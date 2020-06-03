@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Model;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author T-Gamer
+ */
+public class VisualizarEmprestimo {
+
+    private int id_emprestimo = 0;
+    private String nome_aluno = null;
+    private String rm_aluno = null;
+    private String nome_livro = null;
+    private String data = null;
+    private String sala = null;
+    private String sql_visualizaremprestimo = null;
+    private ResultSet resultset_visualizaremprestimo = null;
+    private Conexao conexao_objeto = new Conexao();
+    private PreparedStatement statement_visualizaremprestimo = null;
+
+    public ResultSet visualizarEmprestimo() {
+        try {
+            sql_visualizaremprestimo = "SELECT * FROM tabela_emprestimos WHERE 1";
+            conexao_objeto.AbrirConexao();
+            statement_visualizaremprestimo = conexao_objeto.conexao.prepareStatement(sql_visualizaremprestimo);
+            resultset_visualizaremprestimo = statement_visualizaremprestimo.executeQuery();
+            return resultset_visualizaremprestimo;
+            /*while (resultset_visualizaremprestimo.next()) {
+                this.id_emprestimo = resultset_visualizaremprestimo.getInt("id_emprestimo");
+                this.nome_aluno = resultset_visualizaremprestimo.getString("nome_aluno");
+                this.nome_livro = resultset_visualizaremprestimo.getString("nome_livro");
+                this.data = resultset_visualizaremprestimo.getString("data");
+                this.sala = resultset_visualizaremprestimo.getString("sala");
+            }*/
+        } catch (SQLException erro_visualizaremprestimo) {
+            System.err.println("Problema ao tentar visualizar os empréstimos, ERRO: " + erro_visualizaremprestimo);
+            return resultset_visualizaremprestimo;
+        }
+
+    }
+}
