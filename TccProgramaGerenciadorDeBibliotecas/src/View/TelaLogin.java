@@ -113,9 +113,8 @@ public class TelaLogin extends javax.swing.JFrame {
             LoginClass loginclass_objeto = new LoginClass();
             loginclass_objeto.setUsuario(this.jTxtUsuario.getText());
             loginclass_objeto.setSenha(this.jTxtSenha.getText());
-            //loginclass_objeto.ConsultarUsuario(this.jTxtUsuario.getText(), this.jTxtSenha.getText());
             if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getUsuario(), loginclass_objeto.getSenha())) {
-                JOptionPane.showMessageDialog(this, "Bem-vindo " + loginclass_objeto.getUsuario() + " : )");
+                JOptionPane.showMessageDialog(this, "Bem-vindo " + loginclass_objeto.getUsuario() + " :)");
                 TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
                 this.setVisible(false);
                 telaprincipal_objeto.setVisible(true);
