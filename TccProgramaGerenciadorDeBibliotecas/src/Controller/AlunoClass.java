@@ -10,4 +10,6 @@ package Controller;
  * @author T-Gamer
  */
 public class AlunoClass {
+    private String nome;
+    nome = "cachorro"
 }
