@@ -10,5 +10,5 @@ package Controller;
  * @author T-Gamer
  */
 public class AlunoClass {
-    String nome = "Cachoro";
+    
 }
