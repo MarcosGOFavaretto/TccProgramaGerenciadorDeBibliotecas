@@ -32,16 +32,16 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
         while (resultset_visualizaremprestimo.next()) {
             tabela.addRow(
                     new Object[]{
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx"
+                        resultset_visualizaremprestimo.getInt("id_emprestimo"),
+                        resultset_visualizaremprestimo.getString("id_livro"),
+                        resultset_visualizaremprestimo.getString("rm_aluno"),
+                        resultset_visualizaremprestimo.getString("data_emprestimo"),
+                        resultset_visualizaremprestimo.getString("data_devolucao"),
+                        resultset_visualizaremprestimo.getString("quantidade")
                     }
             );
         }
-        
+
     }
 
     /**
@@ -63,17 +63,17 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Código do empréstimo", "Código do livro", "RM do aluno", "Quantidade"
+                "Código do empréstimo", "Código do livro", "RM do aluno", "Data de Empréstimo", "Data de Devolução", "Quantidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
