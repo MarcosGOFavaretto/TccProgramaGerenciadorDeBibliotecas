@@ -47,8 +47,8 @@
                 <Column editable="false" title="C&#xf3;digo do empr&#xe9;stimo" type="java.lang.Object"/>
                 <Column editable="false" title="C&#xf3;digo do livro" type="java.lang.Object"/>
                 <Column editable="false" title="RM do aluno" type="java.lang.Object"/>
-                <Column editable="true" title="Data de Empr&#xe9;stimo" type="java.lang.Object"/>
-                <Column editable="true" title="Data de Devolu&#xe7;&#xe3;o" type="java.lang.Object"/>
+                <Column editable="false" title="Data de Empr&#xe9;stimo" type="java.lang.Object"/>
+                <Column editable="false" title="Data de Devolu&#xe7;&#xe3;o" type="java.lang.Object"/>
                 <Column editable="false" title="Quantidade" type="java.lang.Object"/>
               </Table>
             </Property>
