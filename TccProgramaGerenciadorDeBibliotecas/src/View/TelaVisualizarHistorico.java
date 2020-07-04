@@ -16,12 +16,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author T-Gamer
  */
-public class TelaVisualizarAtrasos extends javax.swing.JFrame {
+public class TelaVisualizarHistorico extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaVisualizarAtrasos
+     * Creates new form TelaVisualizarEmprestimo
+     *
+     * @throws java.sql.SQLException
      */
-    public TelaVisualizarAtrasos() throws SQLException {
+    public TelaVisualizarHistorico() throws SQLException {
+        
         initComponents();
         EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
         ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
@@ -34,10 +37,12 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
                         "xxxx",
                         "xxxx",
                         "xxxx",
+                        "xxxx",
                         "xxxx"
                     }
             );
         }
+        
     }
 
     /**
@@ -59,15 +64,23 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "RM", "Nome", "Código do livro", "Data de Entrega", "Quantidade"
+                "Código do empréstimo", "Código do livro", "Rm do aluno", "Data de empréstimo", "Data de devolução", "Quantidade"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTbResultado);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
@@ -90,26 +103,39 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarHistorico.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarHistorico.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarHistorico.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarHistorico.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaVisualizarAtrasos().setVisible(true);
+                    new TelaVisualizarHistorico().setVisible(true);
+
                 } catch (SQLException ex) {
-                    Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(TelaVisualizarHistorico.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

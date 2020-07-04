@@ -16,11 +16,10 @@ import java.sql.ResultSet;
 public class EmprestimoClass {
 
     private int id_emprestimo;
-    private String nome_aluno;
-    private String rm_aluno;
-    private String nome_livro;
-    private String data;
-    private String sala;
+    private String id_livro;
+    private String id_aluno;
+    private String data_emprestimo;
+    private String data_devolucao;
     public ResultSet resultset_visualizaremprestimo;
     CadastrarEmprestimo cadastraremprestimo_objeto = new CadastrarEmprestimo();
     VisualizarEmprestimo visualizaremprestimo_objeto = new VisualizarEmprestimo();
@@ -30,24 +29,20 @@ public class EmprestimoClass {
         return id_emprestimo;
     }
 
-    public String getNome_aluno() {
-        return nome_aluno;
+    public String getId_livro() {
+        return id_livro;
     }
 
-    public String getRm_aluno() {
-        return rm_aluno;
+    public String getId_aluno() {
+        return id_aluno;
     }
 
-    public String getNome_livro() {
-        return nome_livro;
+    public String getData_emprestimo() {
+        return data_emprestimo;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public String getSala() {
-        return sala;
+    public String getData_devolucao() {
+        return data_devolucao;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
@@ -55,28 +50,24 @@ public class EmprestimoClass {
         this.id_emprestimo = id_emprestimo;
     }
 
-    public void setNome_aluno(String nome_aluno) {
-        this.nome_aluno = nome_aluno;
+    public void setId_livro(String id_livro) {
+        this.id_livro = id_livro;
     }
 
-    public void setRm_aluno(String rm_aluno) {
-        this.rm_aluno = rm_aluno;
+    public void setId_aluno(String id_aluno) {
+        this.id_aluno = id_aluno;
     }
 
-    public void setNome_livro(String nome_livro) {
-        this.nome_livro = nome_livro;
+    public void setData_emprestimo(String data_emprestimo) {
+        this.data_emprestimo = data_emprestimo;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setData_devolucao(String data_devolucao) {
+        this.data_devolucao = data_devolucao;
     }
 
-    public void setSala(String sala) {
-        this.sala = sala;
-    }
-
-    public boolean cadastrarEmprestimo(String nome_aluno, String rm_aluno, String nome_livro, String data, String sala) {
-        if (cadastraremprestimo_objeto.cadastrarUsuario(nome_aluno, rm_aluno, nome_livro, data, sala)) {
+    public boolean cadastrarEmprestimo(String codigo_livro, String rm_aluno, String data_emprestimo, String data_devolucao, String quantidade) {
+        if (cadastraremprestimo_objeto.cadastrarUsuario(codigo_livro, rm_aluno, data_emprestimo, data_devolucao, quantidade)) {
             return true;
         } else {
             return false;

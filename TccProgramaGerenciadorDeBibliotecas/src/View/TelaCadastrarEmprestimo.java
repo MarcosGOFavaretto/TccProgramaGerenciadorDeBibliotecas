@@ -30,14 +30,13 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBtnPaginaPrincipal = new javax.swing.JButton();
         jBtnCancelar = new javax.swing.JButton();
+        jBtnPaginaInicial = new javax.swing.JButton();
         jBtnSalvar = new javax.swing.JButton();
-        jTxtSala = new javax.swing.JTextField();
-        jTxtData = new javax.swing.JFormattedTextField();
-        jTxtNomeLivro = new javax.swing.JTextField();
-        jTxtRm = new javax.swing.JTextField();
-        jTxtNomeAluno = new javax.swing.JTextField();
+        jTxtQuantidade = new javax.swing.JFormattedTextField();
+        jTxtRm = new javax.swing.JFormattedTextField();
+        jTxtDataDevolucao = new javax.swing.JFormattedTextField();
+        jTxtCodigoLivro = new javax.swing.JFormattedTextField();
         jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,109 +45,107 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jBtnPaginaPrincipal.setBackground(new java.awt.Color(204, 204, 204));
-        jBtnPaginaPrincipal.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N
-        jBtnPaginaPrincipal.setText("PÁGINA PRINCIPAL");
-        jBtnPaginaPrincipal.setBorder(null);
-        jBtnPaginaPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jBtnPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPaginaPrincipalActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBtnPaginaPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 700, 1280, 60));
-
-        jBtnCancelar.setBackground(new java.awt.Color(255, 0, 0));
-        jBtnCancelar.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N
-        jBtnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnCancelar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnCancelar.setText("CANCELAR");
-        jBtnCancelar.setBorder(null);
-        jBtnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 590, 460, 90));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 270, 70));
 
-        jBtnSalvar.setBackground(new java.awt.Color(0, 153, 51));
-        jBtnSalvar.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N
-        jBtnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnPaginaInicial.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnPaginaInicial.setText("PÁGINA INICIAL");
+        jBtnPaginaInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnPaginaInicialActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnPaginaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 270, 70));
+
+        jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
-        jBtnSalvar.setBorder(null);
-        jBtnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 460, 90));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 270, 70));
 
-        jTxtSala.setFont(new java.awt.Font("Artifakt Element", 1, 48)); // NOI18N
-        jTxtSala.setText("3° ETIM - Mecatrônica");
-        jTxtSala.setBorder(null);
-        getContentPane().add(jTxtSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 450, 480, 70));
-
-        jTxtData.setBorder(null);
+        jTxtQuantidade.setBorder(null);
         try {
-            jTxtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jTxtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtData.setText("23/02/2020");
-        jTxtData.setFont(new java.awt.Font("Artifakt Element", 1, 48)); // NOI18N
-        getContentPane().add(jTxtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 270, 70));
+        jTxtQuantidade.setText("11");
+        jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtQuantidade.setOpaque(false);
+        jTxtQuantidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtQuantidadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, 70, 50));
 
-        jTxtNomeLivro.setFont(new java.awt.Font("Artifakt Element", 1, 48)); // NOI18N
-        jTxtNomeLivro.setText("As Crônicas de Nárnia");
-        jTxtNomeLivro.setBorder(null);
-        getContentPane().add(jTxtNomeLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 1140, 70));
-
-        jTxtRm.setFont(new java.awt.Font("Artifakt Element", 1, 48)); // NOI18N
-        jTxtRm.setText("18024");
         jTxtRm.setBorder(null);
-        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 250, 330, 70));
+        try {
+            jTxtRm.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtRm.setText("11111");
+        jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtRm.setOpaque(false);
+        jTxtRm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtRmActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 250, -1, -1));
 
-        jTxtNomeAluno.setFont(new java.awt.Font("Artifakt Element", 1, 48)); // NOI18N
-        jTxtNomeAluno.setText("Marcos Gabriel De Oliveira Favaretto");
-        jTxtNomeAluno.setBorder(null);
-        getContentPane().add(jTxtNomeAluno, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 660, 70));
+        jTxtDataDevolucao.setBorder(null);
+        try {
+            jTxtDataDevolucao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtDataDevolucao.setText("11/11/1111");
+        jTxtDataDevolucao.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtDataDevolucao.setOpaque(false);
+        getContentPane().add(jTxtDataDevolucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 190, 60));
 
-        jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/FundoTelaCadastrarEmprestimo.png"))); // NOI18N
-        jFundo.setMaximumSize(new java.awt.Dimension(1366, 768));
-        jFundo.setMinimumSize(new java.awt.Dimension(1366, 768));
-        jFundo.setPreferredSize(new java.awt.Dimension(1366, 768));
-        getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-270, 0, 1940, 790));
+        jTxtCodigoLivro.setBorder(null);
+        try {
+            jTxtCodigoLivro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtCodigoLivro.setText("11111");
+        jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtCodigoLivro.setOpaque(false);
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 100, -1));
 
-        setSize(new java.awt.Dimension(1367, 787));
+        jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarEmpréstimos.png"))); // NOI18N
+        jFundo.setText("jLabel1");
+        getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        setSize(new java.awt.Dimension(1366, 759));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void limparCampos() {
-        jTxtNomeAluno.setText("");
-        jTxtRm.setText("");
-        jTxtNomeLivro.setText("");
-        jTxtData.setText("");
-        jTxtSala.setText("");
-    }
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // CÓDIGO DO BOTÃO "CANCELAR":
         limparCampos();
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
-    private void jBtnPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaPrincipalActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA PRINCIPAL":
-        TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
-        telaprincipal_objeto.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jBtnPaginaPrincipalActionPerformed
-
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // CÓDIGO DO BOTÃO "SALVAR":
-        if (!jTxtNomeAluno.getText().equals("") || jTxtRm.getText().equals("") || jTxtNomeLivro.getText().equals("") || jTxtData.getText().equals("") || jTxtSala.getText().equals("")) {
+        String data_emprestimo = "xxxxxxxx";
+        String data_devolucao = "xxxxxxxx";
+        if (!jTxtCodigoLivro.getText().equals("") || jTxtRm.getText().equals("") || jTxtQuantidade.getText().equals("")) {
             EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-            if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtNomeAluno.getText(), jTxtRm.getText(), jTxtNomeLivro.getText(), jTxtData.getText(), jTxtSala.getText())) {
+            if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText(), jTxtRm.getText(), data_emprestimo, data_devolucao, jTxtQuantidade.getText())) {
                 JOptionPane.showMessageDialog(this, "Empréstimo cadastrado com sucesso!");
                 limparCampos();
             } else {
@@ -158,6 +155,28 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }
     }//GEN-LAST:event_jBtnSalvarActionPerformed
+
+    private void jTxtRmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtRmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtRmActionPerformed
+
+    private void jTxtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtQuantidadeActionPerformed
+
+    private void jBtnPaginaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaInicialActionPerformed
+        // CÓDIGO DO BOTÃO "PÁGINA INICIAL"
+        TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
+        telaprincipal_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jBtnPaginaInicialActionPerformed
+
+    private void limparCampos() {
+        jTxtCodigoLivro.setText("");
+        jTxtRm.setText("");
+        jTxtDataDevolucao.setText("");
+        jTxtQuantidade.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -196,13 +215,12 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancelar;
-    private javax.swing.JButton jBtnPaginaPrincipal;
+    private javax.swing.JButton jBtnPaginaInicial;
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel jFundo;
-    private javax.swing.JFormattedTextField jTxtData;
-    private javax.swing.JTextField jTxtNomeAluno;
-    private javax.swing.JTextField jTxtNomeLivro;
-    private javax.swing.JTextField jTxtRm;
-    private javax.swing.JTextField jTxtSala;
+    private javax.swing.JFormattedTextField jTxtCodigoLivro;
+    private javax.swing.JFormattedTextField jTxtDataDevolucao;
+    private javax.swing.JFormattedTextField jTxtQuantidade;
+    private javax.swing.JFormattedTextField jTxtRm;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,166 +30,95 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBtnPaginaPrincipal = new javax.swing.JButton();
-        jBtnCancelar = new javax.swing.JButton();
-        jBtnSalvar = new javax.swing.JButton();
-        jTxtEndereco = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTxtTelefone = new javax.swing.JFormattedTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTxtEmail = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTxtSenha = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jTxtNome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTxtRmUsuario = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jTxtEmail = new javax.swing.JTextField();
+        jTxtSenha = new javax.swing.JPasswordField();
+        jTxtEndereco = new javax.swing.JTextField();
+        jTxtTelefone = new javax.swing.JFormattedTextField();
+        jBtnSalvar = new javax.swing.JButton();
+        jBtnPaginaInicial = new javax.swing.JButton();
+        jBtnCancelar = new javax.swing.JButton();
+        jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jBtnPaginaPrincipal.setText("PÁGINA PRINCIPAL");
-        jBtnPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPaginaPrincipalActionPerformed(evt);
-            }
-        });
+        jTxtNome.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtNome.setText("Marcos Gabriel de Oliveira Favaretto");
+        jTxtNome.setBorder(null);
+        jTxtNome.setOpaque(false);
+        getContentPane().add(jTxtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 710, 40));
 
-        jBtnCancelar.setText("CANCELAR");
-        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCancelarActionPerformed(evt);
-            }
-        });
+        jTxtEmail.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtEmail.setText("marcos@etec.sp.gov.br");
+        jTxtEmail.setBorder(null);
+        jTxtEmail.setOpaque(false);
+        getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 290, 50));
 
+        jTxtSenha.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtSenha.setText("123456");
+        jTxtSenha.setBorder(null);
+        jTxtSenha.setOpaque(false);
+        getContentPane().add(jTxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 340, 270, -1));
+
+        jTxtEndereco.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtEndereco.setText("Rua Emídio Capodifóglio, casa 14, Bairro Paraíso, Santa Cruz da Conceição-SP");
+        jTxtEndereco.setBorder(null);
+        jTxtEndereco.setOpaque(false);
+        getContentPane().add(jTxtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 660, 60));
+
+        jTxtTelefone.setBorder(null);
+        try {
+            jTxtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("## # ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtTelefone.setText("19 9 9467-2748");
+        jTxtTelefone.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtTelefone.setOpaque(false);
+        getContentPane().add(jTxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 260, 40));
+
+        jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
         jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnSalvarActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 590, 270, 70));
 
-        jTxtEndereco.setText("Rua Emídio Capodifóglio, casa 14, Bairro Paraíso, Santa Cruz da Conceição - SP");
+        jBtnPaginaInicial.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnPaginaInicial.setText("PÁGINA INICIAL");
+        jBtnPaginaInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnPaginaInicialActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnPaginaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 590, 270, 70));
 
-        jLabel6.setText("Endereco");
+        jBtnCancelar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnCancelar.setText("CANCELAR");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 590, 270, 70));
 
-        jTxtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
-        jTxtTelefone.setText("(19) 9 9467-2748");
+        jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarUsuários.png"))); // NOI18N
+        getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel5.setText("Telefone");
-
-        jTxtEmail.setText("marcos.favaretto@etec.sp.gov.br");
-
-        jLabel4.setText("Email");
-
-        jTxtSenha.setText("123456");
-
-        jLabel3.setText("Senha");
-
-        jTxtNome.setText("Marcos Favaretto");
-
-        jLabel2.setText("Nome");
-
-        jTxtRmUsuario.setText("18024");
-
-        jLabel1.setText("Rm");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBtnPaginaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jBtnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(218, 218, 218)
-                        .addComponent(jBtnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jTxtTelefone)
-                            .addComponent(jTxtRmUsuario)
-                            .addComponent(jTxtNome)
-                            .addComponent(jTxtSenha)
-                            .addComponent(jTxtEmail, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addGap(134, 134, 134))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel1))
-                    .addComponent(jTxtRmUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel2))
-                    .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTxtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4))
-                    .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel5))
-                    .addComponent(jTxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel6))
-                    .addComponent(jTxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnSalvar)
-                    .addComponent(jBtnCancelar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBtnPaginaPrincipal)
-                .addContainerGap())
-        );
-
-        setSize(new java.awt.Dimension(622, 303));
+        setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void limparCampos() {
-        jTxtRmUsuario.setText("");
-        jTxtNome.setText("");
-        jTxtSenha.setText("");
-        jTxtEmail.setText("");
-        jTxtTelefone.setText("");
-        jTxtEndereco.setText("");
-    }
-
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // CÓDIGO DO BOTÃO "SALVAR":
-        if (!jTxtRmUsuario.getText().equals("") || jTxtNome.getText().equals("") || jTxtSenha.getText().equals("") || jTxtEmail.getText().equals("") || jTxtTelefone.getText().equals("") || jTxtEndereco.getText().equals("")) {
+        if (!jTxtNome.getText().equals("") || jTxtEmail.getText().equals("") || jTxtSenha.getText().equals("") || jTxtEndereco.getText().equals("") || jTxtTelefone.getText().equals("")) {
             UsuarioClass usuarioclass_objeto = new UsuarioClass();
-            if (usuarioclass_objeto.cadastrarUsuario(jTxtRmUsuario.getText(), jTxtNome.getText(), jTxtSenha.getText(), jTxtEmail.getText(), jTxtTelefone.getText(), jTxtEndereco.getText())) {
+            if (usuarioclass_objeto.cadastrarUsuario(jTxtNome.getText(), jTxtEmail.getText(), jTxtSenha.getText(), jTxtEndereco.getText(), jTxtTelefone.getText())) {
                 JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
                 limparCampos();
             } else {
@@ -200,17 +129,25 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
-    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
-        // CÓDIGO DO BOTÃO "LIMPAR":
-        limparCampos();
-    }//GEN-LAST:event_jBtnCancelarActionPerformed
-
-    private void jBtnPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaPrincipalActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA PRINCIPAL":
+    private void jBtnPaginaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaInicialActionPerformed
+        // CÓDIGO DO BOTÃO "PÁGINA INICIAL"
         TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
         telaprincipal_objeto.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jBtnPaginaPrincipalActionPerformed
+    }//GEN-LAST:event_jBtnPaginaInicialActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        // CÓDIGO DO BOTÃO "CANCELAR":
+        limparCampos();
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
+
+    private void limparCampos() {
+        jTxtNome.setText("");
+        jTxtSenha.setText("");
+        jTxtEmail.setText("");
+        jTxtTelefone.setText("");
+        jTxtEndereco.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -249,19 +186,13 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancelar;
-    private javax.swing.JButton jBtnPaginaPrincipal;
+    private javax.swing.JButton jBtnPaginaInicial;
     private javax.swing.JButton jBtnSalvar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jFundo;
     private javax.swing.JTextField jTxtEmail;
     private javax.swing.JTextField jTxtEndereco;
     private javax.swing.JTextField jTxtNome;
-    private javax.swing.JTextField jTxtRmUsuario;
-    private javax.swing.JTextField jTxtSenha;
+    private javax.swing.JPasswordField jTxtSenha;
     private javax.swing.JFormattedTextField jTxtTelefone;
     // End of variables declaration//GEN-END:variables
 }

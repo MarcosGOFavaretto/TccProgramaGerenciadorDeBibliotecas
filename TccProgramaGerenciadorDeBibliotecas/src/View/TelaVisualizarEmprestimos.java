@@ -32,12 +32,12 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
         while (resultset_visualizaremprestimo.next()) {
             tabela.addRow(
                     new Object[]{
-                        resultset_visualizaremprestimo.getInt("id_emprestimo"),
-                        resultset_visualizaremprestimo.getString("nome_aluno"),
-                        resultset_visualizaremprestimo.getString("rm_aluno"),
-                        resultset_visualizaremprestimo.getString("nome_livro"),
-                        resultset_visualizaremprestimo.getString("data"),
-                        resultset_visualizaremprestimo.getString("sala")
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx"
                     }
             );
         }
@@ -53,7 +53,6 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBtnPaginaPrincipal = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTbResultado = new javax.swing.JTable();
 
@@ -62,27 +61,19 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jBtnPaginaPrincipal.setText("PÁGINA PRINCIPAL");
-        jBtnPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPaginaPrincipalActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBtnPaginaPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 730, 1370, -1));
-
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "id_emprestimo", "nome_aluno", "rm_aluno", "nome_livro", "data", "sala"
+                "Código do empréstimo", "Código do livro", "RM do aluno", "Quantidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -96,13 +87,6 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBtnPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaPrincipalActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA PRINCIPAL":
-        TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
-        telaprincipal_objeto.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jBtnPaginaPrincipalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +139,6 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnPaginaPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTbResultado;
     // End of variables declaration//GEN-END:variables
