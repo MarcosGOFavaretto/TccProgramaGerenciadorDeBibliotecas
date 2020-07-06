@@ -6,10 +6,12 @@
 package View;
 
 import Controller.EmprestimoClass;
+import Controller.LoginClass;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -53,6 +55,12 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jBtnTelaCadastrarEmprestimo = new javax.swing.JButton();
+        jBtnTelaCadastrarUsuário = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTbResultado = new javax.swing.JTable();
 
@@ -60,6 +68,41 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
         setExtendedState(6);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jBtnTelaCadastrarEmprestimo.setText("Sair");
+        jBtnTelaCadastrarEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnTelaCadastrarEmprestimoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnTelaCadastrarEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+
+        jBtnTelaCadastrarUsuário.setText("Cadastrar usuário");
+        jPanel1.add(jBtnTelaCadastrarUsuário, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+
+        jButton5.setText("Cadastrar Empréstimo");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 770));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,6 +130,62 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+int x = 0;
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // CÓDIGO DO LABEL "HAMBURGUINHO":
+        if (x == 0) {
+            jPanel1.show();
+            jPanel1.setSize(x, 770);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i <= x; i++) {
+                            Thread.sleep(1);
+                            jPanel1.setSize(i + 1, 770);
+                        }
+                    } catch (InterruptedException e) {
+                        JOptionPane.showMessageDialog(null, "ERRO: " + e);
+                    }
+                }
+            };
+            th.start();
+            x = 230;
+        }
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        if (x == 230) {
+            jPanel1.setSize(0, 770);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 230; i >= 0; i--) {
+                            Thread.sleep(1);
+                            jPanel1.setSize(i + 1, 770);
+                        }
+                    } catch (InterruptedException e) {
+                        JOptionPane.showMessageDialog(null, "PROBLEMA: " + e);
+                    }
+                }
+            };
+            th.start();
+            x = 0;
+        }
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jBtnTelaCadastrarEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTelaCadastrarEmprestimoActionPerformed
+        // CÓDIGO DO BOTÃO "SAIR":
+        LoginClass loginclass_objeto = new LoginClass();
+        loginclass_objeto.setUsuario("");
+        loginclass_objeto.setSenha("");
+        loginclass_objeto.setLogin(false);
+        TelaLogin telalogin_objeto = new TelaLogin();
+        telalogin_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jBtnTelaCadastrarEmprestimoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,6 +238,12 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnTelaCadastrarEmprestimo;
+    private javax.swing.JButton jBtnTelaCadastrarUsuário;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTbResultado;
     // End of variables declaration//GEN-END:variables
