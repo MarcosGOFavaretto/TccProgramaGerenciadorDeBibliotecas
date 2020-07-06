@@ -12,11 +12,6 @@ import Model.CadastrarAluno;
  * @author T-Gamer
  */
 public class AlunoClass {
-<<<<<<< HEAD
-    private String nome;
-    nome = "cachorro"
-}
-=======
  
     private String rm_aluno;
     private String sala;
@@ -84,4 +79,3 @@ public class AlunoClass {
         }
     }
 }
->>>>>>> 881c2f2adf0140097cbc100f9743424d789494ed
