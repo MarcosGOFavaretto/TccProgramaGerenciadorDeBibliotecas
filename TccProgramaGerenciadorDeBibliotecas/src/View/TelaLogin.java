@@ -38,6 +38,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jSenha = new javax.swing.JLabel();
         jTxtUsuario = new javax.swing.JTextField();
         jUsuario = new javax.swing.JLabel();
+        jLogo = new javax.swing.JLabel();
         jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,7 +52,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 jBtnFecharActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 250, 30));
+        getContentPane().add(jBtnFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 520, 250, 30));
 
         jBtnCancelar.setFont(new java.awt.Font("Artifakt Element", 1, 14)); // NOI18N
         jBtnCancelar.setText("CANCELAR");
@@ -60,7 +61,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 jBtnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, 250, 30));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 250, 30));
 
         jBtnEntrar.setFont(new java.awt.Font("Artifakt Element", 1, 14)); // NOI18N
         jBtnEntrar.setText("ENTRAR");
@@ -69,27 +70,31 @@ public class TelaLogin extends javax.swing.JFrame {
                 jBtnEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 540, 250, 30));
+        getContentPane().add(jBtnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 520, 250, 30));
 
         jTxtSenha.setText("123456");
-        getContentPane().add(jTxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 280, 30));
+        getContentPane().add(jTxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, 270, 30));
 
         jSenha.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N
         jSenha.setForeground(new java.awt.Color(255, 255, 255));
         jSenha.setText("SENHA");
-        getContentPane().add(jSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, -1));
+        getContentPane().add(jSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
         jTxtUsuario.setFont(new java.awt.Font("Artifakt Element", 1, 14)); // NOI18N
         jTxtUsuario.setText("Marcos");
-        getContentPane().add(jTxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 280, 30));
+        getContentPane().add(jTxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 280, 30));
 
         jUsuario.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N
         jUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jUsuario.setText("USUÁRIO");
-        getContentPane().add(jUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, -1, -1));
+        getContentPane().add(jUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, -1, -1));
 
-        jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/FundoTelaLoginReduzido.png"))); // NOI18N
-        getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Logo.png"))); // NOI18N
+        jLogo.setText("jLabel1");
+        getContentPane().add(jLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-620, -200, -1, -1));
+
+        jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaLogin.png"))); // NOI18N
+        getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-270, -120, 1600, 900));
 
         setSize(new java.awt.Dimension(1072, 703));
         setLocationRelativeTo(null);
@@ -113,13 +118,14 @@ public class TelaLogin extends javax.swing.JFrame {
             LoginClass loginclass_objeto = new LoginClass();
             loginclass_objeto.setUsuario(this.jTxtUsuario.getText());
             loginclass_objeto.setSenha(this.jTxtSenha.getText());
+            //loginclass_objeto.ConsultarUsuario(this.jTxtUsuario.getText(), this.jTxtSenha.getText());
             if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getUsuario(), loginclass_objeto.getSenha())) {
-                JOptionPane.showMessageDialog(this, "Bem-vindo " + loginclass_objeto.getUsuario() + " :)");
+                JOptionPane.showMessageDialog(this, "Usuário reconhecido, BEM VINDO " + loginclass_objeto.getUsuario());
                 TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
                 this.setVisible(false);
                 telaprincipal_objeto.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(this, "Usuário não reconhecido, tente novamente!");
+                JOptionPane.showMessageDialog(this, "Usuário NÃO reconhecido, tente novamente!");
             }
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
@@ -166,6 +172,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton jBtnEntrar;
     private javax.swing.JButton jBtnFechar;
     private javax.swing.JLabel jFundo;
+    private javax.swing.JLabel jLogo;
     private javax.swing.JLabel jSenha;
     private javax.swing.JPasswordField jTxtSenha;
     private javax.swing.JTextField jTxtUsuario;

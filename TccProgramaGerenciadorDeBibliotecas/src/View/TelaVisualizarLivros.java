@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.EmprestimoClass;
 import Controller.LivroClass;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,21 +25,25 @@ public class TelaVisualizarLivros extends javax.swing.JFrame {
      * @throws java.sql.SQLException
      */
     public TelaVisualizarLivros() throws SQLException {
+
         initComponents();
-        LivroClass livroclass_objeto = new LivroClass();
-        ResultSet resultset_visualizarlivros = livroclass_objeto.visualizarLivro();
+        EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
+        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
-        while (resultset_visualizarlivros.next()) {
+        while (resultset_visualizaremprestimo.next()) {
             tabela.addRow(
                     new Object[]{
-                        resultset_visualizarlivros.getInt("id_livro"),
-                        resultset_visualizarlivros.getString("nome_livro"),
-                        resultset_visualizarlivros.getString("autor"),
-                        resultset_visualizarlivros.getString("editora"),
-                        resultset_visualizarlivros.getString("ano_lancamento"),}
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx"
+                    }
             );
         }
+
     }
 
     /**
@@ -50,32 +55,24 @@ public class TelaVisualizarLivros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBtnPaginaPrincipal = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTbResultado = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setUndecorated(true);
+        setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jBtnPaginaPrincipal.setText("PÁGINA PRINCIPAL");
-        jBtnPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPaginaPrincipalActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBtnPaginaPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 1370, -1));
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "id_livro", "nome_livro", "autor", "editora", "ano_lancamento"
+                "Código do Livro", "Nome do Livro", "Autor", "Editora", "Ano de Lançamento", "Quantidade"
             }
         ));
         jScrollPane2.setViewportView(jTbResultado);
@@ -85,13 +82,6 @@ public class TelaVisualizarLivros extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBtnPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaPrincipalActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA PRINCIPAL":
-        TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
-        telaprincipal_objeto.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jBtnPaginaPrincipalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,7 +121,6 @@ public class TelaVisualizarLivros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnPaginaPrincipal;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTbResultado;
     // End of variables declaration//GEN-END:variables

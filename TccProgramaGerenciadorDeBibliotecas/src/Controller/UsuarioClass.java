@@ -80,8 +80,8 @@ public class UsuarioClass {
         this.endereco = endereco;
     }
 
-    public boolean cadastrarUsuario(String rm_usuario, String nome, String senha, String email, String telefone, String endereco) {
-        if (cadastrarusuario_objeto.cadastrarUsuario(rm_usuario, nome, senha, email, telefone, endereco)) {
+    public boolean cadastrarUsuario(String nome, String email, String senha, String endereco, String telefone) {
+        if (cadastrarusuario_objeto.cadastrarUsuario(nome, email, senha, endereco, telefone)) {
             return true;
         } else {
             return false;

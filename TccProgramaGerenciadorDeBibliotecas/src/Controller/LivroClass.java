@@ -19,7 +19,8 @@ public class LivroClass {
     private String nome_livro;
     private String autor;
     private String editora;
-    private String ano_lancamento;
+    private String data;
+    private String quantidade;
     private CadastrarLivro cadastrarlivro_objeto = new CadastrarLivro();
     public ResultSet resultset_visualizarlivro;
     VisualizarLivro visualizarlivro_objeto = new VisualizarLivro();
@@ -41,12 +42,12 @@ public class LivroClass {
         return editora;
     }
 
-    public String getAno_lancamento() {
-        return ano_lancamento;
+    public String getData() {
+        return data;
     }
 
-    public CadastrarLivro getCadastrarlivro_objeto() {
-        return cadastrarlivro_objeto;
+    public String getQuantidade() {
+        return quantidade;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
@@ -66,16 +67,16 @@ public class LivroClass {
         this.editora = editora;
     }
 
-    public void setAno_lancamento(String ano_lancamento) {
-        this.ano_lancamento = ano_lancamento;
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public void setCadastrarlivro_objeto(CadastrarLivro cadastrarlivro_objeto) {
-        this.cadastrarlivro_objeto = cadastrarlivro_objeto;
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
     }
 
-    public boolean cadastrarLivro(String nome_livro, String autor, String editora, String ano_lancamento) {
-        if (cadastrarlivro_objeto.cadastrarUsuario(nome_livro, autor, editora, ano_lancamento)) {
+    public boolean cadastrarLivro(String nome_livro, String autor, String editora, String data, String quantidade) {
+        if (cadastrarlivro_objeto.cadastrarUsuario(nome_livro, autor, editora, data, quantidade)) {
             return true;
         } else {
             return false;

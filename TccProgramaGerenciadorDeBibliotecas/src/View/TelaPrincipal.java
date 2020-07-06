@@ -208,13 +208,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void chamarTelaVisualizarAlunos() {
+    private void chamarTelaVisualizarAlunos() throws SQLException {
         TelaVisualizarAlunos telavisualizaralunos_objeto = new TelaVisualizarAlunos();
         telavisualizaralunos_objeto.setVisible(true);
         this.setVisible(false);
     }
 
-    private void chamarTelaVisualizarAtrasos() {
+    private void chamarTelaVisualizarAtrasos() throws SQLException {
         TelaVisualizarAtrasos telavisualizaratrasos_objeto = new TelaVisualizarAtrasos();
         telavisualizaratrasos_objeto.setVisible(true);
         this.setVisible(false);
@@ -309,13 +309,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnVisualizarLivrosActionPerformed
 
     private void jBtnVisualizarAtrasosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnVisualizarAtrasosActionPerformed
-        // CÓDIGO DO BOTÃO "VISUALIZAR ATRASOS":
-        chamarTelaVisualizarAtrasos();
+        try {
+            // CÓDIGO DO BOTÃO "VISUALIZAR ATRASOS":
+            chamarTelaVisualizarAtrasos();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBtnVisualizarAtrasosActionPerformed
 
     private void jBtnVisualizarAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnVisualizarAlunosActionPerformed
-        // CÓDIGO DO BOTÃO "VISUALIZAR ALUNOS":
-        chamarTelaVisualizarAlunos();
+        try {
+            // CÓDIGO DO BOTÃO "VISUALIZAR ALUNOS":
+            chamarTelaVisualizarAlunos();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBtnVisualizarAlunosActionPerformed
 
     /**
