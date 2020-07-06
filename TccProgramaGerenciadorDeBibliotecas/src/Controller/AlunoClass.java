@@ -10,4 +10,5 @@ package Controller;
  * @author T-Gamer
  */
 public class AlunoClass {
+ String senha ="tomanomeucu";
 }
