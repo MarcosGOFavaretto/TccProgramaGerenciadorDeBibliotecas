@@ -12,10 +12,6 @@ import Model.CadastrarAluno;
  * @author T-Gamer
  */
 public class AlunoClass {
-<<<<<<< HEAD
- String senha ="tomanomeucu";
-=======
-
     private String rm_aluno;
     private String sala;
     private String curso;
@@ -81,5 +77,3 @@ public class AlunoClass {
             return false;
         }
     }
->>>>>>> e002b8dcbfc2208dd1309742fef33c442e6f8e09
-}
