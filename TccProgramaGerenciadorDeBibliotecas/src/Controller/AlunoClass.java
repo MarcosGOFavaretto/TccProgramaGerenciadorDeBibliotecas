@@ -10,5 +10,9 @@ package Controller;
  * @author T-Gamer
  */
 public class AlunoClass {
+<<<<<<< HEAD
     String endereco = "Casa do papai noel"
+=======
+    String nome = "Cachoro";
+>>>>>>> 6d55629f1ee4d83f26f6082bcd70ce79dd9f43bc
 }
