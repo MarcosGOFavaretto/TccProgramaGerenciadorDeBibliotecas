@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import Model.Conexao;
 import Model.ConsultarUsuario;
 
 /**

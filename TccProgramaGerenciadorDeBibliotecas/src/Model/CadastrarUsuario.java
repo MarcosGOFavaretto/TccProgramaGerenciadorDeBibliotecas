@@ -18,17 +18,16 @@ public class CadastrarUsuario {
     private String sql_cadastrarusuario;
     private PreparedStatement statement_cadastrarusuario;
 
-    public boolean cadastrarUsuario(String rm_usuario, String nome, String senha, String email, String telefone, String endereco) {
+    public boolean cadastrarUsuario(String nome, String email, String senha, String endereco, String telefone) {
         try {
-            sql_cadastrarusuario = "INSERT INTO tabela_usuarios(rm_usuario,nome,senha,email,telefone,endereco) VALUES(?,?,?,?,?,?)";
+            sql_cadastrarusuario = "INSERT INTO tabela_usuarios(nome,email,senha,endereco,telefone) VALUES(?,?,?,?,?)";
             conexao_objeto.AbrirConexao();
             statement_cadastrarusuario = conexao_objeto.conexao.prepareStatement(sql_cadastrarusuario);
-            statement_cadastrarusuario.setString(1, rm_usuario);
-            statement_cadastrarusuario.setString(2, nome);
+            statement_cadastrarusuario.setString(1, nome);
+            statement_cadastrarusuario.setString(2, email);
             statement_cadastrarusuario.setString(3, senha);
-            statement_cadastrarusuario.setString(4, email);
+            statement_cadastrarusuario.setString(4, endereco);
             statement_cadastrarusuario.setString(5, telefone);
-            statement_cadastrarusuario.setString(6, endereco);
             if (!statement_cadastrarusuario.execute()) {
                 System.out.println("Usuário cadastrado!");
                 return true;

@@ -5,6 +5,13 @@
  */
 package View;
 
+import Controller.EmprestimoClass;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author T-Gamer
@@ -14,8 +21,23 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
     /**
      * Creates new form TelaVisualizarAtrasos
      */
-    public TelaVisualizarAtrasos() {
+    public TelaVisualizarAtrasos() throws SQLException {
         initComponents();
+        EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
+        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
+        DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
+        tabela.setNumRows(0);
+        while (resultset_visualizaremprestimo.next()) {
+            tabela.addRow(
+                    new Object[]{
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx",
+                        "xxxx"
+                    }
+            );
+        }
     }
 
     /**
@@ -27,48 +49,32 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBtnPaginaPrincipal = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTbResultado = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jBtnPaginaPrincipal.setText("PÁGINA PRINCIPAL");
-        jBtnPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPaginaPrincipalActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBtnPaginaPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 1370, -1));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "RM", "Nome", "Código do livro", "Data de Entrega", "Quantidade"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTbResultado);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
 
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBtnPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaPrincipalActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA PRINCIPAL":
-        TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
-        telaprincipal_objeto.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jBtnPaginaPrincipalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,14 +106,17 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaVisualizarAtrasos().setVisible(true);
+                try {
+                    new TelaVisualizarAtrasos().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton jBtnPaginaPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTbResultado;
     // End of variables declaration//GEN-END:variables
 }
