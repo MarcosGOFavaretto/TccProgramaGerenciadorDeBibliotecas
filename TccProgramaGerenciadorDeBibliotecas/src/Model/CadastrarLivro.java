@@ -18,15 +18,16 @@ public class CadastrarLivro {
     private String sql_cadastrarlivro;
     private PreparedStatement statement_cadastrarlivro;
 
-    public boolean cadastrarUsuario(String nome_livro, String autor, String editora, String ano_lancamento) {
+    public boolean cadastrarUsuario(String nome_livro, String autor, String editora, String data, String quantidade) {
         try {
-            sql_cadastrarlivro = "INSERT INTO tabela_livros(nome_livro,autor,editora,ano_lancamento) VALUES(?,?,?,?)";
+            sql_cadastrarlivro = "INSERT INTO tabela_livros(nome_livro,autor,editora,data, quantidade) VALUES(?,?,?,?,?)";
             conexao_objeto.AbrirConexao();
             statement_cadastrarlivro = conexao_objeto.conexao.prepareStatement(sql_cadastrarlivro);
             statement_cadastrarlivro.setString(1, nome_livro);
             statement_cadastrarlivro.setString(2, autor);
             statement_cadastrarlivro.setString(3, editora);
-            statement_cadastrarlivro.setString(4, ano_lancamento);
+            statement_cadastrarlivro.setString(4, data);
+            statement_cadastrarlivro.setString(5, quantidade);
             if (!statement_cadastrarlivro.execute()) {
                 System.out.println("Livro cadastrado!");
                 return true;

@@ -30,142 +30,129 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BtnPaginaPrincipal = new javax.swing.JButton();
-        jBtnCancelar12 = new javax.swing.JButton();
+        jBtnCancelar = new javax.swing.JButton();
+        jBtnPaginaInicial = new javax.swing.JButton();
         jBtnSalvar = new javax.swing.JButton();
-        jTxtAno = new javax.swing.JFormattedTextField();
-        jLabel5 = new javax.swing.JLabel();
+        jTxtQuantidade = new javax.swing.JFormattedTextField();
+        jTxtData = new javax.swing.JFormattedTextField();
         jTxtEditora = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jTxtAutor = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jTxtNomeLivro = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BtnPaginaPrincipal.setText("PÁGINA PRINCIPAL");
-        BtnPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        jBtnCancelar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnCancelar.setText("CANCELAR");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnPaginaPrincipalActionPerformed(evt);
+                jBtnCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 510, 270, 70));
 
-        jBtnCancelar12.setText("CANCELAR");
-        jBtnCancelar12.addActionListener(new java.awt.event.ActionListener() {
+        jBtnPaginaInicial.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnPaginaInicial.setText("PÁGINA INICIAL");
+        jBtnPaginaInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCancelar12ActionPerformed(evt);
+                jBtnPaginaInicialActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtnPaginaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 270, 70));
 
+        jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
         jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnSalvarActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 270, 70));
 
-        jTxtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("####"))));
-        jTxtAno.setText("2008");
+        jTxtQuantidade.setBorder(null);
+        try {
+            jTxtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtQuantidade.setText("99");
+        jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtQuantidade.setOpaque(false);
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 420, 50, 50));
 
-        jLabel5.setText("Ano");
+        jTxtData.setBorder(null);
+        try {
+            jTxtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtData.setText("30/06/2020");
+        jTxtData.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtData.setOpaque(false);
+        getContentPane().add(jTxtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 416, 160, 50));
 
-        jTxtEditora.setText("Geoffrey Bles");
+        jTxtEditora.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtEditora.setText("As Crônicas de Nárnia");
+        jTxtEditora.setBorder(null);
+        jTxtEditora.setOpaque(false);
+        jTxtEditora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtEditoraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 110, 50));
 
-        jLabel4.setText("Editora");
+        jTxtAutor.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtAutor.setText("As Crônicas de Nárnia");
+        jTxtAutor.setBorder(null);
+        jTxtAutor.setOpaque(false);
+        jTxtAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtAutorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 720, 50));
 
-        jTxtAutor.setText("Clive Staples Lewis");
-
-        jLabel2.setText("Autor");
-
+        jTxtNomeLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtNomeLivro.setText("As Crônicas de Nárnia");
+        jTxtNomeLivro.setBorder(null);
+        jTxtNomeLivro.setOpaque(false);
+        jTxtNomeLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtNomeLivroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtNomeLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 710, 40));
 
-        jLabel1.setText("Nome");
+        jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarLivro.png"))); // NOI18N
+        getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnPaginaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jBtnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(218, 218, 218)
-                        .addComponent(jBtnCancelar12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTxtEditora)
-                            .addComponent(jTxtNomeLivro)
-                            .addComponent(jTxtAutor)
-                            .addComponent(jTxtAno, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addGap(134, 134, 134))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel1))
-                    .addComponent(jTxtNomeLivro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel2))
-                    .addComponent(jTxtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4))
-                    .addComponent(jTxtEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTxtAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnSalvar)
-                    .addComponent(jBtnCancelar12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnPaginaPrincipal)
-                .addContainerGap())
-        );
-
-        setSize(new java.awt.Dimension(622, 303));
+        setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void limparCampos() {
-        jTxtNomeLivro.setText("");
-        jTxtAutor.setText("");
-        jTxtEditora.setText("");
-        jTxtAno.setText("");
-    }
+    private void jTxtNomeLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNomeLivroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtNomeLivroActionPerformed
 
-    private void jBtnCancelar12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelar12ActionPerformed
-        // CÓDIGO DO BOTÃO "LIMPAR":
-        limparCampos();
-    }//GEN-LAST:event_jBtnCancelar12ActionPerformed
+    private void jTxtAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtAutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtAutorActionPerformed
+
+    private void jTxtEditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtEditoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtEditoraActionPerformed
 
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // CÓDIGO DO BOTÃO "SALVAR":
-        if (!jTxtNomeLivro.getText().equals("") || jTxtAutor.getText().equals("") || jTxtEditora.getText().equals("") || jTxtAno.getText().equals("")) {
+        String data_emprestimo = "xxxxxxxx";
+        String data_devolucao = "xxxxxxxx";
+        if (!jTxtNomeLivro.getText().equals("") || jTxtAutor.getText().equals("") || jTxtEditora.getText().equals("") || jTxtData.getText().equals("") || jTxtQuantidade.getText().equals("")) {
             LivroClass livroclass_objeto = new LivroClass();
-            if (livroclass_objeto.cadastrarLivro(jTxtNomeLivro.getText(), jTxtAutor.getText(), jTxtEditora.getText(), jTxtAno.getText())) {
+            if (livroclass_objeto.cadastrarLivro(jTxtNomeLivro.getText(), jTxtAutor.getText(), jTxtEditora.getText(), jTxtData.getText(), jTxtQuantidade.getText())) {
                 JOptionPane.showMessageDialog(this, "Livro cadastrado com sucesso!");
                 limparCampos();
             } else {
@@ -176,12 +163,25 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
-    private void BtnPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPaginaPrincipalActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA PRINCIPAL":
+    private void jBtnPaginaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaInicialActionPerformed
+        // CÓDIGO DO BOTÃO "PÁGINA INICIAL"
         TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
         telaprincipal_objeto.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BtnPaginaPrincipalActionPerformed
+    }//GEN-LAST:event_jBtnPaginaInicialActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        // CÓDIGO DO BOTÃO "CANCELAR":
+        limparCampos();
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
+
+    private void limparCampos() {
+        jTxtNomeLivro.setText("");
+        jTxtAutor.setText("");
+        jTxtEditora.setText("");
+        jTxtData.setText("");
+        jTxtQuantidade.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -219,28 +219,14 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnPaginaPrincipal;
     private javax.swing.JButton jBtnCancelar;
-    private javax.swing.JButton jBtnCancelar1;
-    private javax.swing.JButton jBtnCancelar10;
-    private javax.swing.JButton jBtnCancelar11;
-    private javax.swing.JButton jBtnCancelar12;
-    private javax.swing.JButton jBtnCancelar2;
-    private javax.swing.JButton jBtnCancelar3;
-    private javax.swing.JButton jBtnCancelar4;
-    private javax.swing.JButton jBtnCancelar5;
-    private javax.swing.JButton jBtnCancelar6;
-    private javax.swing.JButton jBtnCancelar7;
-    private javax.swing.JButton jBtnCancelar8;
-    private javax.swing.JButton jBtnCancelar9;
+    private javax.swing.JButton jBtnPaginaInicial;
     private javax.swing.JButton jBtnSalvar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JFormattedTextField jTxtAno;
+    private javax.swing.JLabel jFundo;
     private javax.swing.JTextField jTxtAutor;
+    private javax.swing.JFormattedTextField jTxtData;
     private javax.swing.JTextField jTxtEditora;
     private javax.swing.JTextField jTxtNomeLivro;
+    private javax.swing.JFormattedTextField jTxtQuantidade;
     // End of variables declaration//GEN-END:variables
 }
