@@ -121,9 +121,9 @@ public class TelaLogin extends javax.swing.JFrame {
             //loginclass_objeto.ConsultarUsuario(this.jTxtUsuario.getText(), this.jTxtSenha.getText());
             if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getUsuario(), loginclass_objeto.getSenha())) {
                 JOptionPane.showMessageDialog(this, "Usuário reconhecido, BEM VINDO " + loginclass_objeto.getUsuario());
-                TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
+                TelaCadastrarEmprestimo telacadastraremprestimo_objeto = new TelaCadastrarEmprestimo();
                 this.setVisible(false);
-                telaprincipal_objeto.setVisible(true);
+                telacadastraremprestimo_objeto.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Usuário NÃO reconhecido, tente novamente!");
             }

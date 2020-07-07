@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +21,7 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaVisualizarAlunos
+     * @throws java.sql.SQLException
      */
     public TelaVisualizarAlunos() throws SQLException {
         initComponents();
@@ -50,6 +52,25 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jLbVisualizarAlunos = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLbVisualizarEmprestimos = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLbNovoAgendamento = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLbNovoUsuario = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLbNovoEmprestimo = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLbNovoLivro = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLbNovoAluno = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jHamburguinho2 = new javax.swing.JLabel();
+        jFundoMenu = new javax.swing.JLabel();
+        jHamburguinho1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTbResultado = new javax.swing.JTable();
 
@@ -57,6 +78,115 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
         setExtendedState(6);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 210, 20));
+
+        jLbVisualizarAlunos.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbVisualizarAlunos.setForeground(new java.awt.Color(255, 255, 255));
+        jLbVisualizarAlunos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbVisualizarAlunos.setText("Alunos");
+        jLbVisualizarAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbVisualizarAlunosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbVisualizarAlunos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 170, 40));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 210, 20));
+
+        jLbVisualizarEmprestimos.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbVisualizarEmprestimos.setForeground(new java.awt.Color(255, 255, 255));
+        jLbVisualizarEmprestimos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbVisualizarEmprestimos.setText("Empréstimos");
+        jLbVisualizarEmprestimos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbVisualizarEmprestimosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbVisualizarEmprestimos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 170, 40));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 210, 20));
+
+        jLbNovoAgendamento.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbNovoAgendamento.setForeground(new java.awt.Color(255, 255, 255));
+        jLbNovoAgendamento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbNovoAgendamento.setText("Novo Agendamento");
+        jLbNovoAgendamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbNovoAgendamentoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbNovoAgendamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 170, 40));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 210, 20));
+
+        jLbNovoUsuario.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbNovoUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jLbNovoUsuario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbNovoUsuario.setText("Novo Usuário");
+        jLbNovoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbNovoUsuarioMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbNovoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 170, 40));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 210, 20));
+
+        jLbNovoEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbNovoEmprestimo.setForeground(new java.awt.Color(255, 255, 255));
+        jLbNovoEmprestimo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbNovoEmprestimo.setText("Novo Empréstimo");
+        jLbNovoEmprestimo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbNovoEmprestimoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbNovoEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 170, 40));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 210, 20));
+
+        jLbNovoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbNovoLivro.setForeground(new java.awt.Color(255, 255, 255));
+        jLbNovoLivro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbNovoLivro.setText("Novo Livro");
+        jLbNovoLivro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbNovoLivroMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbNovoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 170, 40));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 210, 20));
+
+        jLbNovoAluno.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbNovoAluno.setForeground(new java.awt.Color(255, 255, 255));
+        jLbNovoAluno.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbNovoAluno.setText("Novo Aluno");
+        jLbNovoAluno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbNovoAlunoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbNovoAluno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 170, 40));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 182, 210, 20));
+
+        jHamburguinho2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho.png"))); // NOI18N
+        jHamburguinho2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jHamburguinho2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jHamburguinho2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
+
+        jFundoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Menu Lateral.png"))); // NOI18N
+        jPanel1.add(jFundoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 770));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 770));
+
+        jHamburguinho1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho.png"))); // NOI18N
+        jHamburguinho1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jHamburguinho1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jHamburguinho1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,6 +206,110 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLbVisualizarAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbVisualizarAlunosMouseClicked
+        // TODO add your handling code here:
+        TelaVisualizarAlunos telavisualizaralunos_objeto = null;
+        try {
+            telavisualizaralunos_objeto = new TelaVisualizarAlunos();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaVisualizarEmprestimos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        telavisualizaralunos_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbVisualizarAlunosMouseClicked
+
+    private void jLbVisualizarEmprestimosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbVisualizarEmprestimosMouseClicked
+        // TODO add your handling code here:
+        TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
+        try {
+            telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaVisualizarEmprestimos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        telavisualizaremprestimos_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbVisualizarEmprestimosMouseClicked
+
+    private void jLbNovoAgendamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbNovoAgendamentoMouseClicked
+        // TODO add your handling code here:
+        TelaCadastrarAgendamento telacadastraragendamento_objeto = new TelaCadastrarAgendamento();
+        telacadastraragendamento_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbNovoAgendamentoMouseClicked
+
+    private void jLbNovoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbNovoUsuarioMouseClicked
+        // TODO add your handling code here:
+        TelaCadastrarUsuario telacadastrarusuario_objeto = new TelaCadastrarUsuario();
+        telacadastrarusuario_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbNovoUsuarioMouseClicked
+
+    private void jLbNovoEmprestimoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbNovoEmprestimoMouseClicked
+        // TODO add your handling code here:
+        TelaCadastrarEmprestimo telacadastraremprestimo_objeto = new TelaCadastrarEmprestimo();
+        telacadastraremprestimo_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbNovoEmprestimoMouseClicked
+
+    private void jLbNovoLivroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbNovoLivroMouseClicked
+        // TODO add your handling code here:
+        TelaCadastrarLivro telacadastrarlivro_objeto = new TelaCadastrarLivro();
+        telacadastrarlivro_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbNovoLivroMouseClicked
+
+    private void jLbNovoAlunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbNovoAlunoMouseClicked
+        // CÓDIGO DO LABEL "NOVO ALUNO":
+        TelaCadastrarAluno telacadastraraluno_objeto = new TelaCadastrarAluno();
+        telacadastraraluno_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbNovoAlunoMouseClicked
+int x = 0;
+    private void jHamburguinho2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jHamburguinho2MouseClicked
+        // TODO add your handling code here:
+        if (x == 230) {
+            jPanel1.setSize(0, 770);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 230; i >= 0; i--) {
+                            Thread.sleep(1);
+                            jPanel1.setSize(i + 1, 770);
+                        }
+                    } catch (InterruptedException e) {
+                        JOptionPane.showMessageDialog(null, "PROBLEMA: " + e);
+                    }
+                }
+            };
+            th.start();
+            x = 0;
+        }
+    }//GEN-LAST:event_jHamburguinho2MouseClicked
+
+    private void jHamburguinho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jHamburguinho1MouseClicked
+        // CÓDIGO DO LABEL "HAMBURGUINHO":
+        if (x == 0) {
+            jPanel1.show();
+            jPanel1.setSize(x, 770);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i <= x; i++) {
+                            Thread.sleep(1);
+                            jPanel1.setSize(i + 1, 770);
+                        }
+                    } catch (InterruptedException e) {
+                        JOptionPane.showMessageDialog(null, "ERRO: " + e);
+                    }
+                }
+            };
+            th.start();
+            x = 230;
+        }
+    }//GEN-LAST:event_jHamburguinho1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -117,7 +351,26 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jFundoMenu;
+    private javax.swing.JLabel jHamburguinho1;
+    private javax.swing.JLabel jHamburguinho2;
+    private javax.swing.JLabel jLbNovoAgendamento;
+    private javax.swing.JLabel jLbNovoAluno;
+    private javax.swing.JLabel jLbNovoEmprestimo;
+    private javax.swing.JLabel jLbNovoLivro;
+    private javax.swing.JLabel jLbNovoUsuario;
+    private javax.swing.JLabel jLbVisualizarAlunos;
+    private javax.swing.JLabel jLbVisualizarEmprestimos;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTable jTbResultado;
     // End of variables declaration//GEN-END:variables
 }
