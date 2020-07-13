@@ -6,6 +6,9 @@
 package View;
 
 import Controller.EmprestimoClass;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -170,7 +173,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         telaprincipal_objeto.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jBtnPaginaInicialActionPerformed
-
+    int x = 0;
     private void limparCampos() {
         jTxtCodigoLivro.setText("");
         jTxtRm.setText("");

@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +21,7 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaVisualizarAlunos
+     * @throws java.sql.SQLException
      */
     public TelaVisualizarAlunos() throws SQLException {
         initComponents();
@@ -76,7 +78,7 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+int x = 0;
     /**
      * @param args the command line arguments
      */
