@@ -17,6 +17,7 @@ public class CadastrarEmprestimo {
     private Conexao conexao_objeto = new Conexao();
     private String sql_cadastraremprestimo;
     private PreparedStatement statement_cadastraremprestimo;
+    private SalvarHistorico salvarhistorico_objeto = new SalvarHistorico();
 
     public boolean cadastrarUsuario(String codigo_livro, String rm_aluno, String data_emprestimo, String data_devolucao, String quantidade) {
         try {
@@ -30,12 +31,7 @@ public class CadastrarEmprestimo {
             statement_cadastraremprestimo.setString(5, quantidade);
             if (!statement_cadastraremprestimo.execute()) {
                 System.out.println("Empréstimo cadastrado!");
-                System.out.println(codigo_livro);
-                System.out.println(rm_aluno);
-                System.out.println(data_emprestimo);
-                System.out.println(data_devolucao);
-                System.out.println(quantidade);
-                
+                salvarhistorico_objeto.salvarhistorico(codigo_livro, rm_aluno, data_emprestimo, data_devolucao, quantidade);
                 return true;
             } else {
                 System.out.println("Empréstimo NÃO cadastrado!");
