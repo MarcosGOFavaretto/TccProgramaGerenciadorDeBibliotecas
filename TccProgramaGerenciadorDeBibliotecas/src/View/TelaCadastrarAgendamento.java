@@ -5,6 +5,9 @@
  */
 package View;
 
+import Controller.AgendamentoClass;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author T-Gamer
@@ -29,6 +32,9 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
 
         jBtnSalvar = new javax.swing.JButton();
         jBtnCancelar = new javax.swing.JButton();
+        jTxtQuantidade = new javax.swing.JFormattedTextField();
+        jTxtCodigoLivro = new javax.swing.JFormattedTextField();
+        jTxtRm = new javax.swing.JFormattedTextField();
         jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,6 +60,39 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 350, 270, 70));
 
+        jTxtQuantidade.setBorder(null);
+        try {
+            jTxtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtQuantidade.setText("11");
+        jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtQuantidade.setOpaque(false);
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 50, 40));
+
+        jTxtCodigoLivro.setBorder(null);
+        try {
+            jTxtCodigoLivro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtCodigoLivro.setText("11111");
+        jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtCodigoLivro.setOpaque(false);
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 100, 40));
+
+        jTxtRm.setBorder(null);
+        try {
+            jTxtRm.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtRm.setText("11111");
+        jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtRm.setOpaque(false);
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 100, 40));
+
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarAgendamento.png"))); // NOI18N
         getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -61,26 +100,31 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void limparCampos() {
+        jTxtRm.setText("");
+        jTxtCodigoLivro.setText("");
+        jTxtQuantidade.setText("");
+    }
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // CÓDIGO DO BOTÃO "SALVAR":
-        /*
-        if (!jTxtRm.getText().equals("") || jCbSala.getSelectedIndex() == 0 || jCbCurso.getSelectedIndex() == 0 || jTxtEmail.getText().equals("") || jTxtTelefone.getText().equals("") || jTxtNome.getText().equals("")) {
-            AlunoClass alunoclass_objeto = new AlunoClass();
-            if (alunoclass_objeto.cadastrarAluno(jTxtRm.getText(), jCbSala.getSelectedItem().toString(), jCbCurso.getSelectedItem().toString(), jTxtEmail.getText(), jTxtTelefone.getText(), jTxtNome.getText())) {
-                JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso!");
+
+        if (!jTxtRm.getText().equals("") || jTxtCodigoLivro.getText().equals("") || jTxtQuantidade.getText().equals("")) {
+            AgendamentoClass agendamentoclass_objeto = new AgendamentoClass();
+            if (agendamentoclass_objeto.cadastrarAgendamento(Integer.valueOf(jTxtRm.getText()), Integer.valueOf(jTxtCodigoLivro.getText()), Integer.valueOf(jTxtQuantidade.getText()))) {
+                JOptionPane.showMessageDialog(this, "Agendamento cadastrado com sucesso!");
                 limparCampos();
             } else {
-                JOptionPane.showMessageDialog(this, "Aluno NÃO foi cadastrado, tente novamente!");
+                JOptionPane.showMessageDialog(this, "Agendamento NÃO foi cadastrado, tente novamente!");
             }
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }
-        */
+
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // CÓDIGO DO BOTÃO "CANCELAR":
-        /*limparCampos();*/
+        limparCampos();
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     /**
@@ -122,5 +166,8 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
     private javax.swing.JButton jBtnCancelar;
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel jFundo;
+    private javax.swing.JFormattedTextField jTxtCodigoLivro;
+    private javax.swing.JFormattedTextField jTxtQuantidade;
+    private javax.swing.JFormattedTextField jTxtRm;
     // End of variables declaration//GEN-END:variables
 }
