@@ -90,9 +90,9 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jTxtData.setText("30/06/2020");
-        jTxtData.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtData.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 35)); // NOI18N
         jTxtData.setOpaque(false);
-        getContentPane().add(jTxtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 416, 160, 50));
+        getContentPane().add(jTxtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 426, 160, 40));
 
         jTxtEditora.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtEditora.setText("As Crônicas de Nárnia");
@@ -114,7 +114,7 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
                 jTxtAutorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 720, 50));
+        getContentPane().add(jTxtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 710, 50));
 
         jTxtNomeLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtNomeLivro.setText("As Crônicas de Nárnia");
