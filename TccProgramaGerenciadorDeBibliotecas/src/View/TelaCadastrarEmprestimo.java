@@ -34,7 +34,6 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     private void initComponents() {
 
         jBtnCancelar = new javax.swing.JButton();
-        jBtnPaginaInicial = new javax.swing.JButton();
         jBtnSalvar = new javax.swing.JButton();
         jTxtQuantidade = new javax.swing.JFormattedTextField();
         jTxtRm = new javax.swing.JFormattedTextField();
@@ -56,15 +55,6 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 270, 70));
-
-        jBtnPaginaInicial.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
-        jBtnPaginaInicial.setText("PÁGINA INICIAL");
-        jBtnPaginaInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPaginaInicialActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBtnPaginaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 270, 70));
 
         jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
@@ -166,13 +156,6 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     private void jTxtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtQuantidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtQuantidadeActionPerformed
-
-    private void jBtnPaginaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaInicialActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA INICIAL"
-        TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
-        telaprincipal_objeto.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jBtnPaginaInicialActionPerformed
     int x = 0;
     private void limparCampos() {
         jTxtCodigoLivro.setText("");
@@ -218,7 +201,6 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancelar;
-    private javax.swing.JButton jBtnPaginaInicial;
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel jFundo;
     private javax.swing.JFormattedTextField jTxtCodigoLivro;

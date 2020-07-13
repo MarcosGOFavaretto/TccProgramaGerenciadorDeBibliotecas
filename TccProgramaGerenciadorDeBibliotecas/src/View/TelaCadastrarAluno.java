@@ -39,7 +39,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         jTxtEmail = new javax.swing.JTextField();
         jTxtTelefone = new javax.swing.JFormattedTextField();
         jBtnSalvar = new javax.swing.JButton();
-        jBtnPaginaInicial = new javax.swing.JButton();
         jBtnCancelar = new javax.swing.JButton();
         jFundo = new javax.swing.JLabel();
 
@@ -109,15 +108,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 270, 70));
 
-        jBtnPaginaInicial.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
-        jBtnPaginaInicial.setText("PÁGINA INICIAL");
-        jBtnPaginaInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPaginaInicialActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBtnPaginaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 270, 70));
-
         jBtnCancelar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnCancelar.setText("CANCELAR");
         jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -158,13 +148,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         jTxtTelefone.setText("");
         jTxtNome.setText("");
     }
-    private void jBtnPaginaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPaginaInicialActionPerformed
-        // CÓDIGO DO BOTÃO "PÁGINA INICIAL"
-        TelaPrincipal telaprincipal_objeto = new TelaPrincipal();
-        telaprincipal_objeto.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jBtnPaginaInicialActionPerformed
-
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // CÓDIGO DO BOTÃO "CANCELAR":
         limparCampos();
@@ -215,7 +198,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancelar;
-    private javax.swing.JButton jBtnPaginaInicial;
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JComboBox<String> jCbCurso;
     private javax.swing.JComboBox<String> jCbSala;
