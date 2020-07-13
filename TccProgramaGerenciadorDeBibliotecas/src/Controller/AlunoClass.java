@@ -6,6 +6,8 @@
 package Controller;
 
 import Model.CadastrarAluno;
+import Model.VisualizarAluno;
+import java.sql.ResultSet;
 
 /**
  *
@@ -20,6 +22,8 @@ public class AlunoClass {
     private String telefone;
     private String nome;
     private CadastrarAluno cadastraraluno_objeto = new CadastrarAluno();
+    private VisualizarAluno visualizaraluno_objeto = new VisualizarAluno();
+    private ResultSet resultset_visualizaraluno;
 
     // CRIANDO OS MÉTODOS "GETTERS":
     public String getRm_aluno() {
@@ -77,5 +81,10 @@ public class AlunoClass {
         } else {
             return false;
         }
+    }
+
+    public ResultSet visualizarAluno() {
+        resultset_visualizaraluno = visualizaraluno_objeto.visualizarAluno();
+        return resultset_visualizaraluno;
     }
 }

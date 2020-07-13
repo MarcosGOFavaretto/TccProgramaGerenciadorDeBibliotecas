@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.EmprestimoClass;
+import Controller.HistoricoClass;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -24,25 +24,26 @@ public class TelaVisualizarHistorico extends javax.swing.JFrame {
      * @throws java.sql.SQLException
      */
     public TelaVisualizarHistorico() throws SQLException {
-        
+
         initComponents();
-        EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
+        HistoricoClass historicoclass_objeto = new HistoricoClass();
+        ResultSet resultset_visualizarhistorico = historicoclass_objeto.visualizarHistorico();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
-        while (resultset_visualizaremprestimo.next()) {
+        while (resultset_visualizarhistorico.next()) {
             tabela.addRow(
                     new Object[]{
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx"
+                        resultset_visualizarhistorico.getInt("id_emprestimo"),
+                        resultset_visualizarhistorico.getInt("id_livro"),
+                        resultset_visualizarhistorico.getString("rm_aluno"),
+                        resultset_visualizarhistorico.getDate("data_emprestimo"),
+                        resultset_visualizarhistorico.getDate("data_devolucao"),
+                        resultset_visualizarhistorico.getString("quantidade"),
+                        resultset_visualizarhistorico.getString("situacao")
                     }
             );
         }
-        
+
     }
 
     /**
@@ -64,17 +65,17 @@ public class TelaVisualizarHistorico extends javax.swing.JFrame {
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código do empréstimo", "Código do livro", "Rm do aluno", "Data de empréstimo", "Data de devolução", "Quantidade"
+                "Código do empréstimo", "Código do livro", "Rm do aluno", "Data de empréstimo", "Data de devolução", "Quantidade", "situacao"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, true, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

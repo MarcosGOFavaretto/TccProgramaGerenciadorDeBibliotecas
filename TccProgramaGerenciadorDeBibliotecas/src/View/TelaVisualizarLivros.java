@@ -27,19 +27,19 @@ public class TelaVisualizarLivros extends javax.swing.JFrame {
     public TelaVisualizarLivros() throws SQLException {
 
         initComponents();
-        EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
+        LivroClass livroclass_objeto = new LivroClass();
+        ResultSet resultset_visualizarlivro = livroclass_objeto.visualizarLivro();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
-        while (resultset_visualizaremprestimo.next()) {
+        while (resultset_visualizarlivro.next()) {
             tabela.addRow(
                     new Object[]{
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx"
+                        resultset_visualizarlivro.getInt("id_livro"),
+                        resultset_visualizarlivro.getString("nome_livro"),
+                        resultset_visualizarlivro.getString("autor"),
+                        resultset_visualizarlivro.getString("editora"),
+                        resultset_visualizarlivro.getString("data"),
+                        resultset_visualizarlivro.getString("quantidade")
                     }
             );
         }
