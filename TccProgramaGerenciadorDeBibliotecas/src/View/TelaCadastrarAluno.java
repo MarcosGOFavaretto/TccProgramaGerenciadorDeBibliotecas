@@ -6,7 +6,6 @@
 package View;
 
 import Controller.AlunoClass;
-import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**

@@ -5,12 +5,11 @@
  */
 package View;
 
-import Controller.EmprestimoClass;
+import Controller.AlunoClass;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,23 +20,25 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaVisualizarAlunos
+     *
      * @throws java.sql.SQLException
      */
     public TelaVisualizarAlunos() throws SQLException {
         initComponents();
-        EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
+        AlunoClass alunoclass_objeto = new AlunoClass();
+        ResultSet resultset_visualizaraluno = alunoclass_objeto.visualizarAluno();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
-        while (resultset_visualizaremprestimo.next()) {
+        while (resultset_visualizaraluno.next()) {
             tabela.addRow(
                     new Object[]{
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx"
+                        resultset_visualizaraluno.getInt("rm"),
+                        resultset_visualizaraluno.getString("nome"),
+                        resultset_visualizaraluno.getString("curso"),
+                        resultset_visualizaraluno.getString("sala"),
+                        resultset_visualizaraluno.getString("email"),
+                        resultset_visualizaraluno.getString("telefone")
+
                     }
             );
         }
@@ -68,7 +69,7 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "RM", "Sala", "Curso", "Telefone", "Email", "Nome"
+                "RM", "Nome", "Curso", "Sala", "Email", "Telefone"
             }
         ));
         jScrollPane1.setViewportView(jTbResultado);
@@ -79,6 +80,7 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 int x = 0;
+
     /**
      * @param args the command line arguments
      */

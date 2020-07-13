@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.AgendamentoClass;
 import Controller.EmprestimoClass;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,19 +27,17 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
     public TelaVisualizarAgendamento() throws SQLException {
         initComponents();
 
-        EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
+        AgendamentoClass agendamentoclass_objeto = new AgendamentoClass();
+        ResultSet resultset_visualizaragendamento = agendamentoclass_objeto.visualizarAgendamento();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
-        while (resultset_visualizaremprestimo.next()) {
+        while (resultset_visualizaragendamento.next()) {
             tabela.addRow(
                     new Object[]{
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx"
+                        resultset_visualizaragendamento.getInt("id_agendamento"),
+                        resultset_visualizaragendamento.getInt("id_livro"),
+                        resultset_visualizaragendamento.getInt("rm_aluno"),
+                        resultset_visualizaragendamento.getInt("quantidade")
                     }
             );
         }
@@ -64,17 +63,17 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Código do agendamento", "Código do livro", "RM do aluno", "Data de empréstimo", "Data de devolução", "Quantidade"
+                "Código do agendamento", "RM do aluno", "Código do livro", "Quantidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
