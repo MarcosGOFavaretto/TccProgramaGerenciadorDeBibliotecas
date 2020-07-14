@@ -7,6 +7,7 @@ package View;
 
 import Controller.LoginClass;
 import Controller.UsuarioClass;
+import Model.ConsultarUsuario;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,10 +22,31 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastrarUsuario
      */
+    private String usuario = "";
+    private String senha = "";
+    private TelaLogin telalogin_objeto = new TelaLogin();
+    private LoginClass loginclass_objeto = new LoginClass();
+
     public TelaCadastrarUsuario() {
-        initComponents();
-        String usuario = JOptionPane.showInputDialog("Insira o email do usuário abaixo:");
-        String senha = JOptionPane.showInputDialog("Insira a senha do usuário abaixo:");
+        usuario = JOptionPane.showInputDialog("Insira o email do usuário abaixo:");
+        senha = JOptionPane.showInputDialog("Insira a senha do usuário abaixo:");
+        if (usuario.equals("") || senha.equals("")) {
+            JOptionPane.showMessageDialog(null, "Campos vazios, acesso negado!");
+            this.setVisible(false);
+            telalogin_objeto.setVisible(true);
+        } else {
+            ConsultarUsuario consultarusuario_objeto = new ConsultarUsuario();
+            loginclass_objeto.setUsuario(this.usuario);
+            loginclass_objeto.setSenha(this.senha);
+            if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getUsuario(), loginclass_objeto.getSenha())) {
+                JOptionPane.showMessageDialog(null, "Usuário reconhecido!");
+                initComponents();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não reconhecido, acesso negado!");
+                this.setVisible(false);
+                telalogin_objeto.setVisible(true);
+            }
+        }
     }
 
     /**
@@ -413,8 +435,10 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         TelaVisualizarAgendamento telavisualizaragendamentos_objeto = null;
         try {
             telavisualizaragendamentos_objeto = new TelaVisualizarAgendamento();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAgendamento.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAgendamento.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaragendamentos_objeto.setVisible(true);
         this.setVisible(false);
@@ -425,8 +449,10 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         TelaVisualizarAlunos telavisualizaralunos_objeto = null;
         try {
             telavisualizaralunos_objeto = new TelaVisualizarAlunos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAlunos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAlunos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaralunos_objeto.setVisible(true);
         this.setVisible(false);
@@ -437,8 +463,10 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         TelaVisualizarAtrasos telavisualizaratrasos_objeto = null;
         try {
             telavisualizaratrasos_objeto = new TelaVisualizarAtrasos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAtrasos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaratrasos_objeto.setVisible(true);
         this.setVisible(false);
@@ -449,8 +477,10 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
         try {
             telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarEmprestimos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarEmprestimos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaremprestimos_objeto.setVisible(true);
         this.setVisible(false);
@@ -461,8 +491,10 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         TelaVisualizarHistorico telavisualizarhistorico_objeto = null;
         try {
             telavisualizarhistorico_objeto = new TelaVisualizarHistorico();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarHistorico.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarHistorico.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizarhistorico_objeto.setVisible(true);
         this.setVisible(false);
@@ -473,8 +505,10 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         TelaVisualizarLivros telavisualizarlivros_objeto = null;
         try {
             telavisualizarlivros_objeto = new TelaVisualizarLivros();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarLivros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarLivros.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizarlivros_objeto.setVisible(true);
         this.setVisible(false);
@@ -535,16 +569,21 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

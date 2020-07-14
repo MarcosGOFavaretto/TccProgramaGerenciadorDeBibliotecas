@@ -23,6 +23,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
      */
     public TelaCadastrarEmprestimo() {
         initComponents();
+        LoginClass loginclass_objeto = new LoginClass();
     }
 
     /**
