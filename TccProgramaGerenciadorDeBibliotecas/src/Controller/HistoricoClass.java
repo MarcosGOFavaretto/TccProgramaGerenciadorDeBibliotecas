@@ -6,7 +6,6 @@
 package Controller;
 
 import Model.SalvarHistorico;
-import Model.VisualizarEmprestimo;
 import Model.VisualizarHistorico;
 import java.sql.ResultSet;
 
