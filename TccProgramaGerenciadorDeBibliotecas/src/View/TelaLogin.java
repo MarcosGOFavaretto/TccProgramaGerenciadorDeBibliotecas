@@ -7,6 +7,9 @@ package View;
 
 import Controller.LoginClass;
 import Model.ConsultarUsuario;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -124,9 +127,14 @@ public class TelaLogin extends javax.swing.JFrame {
             if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getEmail(), loginclass_objeto.getSenha())) {
                 JOptionPane.showMessageDialog(this, "Usuário reconhecido!");
                 limparCampos();
-                TelaCadastrarEmprestimo telacadastraremprestimo_objeto = new TelaCadastrarEmprestimo();
+                TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
+                try {
+                    telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 this.setVisible(false);
-                telacadastraremprestimo_objeto.setVisible(true);
+                telavisualizaremprestimos_objeto.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Usuário NÃO reconhecido, tente novamente!");
             }

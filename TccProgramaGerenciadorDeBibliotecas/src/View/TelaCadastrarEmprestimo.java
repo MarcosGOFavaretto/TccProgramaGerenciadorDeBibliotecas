@@ -7,6 +7,7 @@ package View;
 
 import Controller.EmprestimoClass;
 import Controller.LoginClass;
+import Model.ConsultarUsuario;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,9 +22,34 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastrarEmprestimo
      */
+    private String email = "";
+    private String senha = "";
+    private TelaLogin telalogin_objeto = new TelaLogin();
+    private LoginClass loginclass_objeto = new LoginClass();
+
     public TelaCadastrarEmprestimo() {
-        initComponents();
-        LoginClass loginclass_objeto = new LoginClass();
+        email = JOptionPane.showInputDialog("Insira o email do usuário abaixo:");
+        senha = JOptionPane.showInputDialog("Insira a senha do usuário abaixo:");
+        if (email.equals("") || senha.equals("")) {
+            JOptionPane.showMessageDialog(null, "Campos vazios, acesso negado!");
+            loginclass_objeto.setLogin(false);
+            this.setVisible(false);
+            telalogin_objeto.setVisible(true);
+        } else {
+            ConsultarUsuario consultarusuario_objeto = new ConsultarUsuario();
+            loginclass_objeto.setEmail(this.email);
+            loginclass_objeto.setSenha(this.senha);
+            if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getEmail(), loginclass_objeto.getSenha())) {
+                JOptionPane.showMessageDialog(null, "Usuário reconhecido!");
+                loginclass_objeto.setLogin(true);
+                initComponents();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não reconhecido, acesso negado!");
+                loginclass_objeto.setLogin(false);
+                this.setVisible(false);
+                telalogin_objeto.setVisible(true);
+            }
+        }
     }
 
     /**
@@ -69,6 +95,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         jTxtRm = new javax.swing.JFormattedTextField();
         jTxtDataDevolucao = new javax.swing.JFormattedTextField();
         jTxtCodigoLivro = new javax.swing.JFormattedTextField();
+        jNovoEmprestimo = new javax.swing.JLabel();
         jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -261,7 +288,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 770));
 
-        jHamburguinho1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho1.png"))); // NOI18N
+        jHamburguinho1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho2.png"))); // NOI18N
         jHamburguinho1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jHamburguinho1MouseClicked(evt);
@@ -340,6 +367,11 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtCodigoLivro.setOpaque(false);
         getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 100, -1));
+
+        jNovoEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jNovoEmprestimo.setForeground(new java.awt.Color(255, 255, 255));
+        jNovoEmprestimo.setText("NOVO EMPRÉSTIMO");
+        getContentPane().add(jNovoEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 310, 50));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarEmpréstimos.png"))); // NOI18N
         jFundo.setText("jLabel1");
@@ -614,6 +646,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     private javax.swing.JLabel jMais2;
     private javax.swing.JLabel jMais3;
     private javax.swing.JLabel jMais4;
+    private javax.swing.JLabel jNovoEmprestimo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jSair;
     private javax.swing.JFormattedTextField jTxtCodigoLivro;
