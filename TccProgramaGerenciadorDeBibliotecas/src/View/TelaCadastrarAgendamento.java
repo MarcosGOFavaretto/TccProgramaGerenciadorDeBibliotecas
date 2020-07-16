@@ -65,9 +65,9 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         jHamburguinho1 = new javax.swing.JLabel();
         jBtnSalvar = new javax.swing.JButton();
         jBtnCancelar = new javax.swing.JButton();
-        jTxtQuantidade = new javax.swing.JFormattedTextField();
-        jTxtCodigoLivro = new javax.swing.JFormattedTextField();
-        jTxtRm = new javax.swing.JFormattedTextField();
+        jTxtQuantidade = new javax.swing.JTextField();
+        jTxtRm = new javax.swing.JTextField();
+        jTxtCodigoLivro = new javax.swing.JTextField();
         jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -285,35 +285,23 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 350, 270, 70));
 
-        jTxtQuantidade.setBorder(null);
-        try {
-            jTxtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtQuantidade.setText("2");
+        jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 50, 40));
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 250, 50, 40));
 
-        jTxtCodigoLivro.setBorder(null);
-        try {
-            jTxtCodigoLivro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtCodigoLivro.setOpaque(false);
-        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 100, 40));
-
-        jTxtRm.setBorder(null);
-        try {
-            jTxtRm.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtRm.setText("18024");
+        jTxtRm.setBorder(null);
         jTxtRm.setOpaque(false);
-        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 100, 40));
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 170, 40));
+
+        jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtCodigoLivro.setText("3");
+        jTxtCodigoLivro.setBorder(null);
+        jTxtCodigoLivro.setOpaque(false);
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 150, 40));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarAgendamento.png"))); // NOI18N
         getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -332,19 +320,19 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
 
         if (!jTxtRm.getText().equals("") || jTxtCodigoLivro.getText().equals("") || jTxtQuantidade.getText().equals("")) {
             VerificarQuantidade verificarquantidade_objeto = new VerificarQuantidade();
-            int quantidade = Integer.parseInt(jTxtQuantidade.getText());
-            if (verificarquantidade_objeto.verificarQuantidadeAgendamento(quantidade, jTxtCodigoLivro.getText())) {
+            int quantidade = Integer.parseInt(jTxtQuantidade.getText().replaceAll("[^0-9]", ""));
+            if (verificarquantidade_objeto.verificarQuantidadeAgendamento(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
                 JOptionPane.showMessageDialog(this, "Livro disponível!");
             } else {
                 JOptionPane.showMessageDialog(this, "Livro indisponível");
-            }/*
+            }
             AgendamentoClass agendamentoclass_objeto = new AgendamentoClass();
             if (agendamentoclass_objeto.cadastrarAgendamento(Integer.valueOf(jTxtRm.getText()), Integer.valueOf(jTxtCodigoLivro.getText()), Integer.valueOf(jTxtQuantidade.getText()))) {
                 JOptionPane.showMessageDialog(this, "Agendamento cadastrado com sucesso!");
                 limparCampos();
             } else {
                 JOptionPane.showMessageDialog(this, "Agendamento NÃO foi cadastrado, tente novamente!");
-            }*/
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }
@@ -586,8 +574,8 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
     private javax.swing.JLabel jMais4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jSair;
-    private javax.swing.JFormattedTextField jTxtCodigoLivro;
-    private javax.swing.JFormattedTextField jTxtQuantidade;
-    private javax.swing.JFormattedTextField jTxtRm;
+    private javax.swing.JTextField jTxtCodigoLivro;
+    private javax.swing.JTextField jTxtQuantidade;
+    private javax.swing.JTextField jTxtRm;
     // End of variables declaration//GEN-END:variables
 }
