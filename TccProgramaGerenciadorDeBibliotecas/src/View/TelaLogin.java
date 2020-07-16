@@ -36,7 +36,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jBtnEntrar = new javax.swing.JButton();
         jTxtSenha = new javax.swing.JPasswordField();
         jSenha = new javax.swing.JLabel();
-        jTxtUsuario = new javax.swing.JTextField();
+        jTxtEmail = new javax.swing.JTextField();
         jUsuario = new javax.swing.JLabel();
         jLogo = new javax.swing.JLabel();
         jFundo = new javax.swing.JLabel();
@@ -80,9 +80,9 @@ public class TelaLogin extends javax.swing.JFrame {
         jSenha.setText("SENHA");
         getContentPane().add(jSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
-        jTxtUsuario.setFont(new java.awt.Font("Artifakt Element", 1, 14)); // NOI18N
-        jTxtUsuario.setText("Marcos");
-        getContentPane().add(jTxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 280, 30));
+        jTxtEmail.setFont(new java.awt.Font("Artifakt Element", 1, 14)); // NOI18N
+        jTxtEmail.setText("marcos@gmail.com");
+        getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 280, 30));
 
         jUsuario.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N
         jUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,6 +100,10 @@ public class TelaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void limparCampos() {
+        jTxtEmail.setText("");
+        jTxtSenha.setText("");
+    }
     private void jBtnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFecharActionPerformed
         // CÓDIGO DO BOTÃO "FECHAR":
         System.exit(0);
@@ -107,19 +111,19 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // CÓDIGO DO BOTÃO "CANCELAR":
-        jTxtUsuario.setText("");
-        jTxtSenha.setText("");
+        limparCampos();
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
         // CÓDIGO DO BOTÃO "ENTRAR":
-        if (!jTxtUsuario.getText().equals("") || jTxtSenha.getText().equals("")) {
+        if (!jTxtEmail.getText().equals("") || jTxtSenha.getText().equals("")) {
             ConsultarUsuario consultarusuario_objeto = new ConsultarUsuario();
             LoginClass loginclass_objeto = new LoginClass();
-            loginclass_objeto.setUsuario(this.jTxtUsuario.getText());
+            loginclass_objeto.setEmail(this.jTxtEmail.getText());
             loginclass_objeto.setSenha(this.jTxtSenha.getText());
-            if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getUsuario(), loginclass_objeto.getSenha())) {
-                JOptionPane.showMessageDialog(this, "Usuário reconhecido, BEM VINDO " + loginclass_objeto.getUsuario());
+            if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getEmail(), loginclass_objeto.getSenha())) {
+                JOptionPane.showMessageDialog(this, "Usuário reconhecido!");
+                limparCampos();
                 TelaCadastrarEmprestimo telacadastraremprestimo_objeto = new TelaCadastrarEmprestimo();
                 this.setVisible(false);
                 telacadastraremprestimo_objeto.setVisible(true);
@@ -173,8 +177,8 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jFundo;
     private javax.swing.JLabel jLogo;
     private javax.swing.JLabel jSenha;
+    private javax.swing.JTextField jTxtEmail;
     private javax.swing.JPasswordField jTxtSenha;
-    private javax.swing.JTextField jTxtUsuario;
     private javax.swing.JLabel jUsuario;
     // End of variables declaration//GEN-END:variables
 }

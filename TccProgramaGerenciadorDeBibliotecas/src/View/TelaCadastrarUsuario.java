@@ -22,27 +22,30 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastrarUsuario
      */
-    private String usuario = "";
+    private String email = "";
     private String senha = "";
     private TelaLogin telalogin_objeto = new TelaLogin();
     private LoginClass loginclass_objeto = new LoginClass();
 
     public TelaCadastrarUsuario() {
-        usuario = JOptionPane.showInputDialog("Insira o email do usuário abaixo:");
+        email = JOptionPane.showInputDialog("Insira o email do usuário abaixo:");
         senha = JOptionPane.showInputDialog("Insira a senha do usuário abaixo:");
-        if (usuario.equals("") || senha.equals("")) {
+        if (email.equals("") || senha.equals("")) {
             JOptionPane.showMessageDialog(null, "Campos vazios, acesso negado!");
+            loginclass_objeto.setLogin(false);
             this.setVisible(false);
             telalogin_objeto.setVisible(true);
         } else {
             ConsultarUsuario consultarusuario_objeto = new ConsultarUsuario();
-            loginclass_objeto.setUsuario(this.usuario);
+            loginclass_objeto.setEmail(this.email);
             loginclass_objeto.setSenha(this.senha);
-            if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getUsuario(), loginclass_objeto.getSenha())) {
+            if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getEmail(), loginclass_objeto.getSenha())) {
                 JOptionPane.showMessageDialog(null, "Usuário reconhecido!");
+                loginclass_objeto.setLogin(true);
                 initComponents();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não reconhecido, acesso negado!");
+                loginclass_objeto.setLogin(false);
                 this.setVisible(false);
                 telalogin_objeto.setVisible(true);
             }
@@ -477,13 +480,12 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
         try {
             telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
-
+            telavisualizaremprestimos_objeto.setVisible(true);
+            this.setVisible(false);
         } catch (SQLException ex) {
             Logger.getLogger(TelaVisualizarEmprestimos.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-        telavisualizaremprestimos_objeto.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_jLbVisualizarEmprestimosMouseClicked
 
     private void jLbVisualizarHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbVisualizarHistoricoMouseClicked
@@ -517,7 +519,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
     private void jLbSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbSairMouseClicked
         // CÓDIGO DO LABEL "SAIR":
         LoginClass loginclass_objeto = new LoginClass();
-        loginclass_objeto.setUsuario("");
+        loginclass_objeto.setEmail("");
         loginclass_objeto.setSenha("");
         loginclass_objeto.setLogin(false);
         TelaLogin telalogin_objeto = new TelaLogin();

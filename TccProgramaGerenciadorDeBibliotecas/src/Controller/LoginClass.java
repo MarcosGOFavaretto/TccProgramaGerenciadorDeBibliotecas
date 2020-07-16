@@ -13,14 +13,14 @@ import Model.ConsultarUsuario;
  */
 public class LoginClass {
 
-    private String usuario;
+    private String email;
     private String senha;
     public Boolean login = false;
     private ConsultarUsuario consultarusuario_objeto = new ConsultarUsuario();
 
     // CRIANDO OS MÉTODOS "GETTERS":
-    public String getUsuario() {
-        return usuario;
+    public String getEmail() {
+        return email;
     }
 
     public String getSenha() {
@@ -32,8 +32,8 @@ public class LoginClass {
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setSenha(String senha) {
@@ -46,8 +46,8 @@ public class LoginClass {
 
     // Criando método para a validação do usuário:
     /* ERRO MVC
-    public void ConsultarUsuario(String usuario, String senha) {
-        if (consultarusuario_objeto.ConsultarUsuario(this.usuario, this.senha)) {
+    public void ConsultarUsuario(String email, String senha) {
+        if (consultarusuario_objeto.ConsultarUsuario(this.email, this.senha)) {
             login = true;
         } else {
             login = false;

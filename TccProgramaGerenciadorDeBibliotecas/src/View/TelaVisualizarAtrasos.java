@@ -410,7 +410,7 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
     private void jLbSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbSairMouseClicked
         // CÓDIGO DO LABEL "SAIR":
         LoginClass loginclass_objeto = new LoginClass();
-        loginclass_objeto.setUsuario("");
+        loginclass_objeto.setEmail("");
         loginclass_objeto.setSenha("");
         loginclass_objeto.setLogin(false);
         TelaLogin telalogin_objeto = new TelaLogin();
