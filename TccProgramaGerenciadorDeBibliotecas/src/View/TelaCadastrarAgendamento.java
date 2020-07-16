@@ -259,7 +259,7 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 770));
 
-        jHamburguinho1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho1.png"))); // NOI18N
+        jHamburguinho1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho2.png"))); // NOI18N
         jHamburguinho1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jHamburguinho1MouseClicked(evt);
@@ -321,18 +321,20 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         if (!jTxtRm.getText().equals("") || jTxtCodigoLivro.getText().equals("") || jTxtQuantidade.getText().equals("")) {
             VerificarQuantidade verificarquantidade_objeto = new VerificarQuantidade();
             int quantidade = Integer.parseInt(jTxtQuantidade.getText().replaceAll("[^0-9]", ""));
-            if (verificarquantidade_objeto.verificarQuantidadeAgendamento(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
+            if (verificarquantidade_objeto.verificarQuantidade(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
                 JOptionPane.showMessageDialog(this, "Livro disponível!");
+                AgendamentoClass agendamentoclass_objeto = new AgendamentoClass();
+                if (agendamentoclass_objeto.cadastrarAgendamento(Integer.valueOf(jTxtRm.getText()), Integer.valueOf(jTxtCodigoLivro.getText()), Integer.valueOf(jTxtQuantidade.getText()))) {
+                    JOptionPane.showMessageDialog(this, "Agendamento cadastrado com sucesso!");
+                    limparCampos();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Agendamento NÃO foi cadastrado, tente novamente!");
+                }
             } else {
                 JOptionPane.showMessageDialog(this, "Livro indisponível");
-            }
-            AgendamentoClass agendamentoclass_objeto = new AgendamentoClass();
-            if (agendamentoclass_objeto.cadastrarAgendamento(Integer.valueOf(jTxtRm.getText()), Integer.valueOf(jTxtCodigoLivro.getText()), Integer.valueOf(jTxtQuantidade.getText()))) {
-                JOptionPane.showMessageDialog(this, "Agendamento cadastrado com sucesso!");
                 limparCampos();
-            } else {
-                JOptionPane.showMessageDialog(this, "Agendamento NÃO foi cadastrado, tente novamente!");
             }
+
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }

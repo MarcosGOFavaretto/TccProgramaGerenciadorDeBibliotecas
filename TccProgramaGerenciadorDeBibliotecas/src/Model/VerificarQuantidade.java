@@ -21,7 +21,7 @@ public class VerificarQuantidade {
     private ResultSet resultset_verificarquantidadeagendamento;
     private int quantidade_banco = 0;
 
-    public boolean verificarQuantidadeAgendamento(int quantidade, String id_livro) {
+    public boolean verificarQuantidade(int quantidade, String id_livro) {
 
         try {
             sql_verificarquantidadeagendamento = "SELECT * FROM tabela_livros WHERE id_livro=?";

@@ -5,9 +5,11 @@
  */
 package View;
 
+import Controller.AgendamentoClass;
 import Controller.EmprestimoClass;
 import Controller.LoginClass;
 import Model.ConsultarUsuario;
+import Model.VerificarQuantidade;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -391,13 +393,22 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         String data_emprestimo = "xxxxxxxx";
         String data_devolucao = "xxxxxxxx";
         if (!jTxtCodigoLivro.getText().equals("") || jTxtRm.getText().equals("") || jTxtQuantidade.getText().equals("")) {
-            EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-            if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText(), jTxtRm.getText(), data_emprestimo, data_devolucao, jTxtQuantidade.getText())) {
-                JOptionPane.showMessageDialog(this, "Empréstimo cadastrado com sucesso!");
-                limparCampos();
+            VerificarQuantidade verificarquantidade_objeto = new VerificarQuantidade();
+            int quantidade = Integer.parseInt(jTxtQuantidade.getText().replaceAll("[^0-9]", ""));
+            if (verificarquantidade_objeto.verificarQuantidade(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
+                JOptionPane.showMessageDialog(null, "Livro disponível!");
+                EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
+                if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText(), jTxtRm.getText(), data_emprestimo, data_devolucao, jTxtQuantidade.getText())) {
+                    JOptionPane.showMessageDialog(this, "Empréstimo cadastrado com sucesso!");
+                    limparCampos();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Empréstimo NÃO foi cadastrado, tente novamente!");
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "Empréstimo NÃO foi cadastrado, tente novamente!");
+                JOptionPane.showMessageDialog(null, "Livro indisponível");
+                limparCampos();
             }
+
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }
