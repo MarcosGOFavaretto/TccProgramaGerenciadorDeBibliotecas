@@ -7,9 +7,12 @@ package View;
 
 import Controller.LoginClass;
 import Model.ConsultarUsuario;
+import static View.TelaCadastrarAluno.validarEmail;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -116,27 +119,44 @@ public class TelaLogin extends javax.swing.JFrame {
         // CÓDIGO DO BOTÃO "CANCELAR":
         limparCampos();
     }//GEN-LAST:event_jBtnCancelarActionPerformed
-
+    public static boolean validarEmail(String email) {
+        if (email != null && email.length() > 0) {
+            String mascara = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+            Pattern pattern = Pattern.compile(mascara, Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(email);
+            if (matcher.matches()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
         // CÓDIGO DO BOTÃO "ENTRAR":
         if (!jTxtEmail.getText().equals("") || jTxtSenha.getText().equals("")) {
-            ConsultarUsuario consultarusuario_objeto = new ConsultarUsuario();
-            LoginClass loginclass_objeto = new LoginClass();
-            loginclass_objeto.setEmail(this.jTxtEmail.getText());
-            loginclass_objeto.setSenha(this.jTxtSenha.getText());
-            if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getEmail(), loginclass_objeto.getSenha())) {
-                JOptionPane.showMessageDialog(this, "Usuário reconhecido!");
-                limparCampos();
-                TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
-                try {
-                    telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
-                } catch (SQLException ex) {
-                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            if (validarEmail(jTxtEmail.getText())) {
+                ConsultarUsuario consultarusuario_objeto = new ConsultarUsuario();
+                LoginClass loginclass_objeto = new LoginClass();
+                loginclass_objeto.setEmail(this.jTxtEmail.getText());
+                loginclass_objeto.setSenha(this.jTxtSenha.getText());
+                if (consultarusuario_objeto.ConsultarUsuario(loginclass_objeto.getEmail(), loginclass_objeto.getSenha())) {
+                    JOptionPane.showMessageDialog(this, "Usuário reconhecido!");
+                    limparCampos();
+                    TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
+                    try {
+                        telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    this.setVisible(false);
+                    telavisualizaremprestimos_objeto.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Usuário NÃO reconhecido, tente novamente!");
                 }
-                this.setVisible(false);
-                telavisualizaremprestimos_objeto.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(this, "Usuário NÃO reconhecido, tente novamente!");
+                JOptionPane.showMessageDialog(this, "Email inválido!");
             }
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");

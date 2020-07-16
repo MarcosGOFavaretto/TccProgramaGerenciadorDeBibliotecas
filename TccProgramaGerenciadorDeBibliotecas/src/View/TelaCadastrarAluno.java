@@ -10,6 +10,8 @@ import Controller.LoginClass;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -390,16 +392,33 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
+    public static boolean validarEmail(String email) {
+        if (email != null && email.length() > 0) {
+            String mascara = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+            Pattern pattern = Pattern.compile(mascara, Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(email);
+            if (matcher.matches()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // CÓDIGO DO BOTÃO "SALVAR":
         if (!jTxtRm.getText().equals("") || jCbSala.getSelectedIndex() == 0 || jCbCurso.getSelectedIndex() == 0 || jTxtEmail.getText().equals("") || jTxtTelefone.getText().equals("") || jTxtNome.getText().equals("")) {
-            AlunoClass alunoclass_objeto = new AlunoClass();
-            if (alunoclass_objeto.cadastrarAluno(jTxtRm.getText(), jCbSala.getSelectedItem().toString(), jCbCurso.getSelectedItem().toString(), jTxtEmail.getText(), jTxtTelefone.getText(), jTxtNome.getText())) {
-                JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso!");
-                limparCampos();
+            if (validarEmail(jTxtEmail.getText())) {
+                AlunoClass alunoclass_objeto = new AlunoClass();
+                if (alunoclass_objeto.cadastrarAluno(jTxtRm.getText(), jCbSala.getSelectedItem().toString(), jCbCurso.getSelectedItem().toString(), jTxtEmail.getText(), jTxtTelefone.getText(), jTxtNome.getText())) {
+                    JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso!");
+                    limparCampos();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Aluno NÃO foi cadastrado, tente novamente!");
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "Aluno NÃO foi cadastrado, tente novamente!");
+                JOptionPane.showMessageDialog(this, "Email inválido!");
             }
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
