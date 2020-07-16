@@ -19,7 +19,7 @@ public class LivroClass {
     private String nome_livro;
     private String autor;
     private String editora;
-    private String data;
+    private String ano;
     private String quantidade;
     private CadastrarLivro cadastrarlivro_objeto = new CadastrarLivro();
     public ResultSet resultset_visualizarlivro;
@@ -42,8 +42,8 @@ public class LivroClass {
         return editora;
     }
 
-    public String getData() {
-        return data;
+    public String getAno() {
+        return ano;
     }
 
     public String getQuantidade() {
@@ -67,16 +67,16 @@ public class LivroClass {
         this.editora = editora;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setAno(String ano) {
+        this.ano = ano;
     }
 
     public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 
-    public boolean cadastrarLivro(String nome_livro, String autor, String editora, String data, String quantidade) {
-        if (cadastrarlivro_objeto.cadastrarUsuario(nome_livro, autor, editora, data, quantidade)) {
+    public boolean cadastrarLivro(String nome_livro, String autor, String editora, String ano, String quantidade) {
+        if (cadastrarlivro_objeto.cadastrarUsuario(nome_livro, autor, editora, ano, quantidade)) {
             return true;
         } else {
             return false;

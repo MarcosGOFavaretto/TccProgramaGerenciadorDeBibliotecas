@@ -39,7 +39,7 @@ public class TelaVisualizarLivros extends javax.swing.JFrame {
                         resultset_visualizarlivro.getString("nome_livro"),
                         resultset_visualizarlivro.getString("autor"),
                         resultset_visualizarlivro.getString("editora"),
-                        resultset_visualizarlivro.getString("data"),
+                        resultset_visualizarlivro.getString("ano"),
                         resultset_visualizarlivro.getString("quantidade")
                     }
             );

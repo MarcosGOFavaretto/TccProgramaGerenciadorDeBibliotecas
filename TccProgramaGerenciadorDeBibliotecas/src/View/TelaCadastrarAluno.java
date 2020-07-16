@@ -22,8 +22,51 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
      * Creates new form TelaCadastrarAluno
      */
     public TelaCadastrarAluno() {
+
         initComponents();
         jCbSala.getEditor().getEditorComponent().setBackground(new java.awt.Color(0, 0, 0));
+        /*
+        Thread th = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    if (jCbSala.getSelectedIndex() == 1) {
+                        jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecionar", "ETIM Administração", "ETIM Desenvolvimento de Sistemas", "NOVOTEC Banco de Dados", "NOVOTEC Química"}));
+                    } else {
+                        if (jCbSala.getSelectedIndex() == 2) {
+                            jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecionar", "ETIM Administração", "ETIM Desenvolvimento de Sistemas", "ETIM Mecatrônica"}));
+
+                        } else {
+                            if (jCbSala.getSelectedIndex() == 3) {
+                                jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecionar", "ETIM Administração", "ETIM Informática", "ETIM Mecatrônica"}));
+                            } else {
+                                if (jCbSala.getSelectedIndex() == 4) {
+                                    jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecionar", "TEC Administração", "TEC Automação Industrial", "TEC Eletrotécnica", "TEC Enfermagem", "TEC Infonet"}));
+                                } else {
+                                    if (jCbSala.getSelectedIndex() == 5) {
+                                        jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecionar", "TEC Administração", "TEC Automação Industrial", "TEC Eletrotécnica", "TEC Enfermagem", "TEC Infonet"}));
+                                    } else {
+                                        if (jCbSala.getSelectedIndex() == 6) {
+                                            jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecionar", "TEC Administração", "TEC Automação Industrial", "TEC Desenvolvimento de Sistemas", "TEC Eletrotécnica", "TEC Enfermagem", "TEC Infonet"}
+                                            ));
+                                        } else {
+                                            if (jCbSala.getSelectedIndex() == 7) {
+                                                jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecionar", "TEC Enfermagem"}));
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "PROBLEMA: " + e);
+                }
+            }
+        };
+        th.start();
+         */
     }
 
     /**
@@ -290,7 +333,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         });
         getContentPane().add(jCbSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 170, 30));
 
-        jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "ETIM Administração", "ETIM Desenvolvimento de Sistemas", "ETIM Informática", "ETIM Mecatrônica", "NOVOTEC Banco de Dados", "NOVOTEC Química", "TEC Administração", "TEC Automação Industrial", "TEC Desenvolvimento de Sistemas", "TEC Eletrotécnica", "TEC Infonet", " ", " ", " " }));
+        jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "ETIM Administração", "ETIM Desenvolvimento de Sistemas", "ETIM Informática", "ETIM Mecatrônica", "NOVOTEC Banco de Dados", "NOVOTEC Química", "TEC Administração", "TEC Automação Industrial", "TEC Desenvolvimento de Sistemas", "TEC Eletrotécnica", "TEC Infonet" }));
         jCbCurso.setBorder(null);
         jCbCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -447,8 +490,10 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         TelaVisualizarAgendamento telavisualizaragendamentos_objeto = null;
         try {
             telavisualizaragendamentos_objeto = new TelaVisualizarAgendamento();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAgendamento.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAgendamento.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaragendamentos_objeto.setVisible(true);
         this.setVisible(false);
@@ -459,8 +504,10 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         TelaVisualizarAlunos telavisualizaralunos_objeto = null;
         try {
             telavisualizaralunos_objeto = new TelaVisualizarAlunos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAlunos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAlunos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaralunos_objeto.setVisible(true);
         this.setVisible(false);
@@ -471,8 +518,10 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         TelaVisualizarAtrasos telavisualizaratrasos_objeto = null;
         try {
             telavisualizaratrasos_objeto = new TelaVisualizarAtrasos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAtrasos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaratrasos_objeto.setVisible(true);
         this.setVisible(false);
@@ -483,8 +532,10 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
         try {
             telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarEmprestimos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarEmprestimos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaremprestimos_objeto.setVisible(true);
         this.setVisible(false);
@@ -495,8 +546,10 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         TelaVisualizarHistorico telavisualizarhistorico_objeto = null;
         try {
             telavisualizarhistorico_objeto = new TelaVisualizarHistorico();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarHistorico.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarHistorico.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizarhistorico_objeto.setVisible(true);
         this.setVisible(false);
@@ -507,8 +560,10 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         TelaVisualizarLivros telavisualizarlivros_objeto = null;
         try {
             telavisualizarlivros_objeto = new TelaVisualizarLivros();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarLivros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarLivros.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizarlivros_objeto.setVisible(true);
         this.setVisible(false);
@@ -561,16 +616,21 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarAluno.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
