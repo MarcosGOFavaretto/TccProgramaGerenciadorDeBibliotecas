@@ -11,7 +11,10 @@ import Model.ConsultarUsuario;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 
 /**
  *
@@ -28,8 +31,17 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
     private LoginClass loginclass_objeto = new LoginClass();
 
     public TelaCadastrarUsuario() {
-        email = JOptionPane.showInputDialog("Insira o email do usuário abaixo:");
-        senha = JOptionPane.showInputDialog("Insira a senha do usuário abaixo:");
+        email = JOptionPane.showInputDialog(null, "Insira o email do usuário abaixo:", "Email", 3);
+        JPasswordField password = new JPasswordField(10);
+        password.setEchoChar('*');
+        JLabel rotulo = new JLabel("Insira a senha do usuário a seguir:");
+        JPanel requisitoSenha = new JPanel();
+        requisitoSenha.add(rotulo);
+        requisitoSenha.add(password);
+        JOptionPane.showMessageDialog(null, requisitoSenha, "Acesso restrito", 3);
+
+        senha = password.getText();
+
         if (email.equals("") || senha.equals("")) {
             JOptionPane.showMessageDialog(null, "Campos vazios, acesso negado!");
             loginclass_objeto.setLogin(false);
@@ -482,6 +494,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
             telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
             telavisualizaremprestimos_objeto.setVisible(true);
             this.setVisible(false);
+
         } catch (SQLException ex) {
             Logger.getLogger(TelaVisualizarEmprestimos.class
                     .getName()).log(Level.SEVERE, null, ex);
