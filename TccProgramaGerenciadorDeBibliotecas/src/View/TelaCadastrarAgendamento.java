@@ -7,6 +7,7 @@ package View;
 
 import Controller.AgendamentoClass;
 import Controller.LoginClass;
+import Model.VerificarQuantidade;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -290,7 +291,6 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtQuantidade.setText("11");
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtQuantidade.setOpaque(false);
         getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 50, 40));
@@ -301,7 +301,6 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtCodigoLivro.setText("11111");
         jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtCodigoLivro.setOpaque(false);
         getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 100, 40));
@@ -312,7 +311,6 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtRm.setText("11111");
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtRm.setOpaque(false);
         getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 100, 40));
@@ -333,13 +331,20 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
         // CÓDIGO DO BOTÃO "SALVAR":
 
         if (!jTxtRm.getText().equals("") || jTxtCodigoLivro.getText().equals("") || jTxtQuantidade.getText().equals("")) {
+            VerificarQuantidade verificarquantidade_objeto = new VerificarQuantidade();
+            int quantidade = Integer.parseInt(jTxtQuantidade.getText());
+            if (verificarquantidade_objeto.verificarQuantidadeAgendamento(quantidade, jTxtCodigoLivro.getText())) {
+                JOptionPane.showMessageDialog(this, "Livro disponível!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Livro indisponível");
+            }/*
             AgendamentoClass agendamentoclass_objeto = new AgendamentoClass();
             if (agendamentoclass_objeto.cadastrarAgendamento(Integer.valueOf(jTxtRm.getText()), Integer.valueOf(jTxtCodigoLivro.getText()), Integer.valueOf(jTxtQuantidade.getText()))) {
                 JOptionPane.showMessageDialog(this, "Agendamento cadastrado com sucesso!");
                 limparCampos();
             } else {
                 JOptionPane.showMessageDialog(this, "Agendamento NÃO foi cadastrado, tente novamente!");
-            }
+            }*/
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }
