@@ -37,10 +37,10 @@ public class TelaVisualizarLivros extends javax.swing.JFrame {
                     new Object[]{
                         resultset_visualizarlivro.getInt("id_livro"),
                         resultset_visualizarlivro.getString("nome_livro"),
-                        resultset_visualizarlivro.getString("autor"),
-                        resultset_visualizarlivro.getString("editora"),
-                        resultset_visualizarlivro.getString("ano"),
-                        resultset_visualizarlivro.getString("quantidade")
+                        resultset_visualizarlivro.getString("autor_livro"),
+                        resultset_visualizarlivro.getString("editora_livro"),
+                        resultset_visualizarlivro.getString("ano_lancamento_livro"),
+                        resultset_visualizarlivro.getString("quantidade_livro")
                     }
             );
         }

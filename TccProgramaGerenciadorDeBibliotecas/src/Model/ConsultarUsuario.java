@@ -24,13 +24,13 @@ public class ConsultarUsuario {
 
     public boolean ConsultarUsuario(String email, String senha) {
         try {
-            sql_consultarusuario = "SELECT * FROM tabela_usuarios WHERE email=? and senha=?";
+            sql_consultarusuario = "SELECT * FROM tabela_usuarios WHERE email_usuario=? and senha_usuario=?";
             conexao_objeto.AbrirConexao();
             statement_consultarusuario = conexao_objeto.conexao.prepareStatement(sql_consultarusuario);
             statement_consultarusuario.setString(1, email);
             statement_consultarusuario.setString(2, senha);
             resultset_consultarusuario = statement_consultarusuario.executeQuery();
-            if ((resultset_consultarusuario.getString("email").equals(email)) && (resultset_consultarusuario.getString("senha").equals(senha))) {
+            if ((resultset_consultarusuario.getString("email_usuario").equals(email)) && (resultset_consultarusuario.getString("senha_usuario").equals(senha))) {
                 System.out.println("Usuário reconhecido!");
                 return true;
             } else {

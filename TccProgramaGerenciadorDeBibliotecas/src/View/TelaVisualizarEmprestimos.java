@@ -38,7 +38,7 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
                         resultset_visualizaremprestimo.getString("id_livro"),
                         resultset_visualizaremprestimo.getString("rm_aluno"),
                         resultset_visualizaremprestimo.getString("data_emprestimo"),
-                        resultset_visualizaremprestimo.getString("data_devolucao"),
+                        resultset_visualizaremprestimo.getString("data_entrega"),
                         resultset_visualizaremprestimo.getString("quantidade")
                     }
             );

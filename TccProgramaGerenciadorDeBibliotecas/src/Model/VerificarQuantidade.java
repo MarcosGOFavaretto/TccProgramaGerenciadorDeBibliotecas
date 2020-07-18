@@ -29,7 +29,7 @@ public class VerificarQuantidade {
             statement_verificarquantidadeagendamento = conexao_objeto.conexao.prepareStatement(sql_verificarquantidadeagendamento);
             statement_verificarquantidadeagendamento.setString(1, id_livro);
             resultset_verificarquantidadeagendamento = statement_verificarquantidadeagendamento.executeQuery();
-            quantidade_banco = resultset_verificarquantidadeagendamento.getInt("quantidade");
+            quantidade_banco = resultset_verificarquantidadeagendamento.getInt("quantidade_livro");
             if (quantidade_banco >= quantidade) {
                 System.out.println("Livro disponível!");
                 return true;

@@ -36,8 +36,8 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
             tabela.addRow(
                     new Object[]{
                         resultset_visualizaragendamento.getInt("id_agendamento"),
-                        resultset_visualizaragendamento.getInt("id_livro"),
                         resultset_visualizaragendamento.getInt("rm_aluno"),
+                        resultset_visualizaragendamento.getInt("id_livro"),
                         resultset_visualizaragendamento.getInt("quantidade")
                     }
             );

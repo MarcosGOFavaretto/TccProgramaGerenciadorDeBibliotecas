@@ -20,7 +20,7 @@ public class SalvarHistorico {
 
     public boolean salvarhistorico(String codigo_livro, String rm_aluno, String data_emprestimo, String data_devolucao, String quantidade) {
         try {
-            sql_salvarhistorico = "INSERT INTO tabela_historico(id_livro,rm_aluno,data_emprestimo,data_devolucao,quantidade) VALUES(?,?,?,?,?)";
+            sql_salvarhistorico = "INSERT INTO tabela_historico(id_livro,rm_aluno,data_emprestimo,data_entrega,quantidade) VALUES(?,?,?,?,?)";
             conexao_objeto.AbrirConexao();
             statement_salvarhistorico = conexao_objeto.conexao.prepareStatement(sql_salvarhistorico);
             statement_salvarhistorico.setString(1, codigo_livro);

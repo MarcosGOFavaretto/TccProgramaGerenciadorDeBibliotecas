@@ -105,10 +105,10 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         jHamburguinho1 = new javax.swing.JLabel();
         jBtnCancelar = new javax.swing.JButton();
         jBtnSalvar = new javax.swing.JButton();
-        jTxtQuantidade = new javax.swing.JFormattedTextField();
-        jTxtRm = new javax.swing.JFormattedTextField();
+        jTxtQuantidade = new javax.swing.JTextField();
         jTxtDataDevolucao = new javax.swing.JFormattedTextField();
-        jTxtCodigoLivro = new javax.swing.JFormattedTextField();
+        jTxtRm = new javax.swing.JTextField();
+        jTxtCodigoLivro = new javax.swing.JTextField();
         jNovoEmprestimo = new javax.swing.JLabel();
         jFundo = new javax.swing.JLabel();
 
@@ -328,37 +328,11 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 270, 70));
 
-        jTxtQuantidade.setBorder(null);
-        try {
-            jTxtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTxtQuantidade.setText("11");
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtQuantidade.setText("1");
+        jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
-        jTxtQuantidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtQuantidadeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, 70, 50));
-
-        jTxtRm.setBorder(null);
-        try {
-            jTxtRm.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTxtRm.setText("11111");
-        jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtRm.setOpaque(false);
-        jTxtRm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtRmActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 250, -1, -1));
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, 130, 50));
 
         jTxtDataDevolucao.setBorder(null);
         try {
@@ -366,21 +340,22 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtDataDevolucao.setText("11/11/1111");
+        jTxtDataDevolucao.setText("20/07/2020");
         jTxtDataDevolucao.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataDevolucao.setOpaque(false);
         getContentPane().add(jTxtDataDevolucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 190, 60));
 
-        jTxtCodigoLivro.setBorder(null);
-        try {
-            jTxtCodigoLivro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTxtCodigoLivro.setText("11111");
+        jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtRm.setText("18024");
+        jTxtRm.setBorder(null);
+        jTxtRm.setOpaque(false);
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 250, 130, 40));
+
         jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtCodigoLivro.setText("1");
+        jTxtCodigoLivro.setBorder(null);
         jTxtCodigoLivro.setOpaque(false);
-        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 100, -1));
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 130, 40));
 
         jNovoEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jNovoEmprestimo.setForeground(new java.awt.Color(255, 255, 255));
@@ -410,7 +385,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
             if (verificarquantidade_objeto.verificarQuantidade(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
                 JOptionPane.showMessageDialog(null, "Livro disponível!");
                 EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-                if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText(), jTxtRm.getText(), data_emprestimo, data_devolucao, jTxtQuantidade.getText())) {
+                if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""), jTxtRm.getText().replaceAll("[^0-9]", ""), data_emprestimo, data_devolucao, jTxtQuantidade.getText().replaceAll("[^0-9]", ""))) {
                     JOptionPane.showMessageDialog(this, "Empréstimo cadastrado com sucesso!");
                     limparCampos();
                 } else {
@@ -425,14 +400,6 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }
     }//GEN-LAST:event_jBtnSalvarActionPerformed
-
-    private void jTxtRmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtRmActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtRmActionPerformed
-
-    private void jTxtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtQuantidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtQuantidadeActionPerformed
 
     private void jHamburguinho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jHamburguinho1MouseClicked
         // CÓDIGO DO LABEL "HAMBURGUINHO":
@@ -672,9 +639,9 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     private javax.swing.JLabel jNovoEmprestimo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jSair;
-    private javax.swing.JFormattedTextField jTxtCodigoLivro;
+    private javax.swing.JTextField jTxtCodigoLivro;
     private javax.swing.JFormattedTextField jTxtDataDevolucao;
-    private javax.swing.JFormattedTextField jTxtQuantidade;
-    private javax.swing.JFormattedTextField jTxtRm;
+    private javax.swing.JTextField jTxtQuantidade;
+    private javax.swing.JTextField jTxtRm;
     // End of variables declaration//GEN-END:variables
 }

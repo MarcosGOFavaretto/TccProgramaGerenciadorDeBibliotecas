@@ -18,7 +18,7 @@ public class Conexao {
     // DECLARANDO AS VARIÁVEIS GLOBAIS:
     public static Connection conexao;
     private final String url = "jdbc:sqlite:/";
-    private final String projeto = "C:\\Users\\T-Gamer\\TccProgramaGerenciadordeBiblioteca\\TccProgramaGerenciadorDeBibliotecas\\bancodedados";
+    private final String projeto = "C:\\Users\\T-Gamer\\TccProgramaGerenciadordeBibliotecas\\TccProgramaGerenciadorDeBibliotecas\\bancodedados";
     private final String bancodedados = "/bd.db";
 
     // Criando o método para abrir a conexão:

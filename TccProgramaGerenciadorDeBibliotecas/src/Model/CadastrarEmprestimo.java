@@ -21,7 +21,7 @@ public class CadastrarEmprestimo {
 
     public boolean cadastrarUsuario(String codigo_livro, String rm_aluno, String data_emprestimo, String data_devolucao, String quantidade) {
         try {
-            sql_cadastraremprestimo = "INSERT INTO tabela_emprestimos(id_livro,rm_aluno,data_emprestimo,data_devolucao,quantidade) VALUES(?,?,?,?,?)";
+            sql_cadastraremprestimo = "INSERT INTO tabela_emprestimos(id_livro,rm_aluno,data_emprestimo,data_entrega,quantidade) VALUES(?,?,?,?,?)";
             conexao_objeto.AbrirConexao();
             statement_cadastraremprestimo = conexao_objeto.conexao.prepareStatement(sql_cadastraremprestimo);
             statement_cadastraremprestimo.setString(1, codigo_livro);

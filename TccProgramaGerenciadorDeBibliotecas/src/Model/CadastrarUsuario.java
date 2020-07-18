@@ -20,7 +20,7 @@ public class CadastrarUsuario {
 
     public boolean cadastrarUsuario(String nome, String email, String senha, String endereco, String telefone) {
         try {
-            sql_cadastrarusuario = "INSERT INTO tabela_usuarios(nome,email,senha,endereco,telefone) VALUES(?,?,?,?,?)";
+            sql_cadastrarusuario = "INSERT INTO tabela_usuarios(nome_usuario,email_usuario,senha_usuario,endereco_usuario,telefone_usuario) VALUES(?,?,?,?,?)";
             conexao_objeto.AbrirConexao();
             statement_cadastrarusuario = conexao_objeto.conexao.prepareStatement(sql_cadastrarusuario);
             statement_cadastrarusuario.setString(1, nome);

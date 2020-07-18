@@ -34,12 +34,12 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
         while (resultset_visualizaraluno.next()) {
             tabela.addRow(
                     new Object[]{
-                        resultset_visualizaraluno.getInt("rm"),
-                        resultset_visualizaraluno.getString("nome"),
-                        resultset_visualizaraluno.getString("curso"),
-                        resultset_visualizaraluno.getString("sala"),
-                        resultset_visualizaraluno.getString("email"),
-                        resultset_visualizaraluno.getString("telefone")
+                        resultset_visualizaraluno.getInt("rm_aluno"),
+                        resultset_visualizaraluno.getString("nome_aluno"),
+                        resultset_visualizaraluno.getString("curso_aluno"),
+                        resultset_visualizaraluno.getString("sala_aluno"),
+                        resultset_visualizaraluno.getString("email_aluno"),
+                        resultset_visualizaraluno.getString("telefone_aluno")
 
                     }
             );

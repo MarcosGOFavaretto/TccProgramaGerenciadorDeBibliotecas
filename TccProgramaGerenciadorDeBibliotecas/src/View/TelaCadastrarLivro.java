@@ -64,9 +64,9 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         jHamburguinho1 = new javax.swing.JLabel();
         jBtnCancelar = new javax.swing.JButton();
         jBtnSalvar = new javax.swing.JButton();
-        jTxtQuantidade = new javax.swing.JFormattedTextField();
-        jTxtAno = new javax.swing.JFormattedTextField();
         jTxtEditora = new javax.swing.JTextField();
+        jTxtQuantidade = new javax.swing.JTextField();
+        jTxtAno = new javax.swing.JTextField();
         jTxtAutor = new javax.swing.JTextField();
         jTxtNomeLivro = new javax.swing.JTextField();
         jFundo = new javax.swing.JLabel();
@@ -286,30 +286,8 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 270, 70));
 
-        jTxtQuantidade.setBorder(null);
-        try {
-            jTxtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTxtQuantidade.setText("99");
-        jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtQuantidade.setOpaque(false);
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 420, 50, 50));
-
-        jTxtAno.setBorder(null);
-        try {
-            jTxtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTxtAno.setText("1980");
-        jTxtAno.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 35)); // NOI18N
-        jTxtAno.setOpaque(false);
-        getContentPane().add(jTxtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 426, 160, 40));
-
         jTxtEditora.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtEditora.setText("As Crônicas de Nárnia");
+        jTxtEditora.setText("Geoffrey Bles");
         jTxtEditora.setBorder(null);
         jTxtEditora.setOpaque(false);
         jTxtEditora.addActionListener(new java.awt.event.ActionListener() {
@@ -319,8 +297,20 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         });
         getContentPane().add(jTxtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 110, 50));
 
+        jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtQuantidade.setText("10");
+        jTxtQuantidade.setBorder(null);
+        jTxtQuantidade.setOpaque(false);
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 420, 50, 50));
+
+        jTxtAno.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtAno.setText("2008");
+        jTxtAno.setBorder(null);
+        jTxtAno.setOpaque(false);
+        getContentPane().add(jTxtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 420, 150, 50));
+
         jTxtAutor.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtAutor.setText("As Crônicas de Nárnia");
+        jTxtAutor.setText("Clive Staples Lewis");
         jTxtAutor.setBorder(null);
         jTxtAutor.setOpaque(false);
         jTxtAutor.addActionListener(new java.awt.event.ActionListener() {
@@ -364,7 +354,7 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         // CÓDIGO DO BOTÃO "SALVAR":
         if (!jTxtNomeLivro.getText().equals("") || jTxtAutor.getText().equals("") || jTxtEditora.getText().equals("") || jTxtAno.getText().equals("") || jTxtQuantidade.getText().equals("")) {
             LivroClass livroclass_objeto = new LivroClass();
-            if (livroclass_objeto.cadastrarLivro(jTxtNomeLivro.getText(), jTxtAutor.getText(), jTxtEditora.getText(), jTxtAno.getText(), jTxtQuantidade.getText())) {
+            if (livroclass_objeto.cadastrarLivro(jTxtNomeLivro.getText(), jTxtAutor.getText(), jTxtEditora.getText(), jTxtAno.getText().replaceAll("[^0-9]", ""), jTxtQuantidade.getText().replaceAll("[^0-9]", ""))) {
                 JOptionPane.showMessageDialog(this, "Livro cadastrado com sucesso!");
                 limparCampos();
             } else {
@@ -618,10 +608,10 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
     private javax.swing.JLabel jMais4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jSair;
-    private javax.swing.JFormattedTextField jTxtAno;
+    private javax.swing.JTextField jTxtAno;
     private javax.swing.JTextField jTxtAutor;
     private javax.swing.JTextField jTxtEditora;
     private javax.swing.JTextField jTxtNomeLivro;
-    private javax.swing.JFormattedTextField jTxtQuantidade;
+    private javax.swing.JTextField jTxtQuantidade;
     // End of variables declaration//GEN-END:variables
 }
