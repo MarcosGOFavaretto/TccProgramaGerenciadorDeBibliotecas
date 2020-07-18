@@ -6,7 +6,6 @@
 package Controller;
 
 import Model.CadastrarEmprestimo;
-import Model.SelecionarEmprestimo;
 import Model.VisualizarEmprestimo;
 import java.sql.ResultSet;
 
@@ -25,7 +24,6 @@ public class EmprestimoClass {
     public ResultSet resultset_selecionaremprestimo;
     CadastrarEmprestimo cadastraremprestimo_objeto = new CadastrarEmprestimo();
     VisualizarEmprestimo visualizaremprestimo_objeto = new VisualizarEmprestimo();
-    SelecionarEmprestimo selecionaremprestimo_objeto = new SelecionarEmprestimo();
 
     // CRIANDO OS MÉTODOS "GETTERS":
     public int getId_emprestimo() {
@@ -80,10 +78,5 @@ public class EmprestimoClass {
     public ResultSet visualizarEmprestimo() {
         resultset_visualizaremprestimo = visualizaremprestimo_objeto.visualizarEmprestimo();
         return resultset_visualizaremprestimo;
-    }
-
-    public ResultSet selecionarEmprestimo(String id_emprestimo) {
-        resultset_selecionaremprestimo = selecionaremprestimo_objeto.selecionarEmprestimo(id_emprestimo);
-        return resultset_selecionaremprestimo;
     }
 }
