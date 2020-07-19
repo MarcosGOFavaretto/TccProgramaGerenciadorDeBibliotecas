@@ -15,19 +15,19 @@ import java.sql.ResultSet;
  */
 public class HistoricoClass {
 
-    private int id_emprestimo;
+    private int id_historico_emprestimo;
     private String id_livro;
     private String id_aluno;
     private String data_emprestimo;
-    private String data_devolucao;
+    private String data_entrega;
     private String situacao;
     public ResultSet resultset_visualizarhistorico;
     SalvarHistorico cadastraremprestimo_objeto = new SalvarHistorico();
     VisualizarHistorico visualizarhistorico_objeto = new VisualizarHistorico();
 
     // CRIANDO OS MÉTODOS "GETTERS":
-    public int getId_emprestimo() {
-        return id_emprestimo;
+    public int getId_historico_emprestimo() {
+        return id_historico_emprestimo;
     }
 
     public String getId_livro() {
@@ -42,8 +42,8 @@ public class HistoricoClass {
         return data_emprestimo;
     }
 
-    public String getData_devolucao() {
-        return data_devolucao;
+    public String getData_entrega() {
+        return data_entrega;
     }
 
     public String getSituacao() {
@@ -51,8 +51,8 @@ public class HistoricoClass {
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
-    public void setId_emprestimo(int id_emprestimo) {
-        this.id_emprestimo = id_emprestimo;
+    public void setId_historico_emprestimo(int id_historico_emprestimo) {
+        this.id_historico_emprestimo = id_historico_emprestimo;
     }
 
     public void setId_livro(String id_livro) {
@@ -67,8 +67,8 @@ public class HistoricoClass {
         this.data_emprestimo = data_emprestimo;
     }
 
-    public void setData_devolucao(String data_devolucao) {
-        this.data_devolucao = data_devolucao;
+    public void setData_entrega(String data_entrega) {
+        this.data_entrega = data_entrega;
     }
 
     public void setSituacao(String situacao) {

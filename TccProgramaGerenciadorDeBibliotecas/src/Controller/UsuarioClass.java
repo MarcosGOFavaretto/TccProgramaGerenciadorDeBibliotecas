@@ -15,11 +15,11 @@ public class UsuarioClass {
 
     private int id_usuario;
     private int rm_usuario;
-    private String nome;
-    private String senha;
-    private String email;
-    private String telefone;
-    private String endereco;
+    private String nome_usuario;
+    private String senha_usuario;
+    private String email_usuario;
+    private String telefone_usuario;
+    private String endereco_usuario;
     private CadastrarUsuario cadastrarusuario_objeto = new CadastrarUsuario();
 
     // CRIANDO OS MÉTODOS "GETTERS":
@@ -31,24 +31,24 @@ public class UsuarioClass {
         return rm_usuario;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_usuario() {
+        return nome_usuario;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getSenha_usuario() {
+        return senha_usuario;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail_usuario() {
+        return email_usuario;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getTelefone_usuario() {
+        return telefone_usuario;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getEndereco_usuario() {
+        return endereco_usuario;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
@@ -60,24 +60,24 @@ public class UsuarioClass {
         this.rm_usuario = rm_usuario;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome_usuario(String nome_usuario) {
+        this.nome_usuario = nome_usuario;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSenha_usuario(String senha_usuario) {
+        this.senha_usuario = senha_usuario;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail_usuario(String email_usuario) {
+        this.email_usuario = email_usuario;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone_usuario(String telefone_usuario) {
+        this.telefone_usuario = telefone_usuario;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setEndereco_usuario(String endereco_usuario) {
+        this.endereco_usuario = endereco_usuario;
     }
 
     public boolean cadastrarUsuario(String nome, String email, String senha, String endereco, String telefone) {

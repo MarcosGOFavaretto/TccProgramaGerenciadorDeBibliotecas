@@ -19,7 +19,7 @@ public class EmprestimoClass {
     private String id_livro;
     private String id_aluno;
     private String data_emprestimo;
-    private String data_devolucao;
+    private String data_entrega;
     public ResultSet resultset_visualizaremprestimo;
     public ResultSet resultset_selecionaremprestimo;
     CadastrarEmprestimo cadastraremprestimo_objeto = new CadastrarEmprestimo();
@@ -42,8 +42,8 @@ public class EmprestimoClass {
         return data_emprestimo;
     }
 
-    public String getData_devolucao() {
-        return data_devolucao;
+    public String getData_entrega() {
+        return data_entrega;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
@@ -63,8 +63,8 @@ public class EmprestimoClass {
         this.data_emprestimo = data_emprestimo;
     }
 
-    public void setData_devolucao(String data_devolucao) {
-        this.data_devolucao = data_devolucao;
+    public void setData_entrega(String data_entrega) {
+        this.data_entrega = data_entrega;
     }
 
     public boolean cadastrarEmprestimo(String codigo_livro, String rm_aluno, String data_emprestimo, String data_devolucao, String quantidade) {

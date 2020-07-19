@@ -17,10 +17,10 @@ public class LivroClass {
 
     private int id_livro;
     private String nome_livro;
-    private String autor;
-    private String editora;
-    private String ano;
-    private String quantidade;
+    private String autor_livro;
+    private String editora_livro;
+    private String ano_lancamento_livro;
+    private String quantidade_livro;
     private CadastrarLivro cadastrarlivro_objeto = new CadastrarLivro();
     public ResultSet resultset_visualizarlivro;
     VisualizarLivro visualizarlivro_objeto = new VisualizarLivro();
@@ -34,20 +34,20 @@ public class LivroClass {
         return nome_livro;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getAutor_livro() {
+        return autor_livro;
     }
 
-    public String getEditora() {
-        return editora;
+    public String getEditora_livro() {
+        return editora_livro;
     }
 
-    public String getAno() {
-        return ano;
+    public String getAno_lancamento_livro() {
+        return ano_lancamento_livro;
     }
 
-    public String getQuantidade() {
-        return quantidade;
+    public String getQuantidade_livro() {
+        return quantidade_livro;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
@@ -59,20 +59,20 @@ public class LivroClass {
         this.nome_livro = nome_livro;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setAutor_livro(String autor_livro) {
+        this.autor_livro = autor_livro;
     }
 
-    public void setEditora(String editora) {
-        this.editora = editora;
+    public void setEditora_livro(String editora_livro) {
+        this.editora_livro = editora_livro;
     }
 
-    public void setAno(String ano) {
-        this.ano = ano;
+    public void setAno_lancamento_livro(String ano_lancamento_livro) {
+        this.ano_lancamento_livro = ano_lancamento_livro;
     }
 
-    public void setQuantidade(String quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantidade_livro(String quantidade_livro) {
+        this.quantidade_livro = quantidade_livro;
     }
 
     public boolean cadastrarLivro(String nome_livro, String autor, String editora, String ano, String quantidade) {

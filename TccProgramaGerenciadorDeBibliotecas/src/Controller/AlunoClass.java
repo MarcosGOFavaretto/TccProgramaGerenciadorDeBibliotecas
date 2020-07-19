@@ -16,11 +16,11 @@ import java.sql.ResultSet;
 public class AlunoClass {
 
     private String rm_aluno;
-    private String sala;
-    private String curso;
-    private String email;
-    private String telefone;
-    private String nome;
+    private String sala_aluno;
+    private String curso_aluno;
+    private String email_aluno;
+    private String telefone_aluno;
+    private String nome_aluno;
     private CadastrarAluno cadastraraluno_objeto = new CadastrarAluno();
     private VisualizarAluno visualizaraluno_objeto = new VisualizarAluno();
     private ResultSet resultset_visualizaraluno;
@@ -30,24 +30,24 @@ public class AlunoClass {
         return rm_aluno;
     }
 
-    public String getSala() {
-        return sala;
+    public String getSala_aluno() {
+        return sala_aluno;
     }
 
-    public String getCurso() {
-        return curso;
+    public String getCurso_aluno() {
+        return curso_aluno;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail_aluno() {
+        return email_aluno;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getTelefone_aluno() {
+        return telefone_aluno;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_aluno() {
+        return nome_aluno;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS": 
@@ -55,24 +55,24 @@ public class AlunoClass {
         this.rm_aluno = rm_aluno;
     }
 
-    public void setSala(String sala) {
-        this.sala = sala;
+    public void setSala_aluno(String sala_aluno) {
+        this.sala_aluno = sala_aluno;
     }
 
-    public void setCurso(String curso) {
-        this.curso = curso;
+    public void setCurso_aluno(String curso_aluno) {
+        this.curso_aluno = curso_aluno;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail_aluno(String email_aluno) {
+        this.email_aluno = email_aluno;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone_aluno(String telefone_aluno) {
+        this.telefone_aluno = telefone_aluno;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome_aluno(String nome_aluno) {
+        this.nome_aluno = nome_aluno;
     }
 
     public boolean cadastrarAluno(String rm, String sala, String curso, String email, String telefone, String nome) {
