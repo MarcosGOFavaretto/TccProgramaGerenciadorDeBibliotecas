@@ -65,18 +65,20 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         jLbNovoLivro = new javax.swing.JLabel();
         jMais4 = new javax.swing.JLabel();
         jLbNovoUsuario = new javax.swing.JLabel();
-        jLupa = new javax.swing.JLabel();
+        jOlho = new javax.swing.JLabel();
         jLbVisualizarAgendamentos = new javax.swing.JLabel();
-        jLupa1 = new javax.swing.JLabel();
+        jOlho1 = new javax.swing.JLabel();
         jLbVisualizarAlunos = new javax.swing.JLabel();
-        jLupa2 = new javax.swing.JLabel();
+        jOlho2 = new javax.swing.JLabel();
         jLbVisualizarAtrasos = new javax.swing.JLabel();
-        jLupa3 = new javax.swing.JLabel();
+        jOlho3 = new javax.swing.JLabel();
         jLbVisualizarEmprestimos = new javax.swing.JLabel();
-        jLupa4 = new javax.swing.JLabel();
+        jOlho4 = new javax.swing.JLabel();
         jLbVisualizarHistorico = new javax.swing.JLabel();
-        jLupa5 = new javax.swing.JLabel();
-        jLbVisualizarLivros = new javax.swing.JLabel();
+        jOlho5 = new javax.swing.JLabel();
+        jLbEditarLivros = new javax.swing.JLabel();
+        jLapis = new javax.swing.JLabel();
+        jLbEditarEmprestimo = new javax.swing.JLabel();
         jSair = new javax.swing.JLabel();
         jLbSair = new javax.swing.JLabel();
         jHamburguinho2 = new javax.swing.JLabel();
@@ -163,8 +165,8 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(jLbNovoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 170, 40));
 
-        jLupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
-        jPanel1.add(jLupa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 208, -1, 60));
+        jOlho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
+        jPanel1.add(jOlho, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 208, -1, 60));
 
         jLbVisualizarAgendamentos.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
         jLbVisualizarAgendamentos.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,8 +179,8 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(jLbVisualizarAgendamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 170, 40));
 
-        jLupa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
-        jPanel1.add(jLupa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        jOlho1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
+        jPanel1.add(jOlho1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
 
         jLbVisualizarAlunos.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
         jLbVisualizarAlunos.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,8 +193,8 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(jLbVisualizarAlunos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 170, 40));
 
-        jLupa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
-        jPanel1.add(jLupa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
+        jOlho2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
+        jPanel1.add(jOlho2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
 
         jLbVisualizarAtrasos.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
         jLbVisualizarAtrasos.setForeground(new java.awt.Color(255, 255, 255));
@@ -205,8 +207,8 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(jLbVisualizarAtrasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 170, 40));
 
-        jLupa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
-        jPanel1.add(jLupa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, -1, -1));
+        jOlho3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
+        jPanel1.add(jOlho3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, -1, -1));
 
         jLbVisualizarEmprestimos.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
         jLbVisualizarEmprestimos.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,8 +221,8 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(jLbVisualizarEmprestimos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 170, 40));
 
-        jLupa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
-        jPanel1.add(jLupa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
+        jOlho4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
+        jPanel1.add(jOlho4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
 
         jLbVisualizarHistorico.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
         jLbVisualizarHistorico.setForeground(new java.awt.Color(255, 255, 255));
@@ -233,22 +235,36 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(jLbVisualizarHistorico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 170, 40));
 
-        jLupa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
-        jPanel1.add(jLupa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
+        jOlho5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Olho.png"))); // NOI18N
+        jPanel1.add(jOlho5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
 
-        jLbVisualizarLivros.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
-        jLbVisualizarLivros.setForeground(new java.awt.Color(255, 255, 255));
-        jLbVisualizarLivros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLbVisualizarLivros.setText("Livros");
-        jLbVisualizarLivros.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLbEditarLivros.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbEditarLivros.setForeground(new java.awt.Color(255, 255, 255));
+        jLbEditarLivros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbEditarLivros.setText("Livros");
+        jLbEditarLivros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLbVisualizarLivrosMouseClicked(evt);
+                jLbEditarLivrosMouseClicked(evt);
             }
         });
-        jPanel1.add(jLbVisualizarLivros, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 170, 40));
+        jPanel1.add(jLbEditarLivros, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 170, 40));
+
+        jLapis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Lapis.png"))); // NOI18N
+        jPanel1.add(jLapis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, -1, -1));
+
+        jLbEditarEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
+        jLbEditarEmprestimo.setForeground(new java.awt.Color(255, 255, 255));
+        jLbEditarEmprestimo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLbEditarEmprestimo.setText("Editar Empréstimo");
+        jLbEditarEmprestimo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbEditarEmprestimoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLbEditarEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 170, 40));
 
         jSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Sair.png"))); // NOI18N
-        jPanel1.add(jSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, -1, -1));
+        jPanel1.add(jSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, -1, -1));
 
         jLbSair.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 20)); // NOI18N
         jLbSair.setForeground(new java.awt.Color(255, 255, 255));
@@ -259,7 +275,7 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
                 jLbSairMouseClicked(evt);
             }
         });
-        jPanel1.add(jLbSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 170, 40));
+        jPanel1.add(jLbSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 170, 40));
 
         jHamburguinho2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/ICON - Hamburguinho2.png"))); // NOI18N
         jHamburguinho2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -308,6 +324,29 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    int x = 0;
+    private void jHamburguinho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jHamburguinho1MouseClicked
+        // CÓDIGO DO LABEL "HAMBURGUINHO":
+        if (x == 0) {
+            jPanel1.show();
+            jPanel1.setSize(x, 770);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i <= x; i++) {
+                            Thread.sleep(1);
+                            jPanel1.setSize(i + 1, 770);
+                        }
+                    } catch (InterruptedException e) {
+                        JOptionPane.showMessageDialog(null, "ERRO: " + e);
+                    }
+                }
+            };
+            th.start();
+            x = 230;
+        }
+    }//GEN-LAST:event_jHamburguinho1MouseClicked
 
     private void jLbNovoAgendamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbNovoAgendamentoMouseClicked
         // CÓDIGO DO LABEL "NOVO AGENDAMENTO":
@@ -404,7 +443,7 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jLbVisualizarHistoricoMouseClicked
 
-    private void jLbVisualizarLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbVisualizarLivrosMouseClicked
+    private void jLbEditarLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbEditarLivrosMouseClicked
         // CÓDIGO DO LABEL "VISUALIZAR HISTÓRICO":
         TelaVisualizarLivros telavisualizarlivros_objeto = null;
         try {
@@ -414,7 +453,19 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         }
         telavisualizarlivros_objeto.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jLbVisualizarLivrosMouseClicked
+    }//GEN-LAST:event_jLbEditarLivrosMouseClicked
+
+    private void jLbEditarEmprestimoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbEditarEmprestimoMouseClicked
+        // CÓDIGO DO LABEL "EDITAR EMPRÉSTIMO":
+        TelaEditarEmprestimo telaeditaremprestimo_objeto = null;
+        try {
+            telaeditaremprestimo_objeto = new TelaEditarEmprestimo();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaCadastrarLivro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        telaeditaremprestimo_objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLbEditarEmprestimoMouseClicked
 
     private void jLbSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbSairMouseClicked
         // CÓDIGO DO LABEL "SAIR":
@@ -426,7 +477,7 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
         telalogin_objeto.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLbSairMouseClicked
-    int x = 0;
+
     private void jHamburguinho2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jHamburguinho2MouseClicked
         // TODO add your handling code here:
         if (x == 230) {
@@ -448,29 +499,6 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
             x = 0;
         }
     }//GEN-LAST:event_jHamburguinho2MouseClicked
-
-    private void jHamburguinho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jHamburguinho1MouseClicked
-        // CÓDIGO DO LABEL "HAMBURGUINHO":
-        if (x == 0) {
-            jPanel1.show();
-            jPanel1.setSize(x, 770);
-            Thread th = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i <= x; i++) {
-                            Thread.sleep(1);
-                            jPanel1.setSize(i + 1, 770);
-                        }
-                    } catch (InterruptedException e) {
-                        JOptionPane.showMessageDialog(null, "ERRO: " + e);
-                    }
-                }
-            };
-            th.start();
-            x = 230;
-        }
-    }//GEN-LAST:event_jHamburguinho1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -532,6 +560,9 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
     private javax.swing.JLabel jFundoMenu;
     private javax.swing.JLabel jHamburguinho1;
     private javax.swing.JLabel jHamburguinho2;
+    private javax.swing.JLabel jLapis;
+    private javax.swing.JLabel jLbEditarEmprestimo;
+    private javax.swing.JLabel jLbEditarLivros;
     private javax.swing.JLabel jLbNovoAgendamento;
     private javax.swing.JLabel jLbNovoAluno;
     private javax.swing.JLabel jLbNovoEmprestimo;
@@ -543,18 +574,17 @@ public class TelaVisualizarAgendamento extends javax.swing.JFrame {
     private javax.swing.JLabel jLbVisualizarAtrasos;
     private javax.swing.JLabel jLbVisualizarEmprestimos;
     private javax.swing.JLabel jLbVisualizarHistorico;
-    private javax.swing.JLabel jLbVisualizarLivros;
-    private javax.swing.JLabel jLupa;
-    private javax.swing.JLabel jLupa1;
-    private javax.swing.JLabel jLupa2;
-    private javax.swing.JLabel jLupa3;
-    private javax.swing.JLabel jLupa4;
-    private javax.swing.JLabel jLupa5;
     private javax.swing.JLabel jMais;
     private javax.swing.JLabel jMais1;
     private javax.swing.JLabel jMais2;
     private javax.swing.JLabel jMais3;
     private javax.swing.JLabel jMais4;
+    private javax.swing.JLabel jOlho;
+    private javax.swing.JLabel jOlho1;
+    private javax.swing.JLabel jOlho2;
+    private javax.swing.JLabel jOlho3;
+    private javax.swing.JLabel jOlho4;
+    private javax.swing.JLabel jOlho5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jSair;
     private javax.swing.JScrollPane jScrollPane1;

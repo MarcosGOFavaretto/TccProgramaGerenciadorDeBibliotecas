@@ -7,7 +7,6 @@ package View;
 
 import Controller.LoginClass;
 import Model.ConsultarUsuario;
-import static View.TelaCadastrarAluno.validarEmail;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

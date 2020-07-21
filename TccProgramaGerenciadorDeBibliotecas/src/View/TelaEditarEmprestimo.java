@@ -5,6 +5,13 @@
  */
 package View;
 
+import Controller.EmprestimoClass;
+import Model.VerificarQuantidade;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author T-Gamer
@@ -14,8 +21,26 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     /**
      * Creates new form TelaEditarEmprestimo
      */
-    public TelaEditarEmprestimo() {
-        initComponents();
+    // DECLARANDO AS VARIÁVEIS:
+    String id_emprestimo = "";
+    EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
+    TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
+
+    public TelaEditarEmprestimo() throws SQLException {
+        id_emprestimo = JOptionPane.showInputDialog(null, "Insira o código do empréstimo", "CÓDIGO DO EMPRÉSTIMO", 3);
+        if (!id_emprestimo.equals("")) {
+            emprestimoclass_objeto.selecionarEmprestimo(Integer.parseInt(id_emprestimo));
+            initComponents();
+            jTxtCodigoEmprestimo.setText(String.valueOf(emprestimoclass_objeto.getId_emprestimo()));
+            jTxtRm.setText(String.valueOf(emprestimoclass_objeto.getRm_aluno()));
+            jTxtCodigoLivro.setText(String.valueOf(emprestimoclass_objeto.getId_livro()));
+            jTxtQuantidade.setText(String.valueOf(emprestimoclass_objeto.getQuantidade()));
+            jTxtSituacao.setText("NÃO ENTREGUE");
+            jTxtDataEmprestimo.setText(String.valueOf(emprestimoclass_objeto.getData_emprestimo()));
+            jTxtDataEntrega.setText(String.valueOf(emprestimoclass_objeto.getData_entrega()));
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!", "Campos vazios!", 0);
+        }
     }
 
     /**
@@ -27,21 +52,197 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTxtCodigoEmprestimo = new javax.swing.JTextField();
+        jTxtRm = new javax.swing.JTextField();
+        jTxtCodigoLivro = new javax.swing.JTextField();
+        jTxtQuantidade = new javax.swing.JTextField();
+        jTxtSituacao = new javax.swing.JTextField();
+        jTxtDataEmprestimo = new javax.swing.JFormattedTextField();
+        jTxtDataEntrega = new javax.swing.JFormattedTextField();
+        jBtnConfirmarEntrega = new javax.swing.JButton();
+        jBtnDuasSemanas = new javax.swing.JButton();
+        jBtnUmaSemana = new javax.swing.JButton();
+        jBtnSalvarAlteracoes = new javax.swing.JButton();
+        jFundo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setExtendedState(6);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
+        setSize(new java.awt.Dimension(1366, 768));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jTxtCodigoEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtCodigoEmprestimo.setBorder(null);
+        jTxtCodigoEmprestimo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTxtCodigoEmprestimo.setOpaque(false);
+        jTxtCodigoEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtCodigoEmprestimoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtCodigoEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 120, 40));
 
-        pack();
+        jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtRm.setBorder(null);
+        jTxtRm.setOpaque(false);
+        jTxtRm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtRmActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 120, 40));
+
+        jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtCodigoLivro.setBorder(null);
+        jTxtCodigoLivro.setOpaque(false);
+        jTxtCodigoLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtCodigoLivroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 250, 120, 40));
+
+        jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtQuantidade.setBorder(null);
+        jTxtQuantidade.setOpaque(false);
+        jTxtQuantidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtQuantidadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, 210, 50));
+
+        jTxtSituacao.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtSituacao.setBorder(null);
+        jTxtSituacao.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTxtSituacao.setOpaque(false);
+        jTxtSituacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtSituacaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtSituacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 330, 230, 50));
+
+        jTxtDataEmprestimo.setBorder(null);
+        try {
+            jTxtDataEmprestimo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtDataEmprestimo.setText("  /  /    ");
+        jTxtDataEmprestimo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTxtDataEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtDataEmprestimo.setOpaque(false);
+        getContentPane().add(jTxtDataEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 422, 210, 40));
+
+        jTxtDataEntrega.setBorder(null);
+        try {
+            jTxtDataEntrega.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtDataEntrega.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtDataEntrega.setOpaque(false);
+        getContentPane().add(jTxtDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 420, 210, 40));
+
+        jBtnConfirmarEntrega.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnConfirmarEntrega.setText("CONFIRMAR ENTREGA");
+        jBtnConfirmarEntrega.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnConfirmarEntregaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnConfirmarEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 510, 190, 70));
+
+        jBtnDuasSemanas.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnDuasSemanas.setText("+2 SEMANAS");
+        jBtnDuasSemanas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDuasSemanasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnDuasSemanas, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 190, 70));
+
+        jBtnUmaSemana.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnUmaSemana.setText("+1 SEMANA");
+        jBtnUmaSemana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnUmaSemanaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnUmaSemana, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, 190, 70));
+
+        jBtnSalvarAlteracoes.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
+        jBtnSalvarAlteracoes.setText("SALVAR ALTERAÇÕES");
+        jBtnSalvarAlteracoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSalvarAlteracoesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnSalvarAlteracoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 190, 70));
+
+        jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaEditarEmprestimo.png"))); // NOI18N
+        getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        setSize(new java.awt.Dimension(1366, 768));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarAlteracoesActionPerformed
+        // CÓDIGO DO BOTÃO "SALVAR":
+        if (!jTxtCodigoEmprestimo.getText().equals("") || jTxtRm.getText().equals("") || jTxtCodigoLivro.getText().equals("") || jTxtQuantidade.getText().equals("") || jTxtSituacao.getText().equals("") || jTxtDataEmprestimo.getText().equals("") || jTxtDataEntrega.getText().equals("")) {
+            VerificarQuantidade verificarquantidade_objeto = new VerificarQuantidade();
+            int quantidade = Integer.parseInt(jTxtQuantidade.getText().replaceAll("[^0-9]", ""));
+            if (verificarquantidade_objeto.verificarQuantidade(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
+                JOptionPane.showMessageDialog(this, "Livro disponível!");
+                if (emprestimoclass_objeto.atualizarEmprestimo(jTxtCodigoEmprestimo.getText(), jTxtRm.getText(), jTxtCodigoLivro.getText(), String.valueOf(quantidade), jTxtDataEntrega.getText())) {
+                    JOptionPane.showMessageDialog(this, "Empréstimo atualizado com sucesso!");
+                    this.setVisible(false);
+                    telavisualizaremprestimos_objeto.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Empréstimo NÃO foi atualizado, tente novamente!");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Livro indisponível");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!", "Campos vazios!", 0);
+        }
+    }//GEN-LAST:event_jBtnSalvarAlteracoesActionPerformed
+
+    private void jBtnUmaSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUmaSemanaActionPerformed
+        // CÓDIGO DO BOTÃO "+1 SEMANA":
+    }//GEN-LAST:event_jBtnUmaSemanaActionPerformed
+
+    private void jBtnDuasSemanasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDuasSemanasActionPerformed
+        // CÓDIGO DO BOTÃO "+2 SEMANA":
+    }//GEN-LAST:event_jBtnDuasSemanasActionPerformed
+
+    private void jBtnConfirmarEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarEntregaActionPerformed
+        // CÓDIGO DO BOTÃO "CONFIRMAR ENTREGA":
+    }//GEN-LAST:event_jBtnConfirmarEntregaActionPerformed
+
+    private void jTxtRmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtRmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtRmActionPerformed
+
+    private void jTxtCodigoEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodigoEmprestimoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtCodigoEmprestimoActionPerformed
+
+    private void jTxtCodigoLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodigoLivroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtCodigoLivroActionPerformed
+
+    private void jTxtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtQuantidadeActionPerformed
+
+    private void jTxtSituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtSituacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtSituacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -73,11 +274,27 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaEditarEmprestimo().setVisible(true);
+                try {
+                    new TelaEditarEmprestimo().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TelaEditarEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnConfirmarEntrega;
+    private javax.swing.JButton jBtnDuasSemanas;
+    private javax.swing.JButton jBtnSalvarAlteracoes;
+    private javax.swing.JButton jBtnUmaSemana;
+    private javax.swing.JLabel jFundo;
+    private javax.swing.JTextField jTxtCodigoEmprestimo;
+    private javax.swing.JTextField jTxtCodigoLivro;
+    private javax.swing.JFormattedTextField jTxtDataEmprestimo;
+    private javax.swing.JFormattedTextField jTxtDataEntrega;
+    private javax.swing.JTextField jTxtQuantidade;
+    private javax.swing.JTextField jTxtRm;
+    private javax.swing.JTextField jTxtSituacao;
     // End of variables declaration//GEN-END:variables
 }

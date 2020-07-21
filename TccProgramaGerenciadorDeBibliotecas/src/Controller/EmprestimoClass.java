@@ -5,9 +5,13 @@
  */
 package Controller;
 
+import Model.AtualizarEmprestimo;
 import Model.CadastrarEmprestimo;
+import Model.SelecionarEmprestimo;
 import Model.VisualizarEmprestimo;
+import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,34 +20,46 @@ import java.sql.ResultSet;
 public class EmprestimoClass {
 
     private int id_emprestimo;
-    private String id_livro;
-    private String id_aluno;
-    private String data_emprestimo;
-    private String data_entrega;
+    private int rm_aluno;
+    private int id_livro;
+    private int quantidade;
+    private Date data_emprestimo;
+    private Date data_entrega;
+    private String situacao;
     public ResultSet resultset_visualizaremprestimo;
     public ResultSet resultset_selecionaremprestimo;
     CadastrarEmprestimo cadastraremprestimo_objeto = new CadastrarEmprestimo();
     VisualizarEmprestimo visualizaremprestimo_objeto = new VisualizarEmprestimo();
+    SelecionarEmprestimo selecionaremprestimo_objeto = new SelecionarEmprestimo();
+    AtualizarEmprestimo atualizaremprestimo_objeto = new AtualizarEmprestimo();
 
     // CRIANDO OS MÉTODOS "GETTERS":
     public int getId_emprestimo() {
         return id_emprestimo;
     }
 
-    public String getId_livro() {
+    public int getId_livro() {
         return id_livro;
     }
 
-    public String getId_aluno() {
-        return id_aluno;
+    public int getRm_aluno() {
+        return rm_aluno;
     }
 
-    public String getData_emprestimo() {
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public Date getData_emprestimo() {
         return data_emprestimo;
     }
 
-    public String getData_entrega() {
+    public Date getData_entrega() {
         return data_entrega;
+    }
+
+    public String getSituacao() {
+        return situacao;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS":
@@ -51,20 +67,28 @@ public class EmprestimoClass {
         this.id_emprestimo = id_emprestimo;
     }
 
-    public void setId_livro(String id_livro) {
+    public void setId_livro(int id_livro) {
         this.id_livro = id_livro;
     }
 
-    public void setId_aluno(String id_aluno) {
-        this.id_aluno = id_aluno;
+    public void setRm_aluno(int rm_aluno) {
+        this.rm_aluno = rm_aluno;
     }
 
-    public void setData_emprestimo(String data_emprestimo) {
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public void setData_emprestimo(Date data_emprestimo) {
         this.data_emprestimo = data_emprestimo;
     }
 
-    public void setData_entrega(String data_entrega) {
+    public void setData_entrega(Date data_entrega) {
         this.data_entrega = data_entrega;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
 
     public boolean cadastrarEmprestimo(String codigo_livro, String rm_aluno, String data_emprestimo, String data_devolucao, String quantidade) {
@@ -78,5 +102,23 @@ public class EmprestimoClass {
     public ResultSet visualizarEmprestimo() {
         resultset_visualizaremprestimo = visualizaremprestimo_objeto.visualizarEmprestimo();
         return resultset_visualizaremprestimo;
+    }
+
+    public void selecionarEmprestimo(int id_emprestimo) throws SQLException {
+        this.resultset_selecionaremprestimo = selecionaremprestimo_objeto.selecionarEmprestimo(id_emprestimo);
+        setId_emprestimo(this.resultset_selecionaremprestimo.getInt("id_emprestimo"));
+        setId_livro(this.resultset_selecionaremprestimo.getInt("id_livro"));
+        setRm_aluno(this.resultset_selecionaremprestimo.getInt("rm_aluno"));
+        setQuantidade(this.resultset_selecionaremprestimo.getInt("quantidade"));
+        setData_emprestimo(this.resultset_selecionaremprestimo.getDate("data_emprestimo"));
+        setData_entrega(this.resultset_selecionaremprestimo.getDate("data_entrega"));
+    }
+
+    public boolean atualizarEmprestimo(String id_emprestimo, String rm_aluno, String id_livro, String quantidade, String data_entrega) {
+        if (atualizaremprestimo_objeto.atualizarEmprestimo(id_emprestimo, rm_aluno, id_livro, quantidade, data_entrega)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
