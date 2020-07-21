@@ -293,7 +293,7 @@ public class TelaVisualizarHistorico extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código do empréstimo", "Código do livro", "Rm do aluno", "Data de empréstimo", "Data de devolução", "Quantidade", "situacao"
+                "Código do empréstimo", "Código do livro", "Rm do aluno", "Data de empréstimo", "Data de devolução", "Quantidade", "Situacao"
             }
         ) {
             boolean[] canEdit = new boolean [] {

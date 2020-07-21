@@ -332,7 +332,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         jTxtQuantidade.setText("1");
         jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, 130, 50));
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, 100, 50));
 
         jTxtDataDevolucao.setBorder(null);
         try {
