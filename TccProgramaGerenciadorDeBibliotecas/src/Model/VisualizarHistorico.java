@@ -28,7 +28,7 @@ public class VisualizarHistorico {
             resultset_visualizarhistorico = statement_visualizarhistorico.executeQuery();
             return resultset_visualizarhistorico;
         } catch (SQLException erro_visualizarhistorico) {
-            System.err.println("Problema ao tentar visualizar os empréstimos, ERRO: " + erro_visualizarhistorico);
+            System.err.println("Problema ao tentar visualizar o histórico, ERRO: " + erro_visualizarhistorico);
             return resultset_visualizarhistorico;
         }
 

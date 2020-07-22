@@ -5,11 +5,14 @@
  */
 package View;
 
+import Controller.AtrasoClass;
 import Controller.EmprestimoClass;
 import Controller.LoginClass;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -28,20 +31,47 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
      */
     public TelaVisualizarAtrasos() throws SQLException {
         initComponents();
-        EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
+        AtrasoClass atrasoclass_objeto = new AtrasoClass();
+        String[] array_data_banco = null;
+        ResultSet resultset_visualizaratrasos = atrasoclass_objeto.visualizarAtrasos();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
-        while (resultset_visualizaremprestimo.next()) {
-            tabela.addRow(
-                    new Object[]{
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx",
-                        "xxxx"
-                    }
-            );
+        while (resultset_visualizaratrasos.next()) {
+            Date data_atual = new Date();
+            SimpleDateFormat mascara = new SimpleDateFormat("dd/MM/yyyy");
+            String[] aData = mascara.format(data_atual).split("/");
+
+            Calendar cal_data_atual = Calendar.getInstance();
+
+            cal_data_atual.set(Calendar.DAY_OF_MONTH, Integer.parseInt(aData[0]));
+            cal_data_atual.set(Calendar.MONTH, Integer.parseInt(aData[1]) - 1);
+            cal_data_atual.set(Calendar.YEAR, Integer.parseInt(aData[2]));
+            Date data_atual_final = cal_data_atual.getTime();
+
+            String data_banco = resultset_visualizaratrasos.getString("data_entrega");
+            array_data_banco = data_banco.split("/");
+
+            Calendar cal_data_banco = Calendar.getInstance();
+
+            cal_data_banco.set(Calendar.DAY_OF_MONTH, Integer.parseInt(array_data_banco[0]));
+            cal_data_banco.set(Calendar.MONTH, Integer.parseInt(array_data_banco[1]) - 1);
+            cal_data_banco.set(Calendar.YEAR, Integer.parseInt(array_data_banco[2]));
+            Date data_banco_final = cal_data_banco.getTime();
+
+            System.out.println(mascara.format(data_atual_final));
+            System.out.println(mascara.format(data_banco_final));
+
+            if (cal_data_banco.before(cal_data_atual)) {
+                tabela.addRow(
+                        new Object[]{
+                            resultset_visualizaratrasos.getString("rm_aluno"),
+                            resultset_visualizaratrasos.getString("id_livro"),
+                            resultset_visualizaratrasos.getString("data_entrega"),
+                            resultset_visualizaratrasos.getString("quantidade")
+                        }
+                );
+
+            }
         }
 
     }
@@ -301,13 +331,13 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
 
         jTbResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "RM", "Nome", "Código do livro", "Data de Entrega", "Quantidade"
+                "RM", "Código do livro", "Data de Entrega", "Quantidade"
             }
         ));
         jScrollPane1.setViewportView(jTbResultado);
@@ -381,8 +411,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         TelaVisualizarAgendamento telavisualizaragendamentos_objeto = null;
         try {
             telavisualizaragendamentos_objeto = new TelaVisualizarAgendamento();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAgendamento.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAgendamento.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaragendamentos_objeto.setVisible(true);
         this.setVisible(false);
@@ -393,8 +425,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         TelaVisualizarAlunos telavisualizaralunos_objeto = null;
         try {
             telavisualizaralunos_objeto = new TelaVisualizarAlunos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAlunos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAlunos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaralunos_objeto.setVisible(true);
         this.setVisible(false);
@@ -405,8 +439,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         TelaVisualizarAtrasos telavisualizaratrasos_objeto = null;
         try {
             telavisualizaratrasos_objeto = new TelaVisualizarAtrasos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarAtrasos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaratrasos_objeto.setVisible(true);
         this.setVisible(false);
@@ -417,8 +453,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;
         try {
             telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarEmprestimos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarEmprestimos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizaremprestimos_objeto.setVisible(true);
         this.setVisible(false);
@@ -429,8 +467,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         TelaVisualizarHistorico telavisualizarhistorico_objeto = null;
         try {
             telavisualizarhistorico_objeto = new TelaVisualizarHistorico();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarHistorico.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarHistorico.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizarhistorico_objeto.setVisible(true);
         this.setVisible(false);
@@ -441,8 +481,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         TelaVisualizarLivros telavisualizarlivros_objeto = null;
         try {
             telavisualizarlivros_objeto = new TelaVisualizarLivros();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaVisualizarLivros.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaVisualizarLivros.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telavisualizarlivros_objeto.setVisible(true);
         this.setVisible(false);
@@ -453,8 +495,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         TelaEditarEmprestimo telaeditaremprestimo_objeto = null;
         try {
             telaeditaremprestimo_objeto = new TelaEditarEmprestimo();
+
         } catch (SQLException ex) {
-            Logger.getLogger(TelaCadastrarLivro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCadastrarLivro.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         telaeditaremprestimo_objeto.setVisible(true);
         this.setVisible(false);
@@ -507,16 +551,21 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisualizarAtrasos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -525,8 +574,10 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
             public void run() {
                 try {
                     new TelaVisualizarAtrasos().setVisible(true);
+
                 } catch (SQLException ex) {
-                    Logger.getLogger(TelaVisualizarAtrasos.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(TelaVisualizarAtrasos.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

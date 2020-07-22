@@ -5,10 +5,23 @@
  */
 package Controller;
 
+import Model.VisualizarAtrasos;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  *
  * @author T-Gamer
  */
 public class AtrasoClass {
-    
+
+    private ResultSet resultset_visualizaratrasos = null;
+    private VisualizarAtrasos visualizaratrasos_objeto = new VisualizarAtrasos();
+
+    public ResultSet visualizarAtrasos() {
+        resultset_visualizaratrasos = visualizaratrasos_objeto.visualizarAtrasos();
+        return resultset_visualizaratrasos;
+    }
 }
