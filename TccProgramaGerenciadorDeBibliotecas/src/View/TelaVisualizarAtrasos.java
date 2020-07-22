@@ -9,6 +9,7 @@ import Controller.EmprestimoClass;
 import Controller.LoginClass;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -42,6 +43,7 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
                     }
             );
         }
+
     }
 
     /**

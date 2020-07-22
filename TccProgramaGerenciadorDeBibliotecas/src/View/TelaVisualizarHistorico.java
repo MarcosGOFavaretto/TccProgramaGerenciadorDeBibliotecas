@@ -35,7 +35,7 @@ public class TelaVisualizarHistorico extends javax.swing.JFrame {
         while (resultset_visualizarhistorico.next()) {
             tabela.addRow(
                     new Object[]{
-                        resultset_visualizarhistorico.getInt("id_historico_emprestimo"),
+                        resultset_visualizarhistorico.getInt("id_emprestimo"),
                         resultset_visualizarhistorico.getInt("id_livro"),
                         resultset_visualizarhistorico.getString("rm_aluno"),
                         resultset_visualizarhistorico.getDate("data_emprestimo"),

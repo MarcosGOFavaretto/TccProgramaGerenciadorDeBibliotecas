@@ -6,6 +6,7 @@
 package Model;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -17,6 +18,7 @@ public class CadastrarEmprestimo {
     private Conexao conexao_objeto = new Conexao();
     private String sql_cadastraremprestimo;
     private PreparedStatement statement_cadastraremprestimo;
+    private ResultSet resultset_visualizarultimoemprestimo;
     private SalvarHistorico salvarhistorico_objeto = new SalvarHistorico();
 
     public boolean cadastrarUsuario(String codigo_livro, String rm_aluno, String data_emprestimo, String data_devolucao, String quantidade) {
@@ -31,7 +33,10 @@ public class CadastrarEmprestimo {
             statement_cadastraremprestimo.setString(5, quantidade);
             if (!statement_cadastraremprestimo.execute()) {
                 System.out.println("Empréstimo cadastrado!");
-                salvarhistorico_objeto.salvarhistorico(codigo_livro, rm_aluno, data_emprestimo, data_devolucao, quantidade);
+                VisualizarEmprestimo visualizaremprestimo_objeto = new VisualizarEmprestimo();
+                resultset_visualizarultimoemprestimo = visualizaremprestimo_objeto.visualizarUltimoEmprestimo();
+                System.out.println(resultset_visualizarultimoemprestimo.getString("id_emprestimo"));
+                salvarhistorico_objeto.salvarhistorico(resultset_visualizarultimoemprestimo.getString("id_emprestimo"), codigo_livro, rm_aluno, data_emprestimo, data_devolucao, quantidade);
                 return true;
             } else {
                 System.out.println("Empréstimo NÃO cadastrado!");

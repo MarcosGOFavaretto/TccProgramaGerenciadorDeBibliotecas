@@ -7,6 +7,7 @@ package Controller;
 
 import Model.AtualizarEmprestimo;
 import Model.CadastrarEmprestimo;
+import Model.ConfirmarEntrega;
 import Model.SelecionarEmprestimo;
 import Model.VisualizarEmprestimo;
 import java.sql.Date;
@@ -32,6 +33,7 @@ public class EmprestimoClass {
     VisualizarEmprestimo visualizaremprestimo_objeto = new VisualizarEmprestimo();
     SelecionarEmprestimo selecionaremprestimo_objeto = new SelecionarEmprestimo();
     AtualizarEmprestimo atualizaremprestimo_objeto = new AtualizarEmprestimo();
+    ConfirmarEntrega confirmarentrega_objeto = new ConfirmarEntrega();
 
     // CRIANDO OS MÉTODOS "GETTERS":
     public int getId_emprestimo() {
@@ -116,6 +118,14 @@ public class EmprestimoClass {
 
     public boolean atualizarEmprestimo(String id_emprestimo, String rm_aluno, String id_livro, String quantidade, String data_entrega) {
         if (atualizaremprestimo_objeto.atualizarEmprestimo(id_emprestimo, rm_aluno, id_livro, quantidade, data_entrega)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean confirmarEntrega(String id_emprestimo) {
+        if (confirmarentrega_objeto.confirmarEntrega(id_emprestimo)) {
             return true;
         } else {
             return false;
