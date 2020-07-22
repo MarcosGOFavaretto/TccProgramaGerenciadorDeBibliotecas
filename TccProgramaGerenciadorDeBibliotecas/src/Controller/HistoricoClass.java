@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.AtualizarHistorico;
 import Model.SalvarHistorico;
 import Model.VisualizarHistorico;
 import java.sql.ResultSet;
@@ -24,6 +25,7 @@ public class HistoricoClass {
     public ResultSet resultset_visualizarhistorico;
     SalvarHistorico cadastraremprestimo_objeto = new SalvarHistorico();
     VisualizarHistorico visualizarhistorico_objeto = new VisualizarHistorico();
+    AtualizarHistorico atualizarhistorico_objeto = new AtualizarHistorico();
 
     // CRIANDO OS MÉTODOS "GETTERS":
     public int getId_historico_emprestimo() {
@@ -78,5 +80,21 @@ public class HistoricoClass {
     public ResultSet visualizarHistorico() {
         resultset_visualizarhistorico = visualizarhistorico_objeto.visualizarHistorico();
         return resultset_visualizarhistorico;
+    }
+
+    public boolean atualizarHistorico(String id_emprestimo, String rm_aluno, String id_livro, String quantidade) {
+        if (atualizarhistorico_objeto.atualizarHistorico(id_emprestimo, rm_aluno, id_livro, quantidade)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean atualizarDataHistorico(String id_emprestimo, String data_entrega) {
+        if (atualizarhistorico_objeto.atualizarDataHistorico(id_emprestimo, data_entrega)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

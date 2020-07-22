@@ -6,6 +6,7 @@
 package View;
 
 import Controller.EmprestimoClass;
+import Controller.HistoricoClass;
 import Controller.LoginClass;
 import Model.VerificarQuantidade;
 import java.sql.SQLException;
@@ -29,6 +30,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     String id_emprestimo = "";
     EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
     TelaVisualizarHistorico telavisualizarhistorico_objeto = new TelaVisualizarHistorico();
+    HistoricoClass historicoclass_objeto = new HistoricoClass();
 
     public TelaEditarEmprestimo() throws SQLException {
         id_emprestimo = JOptionPane.showInputDialog(null, "Insira o código do empréstimo", "CÓDIGO DO EMPRÉSTIMO", 3);
@@ -56,12 +58,16 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTxtCodigoEmprestimo1 = new javax.swing.JTextField();
         jTxtCodigoEmprestimo = new javax.swing.JTextField();
         jTxtRm = new javax.swing.JTextField();
         jTxtCodigoLivro = new javax.swing.JTextField();
         jTxtQuantidade = new javax.swing.JTextField();
+        jTxtSituacao1 = new javax.swing.JTextField();
         jTxtSituacao = new javax.swing.JTextField();
+        jTxtDataEmprestimo1 = new javax.swing.JFormattedTextField();
         jTxtDataEmprestimo = new javax.swing.JFormattedTextField();
+        jTxtDataEntrega1 = new javax.swing.JFormattedTextField();
         jTxtDataEntrega = new javax.swing.JFormattedTextField();
         jBtnConfirmarEntrega = new javax.swing.JButton();
         jBtnDuasSemanas = new javax.swing.JButton();
@@ -106,6 +112,18 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTxtCodigoEmprestimo1.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtCodigoEmprestimo1.setBorder(null);
+        jTxtCodigoEmprestimo1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTxtCodigoEmprestimo1.setEnabled(false);
+        jTxtCodigoEmprestimo1.setOpaque(false);
+        jTxtCodigoEmprestimo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtCodigoEmprestimo1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtCodigoEmprestimo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 120, 70));
+
         jTxtCodigoEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtCodigoEmprestimo.setBorder(null);
         jTxtCodigoEmprestimo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -147,6 +165,18 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, 210, 50));
 
+        jTxtSituacao1.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtSituacao1.setBorder(null);
+        jTxtSituacao1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTxtSituacao1.setEnabled(false);
+        jTxtSituacao1.setOpaque(false);
+        jTxtSituacao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtSituacao1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtSituacao1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 320, 240, 60));
+
         jTxtSituacao.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtSituacao.setBorder(null);
         jTxtSituacao.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -158,6 +188,18 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(jTxtSituacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 330, 230, 50));
 
+        jTxtDataEmprestimo1.setBorder(null);
+        try {
+            jTxtDataEmprestimo1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtDataEmprestimo1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTxtDataEmprestimo1.setEnabled(false);
+        jTxtDataEmprestimo1.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtDataEmprestimo1.setOpaque(false);
+        getContentPane().add(jTxtDataEmprestimo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 402, 210, 70));
+
         jTxtDataEmprestimo.setBorder(null);
         try {
             jTxtDataEmprestimo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -168,6 +210,17 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         jTxtDataEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataEmprestimo.setOpaque(false);
         getContentPane().add(jTxtDataEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 422, 210, 40));
+
+        jTxtDataEntrega1.setBorder(null);
+        try {
+            jTxtDataEntrega1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTxtDataEntrega1.setEnabled(false);
+        jTxtDataEntrega1.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
+        jTxtDataEntrega1.setOpaque(false);
+        getContentPane().add(jTxtDataEntrega1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, 210, 70));
 
         jTxtDataEntrega.setBorder(null);
         try {
@@ -475,6 +528,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
             cal.add(Calendar.DAY_OF_MONTH, 7);
             Date data_entrega_final = cal.getTime();
             emprestimoclass_objeto.atualizarDataDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
+            historicoclass_objeto.atualizarDataHistorico(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
         } catch (SQLException ex) {
             Logger.getLogger(TelaEditarEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -497,6 +551,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
             cal.add(Calendar.DAY_OF_MONTH, 14);
             Date data_entrega_final = cal.getTime();
             emprestimoclass_objeto.atualizarDataDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
+            historicoclass_objeto.atualizarDataHistorico(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
         } catch (SQLException ex) {
             Logger.getLogger(TelaEditarEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -715,6 +770,14 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jHamburguinho1MouseClicked
 
+    private void jTxtCodigoEmprestimo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodigoEmprestimo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtCodigoEmprestimo1ActionPerformed
+
+    private void jTxtSituacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtSituacao1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtSituacao1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -791,11 +854,15 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jSair;
     private javax.swing.JTextField jTxtCodigoEmprestimo;
+    private javax.swing.JTextField jTxtCodigoEmprestimo1;
     private javax.swing.JTextField jTxtCodigoLivro;
     private javax.swing.JFormattedTextField jTxtDataEmprestimo;
+    private javax.swing.JFormattedTextField jTxtDataEmprestimo1;
     private javax.swing.JFormattedTextField jTxtDataEntrega;
+    private javax.swing.JFormattedTextField jTxtDataEntrega1;
     private javax.swing.JTextField jTxtQuantidade;
     private javax.swing.JTextField jTxtRm;
     private javax.swing.JTextField jTxtSituacao;
+    private javax.swing.JTextField jTxtSituacao1;
     // End of variables declaration//GEN-END:variables
 }

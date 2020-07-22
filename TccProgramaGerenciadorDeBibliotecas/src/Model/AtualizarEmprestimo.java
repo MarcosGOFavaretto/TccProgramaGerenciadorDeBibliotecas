@@ -19,10 +19,11 @@ public class AtualizarEmprestimo {
     private PreparedStatement statement_atualizaremprestimo;
     private String sql_atualizardataentrega;
     private PreparedStatement statement_atualizardataentrega;
+    private AtualizarHistorico atualizarhistorico_objeto = new AtualizarHistorico();
 
     public boolean atualizarEmprestimo(String id_emprestimo, String rm_aluno, String id_livro, String quantidade) {
         try {
-            sql_atualizaremprestimo = "UPDATE tabela_emprestimos SET rm_aluno=?, id_livro=?, quantidade=? WHERE id_emprestimo =?";
+            sql_atualizaremprestimo = "UPDATE tabela_historico SET rm_aluno=?, id_livro=?, quantidade=? WHERE id_emprestimo =?";
             conexao_objeto.AbrirConexao();
             statement_atualizaremprestimo = conexao_objeto.conexao.prepareStatement(sql_atualizaremprestimo);
             statement_atualizaremprestimo.setString(1, rm_aluno);
@@ -31,6 +32,7 @@ public class AtualizarEmprestimo {
             statement_atualizaremprestimo.setString(4, id_emprestimo);
             if (!statement_atualizaremprestimo.execute()) {
                 System.out.println("Empréstimo atualizado!");
+                atualizarhistorico_objeto.atualizarHistorico(id_emprestimo, rm_aluno, id_livro, quantidade);
                 return true;
             } else {
                 System.out.println("Empréstimo NÃO atualizado!");
@@ -44,7 +46,7 @@ public class AtualizarEmprestimo {
 
     public boolean atualizarDataEntrega(String id_emprestimo, String data_entrega) {
         try {
-            sql_atualizardataentrega = "UPDATE tabela_emprestimos SET data_entrega=? WHERE id_emprestimo =?";
+            sql_atualizardataentrega = "UPDATE tabela_historico SET data_entrega=? WHERE id_emprestimo =?";
             conexao_objeto.AbrirConexao();
             statement_atualizardataentrega = conexao_objeto.conexao.prepareStatement(sql_atualizardataentrega);
             statement_atualizardataentrega.setString(1, data_entrega);
