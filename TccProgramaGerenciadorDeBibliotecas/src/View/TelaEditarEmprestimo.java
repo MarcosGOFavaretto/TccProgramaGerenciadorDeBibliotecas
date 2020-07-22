@@ -9,6 +9,9 @@ import Controller.EmprestimoClass;
 import Controller.LoginClass;
 import Model.VerificarQuantidade;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -441,7 +444,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
             int quantidade = Integer.parseInt(jTxtQuantidade.getText().replaceAll("[^0-9]", ""));
             if (verificarquantidade_objeto.verificarQuantidade(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
                 JOptionPane.showMessageDialog(this, "Livro disponível!");
-                if (emprestimoclass_objeto.atualizarEmprestimo(jTxtCodigoEmprestimo.getText(), jTxtRm.getText(), jTxtCodigoLivro.getText(), String.valueOf(quantidade), jTxtDataEntrega.getText())) {
+                if (emprestimoclass_objeto.atualizarEmprestimo(jTxtCodigoEmprestimo.getText(), jTxtRm.getText(), jTxtCodigoLivro.getText(), String.valueOf(quantidade))) {
                     JOptionPane.showMessageDialog(this, "Empréstimo atualizado com sucesso!");
                     this.setVisible(false);
                     telavisualizarhistorico_objeto.setVisible(true);
@@ -457,11 +460,46 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnSalvarAlteracoesActionPerformed
 
     private void jBtnUmaSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUmaSemanaActionPerformed
-        // CÓDIGO DO BOTÃO "+1 SEMANA":
+        try {
+            // CÓDIGO DO BOTÃO "+1 SEMANA":
+            emprestimoclass_objeto.selecionarEmprestimo(Integer.parseInt(jTxtCodigoEmprestimo.getText()));
+            String data_entrega_inicial = emprestimoclass_objeto.getData_entrega();
+            SimpleDateFormat mascara = new SimpleDateFormat("dd/MM/yyyy");
+            String[] aData = data_entrega_inicial.split("/");
+
+            Calendar cal = Calendar.getInstance();
+
+            cal.set(Calendar.DAY_OF_MONTH, Integer.parseInt(aData[0]));
+            cal.set(Calendar.MONTH, Integer.parseInt(aData[1]) - 1);
+            cal.set(Calendar.YEAR, Integer.parseInt(aData[2]));
+            cal.add(Calendar.DAY_OF_MONTH, 7);
+            Date data_entrega_final = cal.getTime();
+            emprestimoclass_objeto.atualizarDataDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaEditarEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBtnUmaSemanaActionPerformed
 
     private void jBtnDuasSemanasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDuasSemanasActionPerformed
         // CÓDIGO DO BOTÃO "+2 SEMANA":
+        try {
+            // CÓDIGO DO BOTÃO "+1 SEMANA":
+            emprestimoclass_objeto.selecionarEmprestimo(Integer.parseInt(jTxtCodigoEmprestimo.getText()));
+            String data_entrega_inicial = emprestimoclass_objeto.getData_entrega();
+            SimpleDateFormat mascara = new SimpleDateFormat("dd/MM/yyyy");
+            String[] aData = data_entrega_inicial.split("/");
+
+            Calendar cal = Calendar.getInstance();
+
+            cal.set(Calendar.DAY_OF_MONTH, Integer.parseInt(aData[0]));
+            cal.set(Calendar.MONTH, Integer.parseInt(aData[1]) - 1);
+            cal.set(Calendar.YEAR, Integer.parseInt(aData[2]));
+            cal.add(Calendar.DAY_OF_MONTH, 14);
+            Date data_entrega_final = cal.getTime();
+            emprestimoclass_objeto.atualizarDataDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaEditarEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBtnDuasSemanasActionPerformed
 
     private void jBtnConfirmarEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarEntregaActionPerformed

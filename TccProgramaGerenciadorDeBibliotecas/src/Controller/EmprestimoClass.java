@@ -24,8 +24,8 @@ public class EmprestimoClass {
     private int rm_aluno;
     private int id_livro;
     private int quantidade;
-    private Date data_emprestimo;
-    private Date data_entrega;
+    private String data_emprestimo;
+    private String data_entrega;
     private String situacao;
     public ResultSet resultset_visualizaremprestimo;
     public ResultSet resultset_selecionaremprestimo;
@@ -52,11 +52,11 @@ public class EmprestimoClass {
         return quantidade;
     }
 
-    public Date getData_emprestimo() {
+    public String getData_emprestimo() {
         return data_emprestimo;
     }
 
-    public Date getData_entrega() {
+    public String getData_entrega() {
         return data_entrega;
     }
 
@@ -81,11 +81,11 @@ public class EmprestimoClass {
         this.quantidade = quantidade;
     }
 
-    public void setData_emprestimo(Date data_emprestimo) {
+    public void setData_emprestimo(String data_emprestimo) {
         this.data_emprestimo = data_emprestimo;
     }
 
-    public void setData_entrega(Date data_entrega) {
+    public void setData_entrega(String data_entrega) {
         this.data_entrega = data_entrega;
     }
 
@@ -112,12 +112,12 @@ public class EmprestimoClass {
         setId_livro(this.resultset_selecionaremprestimo.getInt("id_livro"));
         setRm_aluno(this.resultset_selecionaremprestimo.getInt("rm_aluno"));
         setQuantidade(this.resultset_selecionaremprestimo.getInt("quantidade"));
-        setData_emprestimo(this.resultset_selecionaremprestimo.getDate("data_emprestimo"));
-        setData_entrega(this.resultset_selecionaremprestimo.getDate("data_entrega"));
+        setData_emprestimo(this.resultset_selecionaremprestimo.getString("data_emprestimo"));
+        setData_entrega(this.resultset_selecionaremprestimo.getString("data_entrega"));
     }
 
-    public boolean atualizarEmprestimo(String id_emprestimo, String rm_aluno, String id_livro, String quantidade, String data_entrega) {
-        if (atualizaremprestimo_objeto.atualizarEmprestimo(id_emprestimo, rm_aluno, id_livro, quantidade, data_entrega)) {
+    public boolean atualizarEmprestimo(String id_emprestimo, String rm_aluno, String id_livro, String quantidade) {
+        if (atualizaremprestimo_objeto.atualizarEmprestimo(id_emprestimo, rm_aluno, id_livro, quantidade)) {
             return true;
         } else {
             return false;
@@ -126,6 +126,14 @@ public class EmprestimoClass {
 
     public boolean confirmarEntrega(String id_emprestimo) {
         if (confirmarentrega_objeto.confirmarEntrega(id_emprestimo)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean atualizarDataDevolucao(String id_emprestimo, String data_entrega) {
+        if (atualizaremprestimo_objeto.atualizarDataEntrega(id_emprestimo, data_entrega)) {
             return true;
         } else {
             return false;
