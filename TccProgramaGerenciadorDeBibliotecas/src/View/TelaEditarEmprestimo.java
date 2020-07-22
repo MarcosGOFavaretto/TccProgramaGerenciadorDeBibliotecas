@@ -9,7 +9,6 @@ import Controller.EmprestimoClass;
 import Controller.LoginClass;
 import Model.VerificarQuantidade;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -26,8 +25,8 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     // DECLARANDO AS VARIÁVEIS:
     String id_emprestimo = "";
     EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-    TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = new TelaVisualizarEmprestimos();
-    
+    TelaVisualizarHistorico telavisualizarhistorico_objeto = new TelaVisualizarHistorico();
+
     public TelaEditarEmprestimo() throws SQLException {
         id_emprestimo = JOptionPane.showInputDialog(null, "Insira o código do empréstimo", "CÓDIGO DO EMPRÉSTIMO", 3);
         if (!id_emprestimo.equals("")) {
@@ -445,7 +444,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 if (emprestimoclass_objeto.atualizarEmprestimo(jTxtCodigoEmprestimo.getText(), jTxtRm.getText(), jTxtCodigoLivro.getText(), String.valueOf(quantidade), jTxtDataEntrega.getText())) {
                     JOptionPane.showMessageDialog(this, "Empréstimo atualizado com sucesso!");
                     this.setVisible(false);
-                    telavisualizaremprestimos_objeto.setVisible(true);
+                    telavisualizarhistorico_objeto.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "Empréstimo NÃO foi atualizado, tente novamente!");
                 }
