@@ -515,7 +515,6 @@
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="#####" subtype="-1" type="5"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="18024"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Abadi MT Std Extra Light" size="36" style="0"/>
         </Property>
@@ -596,7 +595,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Abadi MT Std Extra Light" size="36" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Marcos Gabriel de Oliveira Favaretto"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -613,7 +611,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Abadi MT Std Extra Light" size="36" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="marcos@etec.sp.gov.br"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -633,7 +630,6 @@
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="## # ####-####" subtype="-1" type="5"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="19 9 9587-0430"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Abadi MT Std Extra Light" size="36" style="0"/>
         </Property>

@@ -303,7 +303,6 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 270, 70));
 
         jTxtEditora.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtEditora.setText("Geoffrey Bles");
         jTxtEditora.setBorder(null);
         jTxtEditora.setOpaque(false);
         jTxtEditora.addActionListener(new java.awt.event.ActionListener() {
@@ -314,19 +313,16 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         getContentPane().add(jTxtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 120, 50));
 
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtQuantidade.setText("10");
         jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
         getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 460, 50, 40));
 
         jTxtAno.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtAno.setText("2008");
         jTxtAno.setBorder(null);
         jTxtAno.setOpaque(false);
         getContentPane().add(jTxtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 150, 40));
 
         jTxtAutor.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtAutor.setText("Clive Staples Lewis");
         jTxtAutor.setBorder(null);
         jTxtAutor.setOpaque(false);
         jTxtAutor.addActionListener(new java.awt.event.ActionListener() {
@@ -337,7 +333,6 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
         getContentPane().add(jTxtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 710, 60));
 
         jTxtNomeLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtNomeLivro.setText("As Crônicas de Nárnia");
         jTxtNomeLivro.setBorder(null);
         jTxtNomeLivro.setOpaque(false);
         jTxtNomeLivro.addActionListener(new java.awt.event.ActionListener() {

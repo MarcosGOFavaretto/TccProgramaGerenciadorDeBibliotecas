@@ -324,25 +324,21 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         getContentPane().add(jHamburguinho1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 710, -1, -1));
 
         jTxtNome.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtNome.setText("Marcos Gabriel de Oliveira Favaretto");
         jTxtNome.setBorder(null);
         jTxtNome.setOpaque(false);
         getContentPane().add(jTxtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 710, 50));
 
         jTxtEmail.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtEmail.setText("marcos@etec.sp.gov.br");
         jTxtEmail.setBorder(null);
         jTxtEmail.setOpaque(false);
         getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 290, 60));
 
         jTxtSenha.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtSenha.setText("123456");
         jTxtSenha.setBorder(null);
         jTxtSenha.setOpaque(false);
         getContentPane().add(jTxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 356, 270, 50));
 
         jTxtEndereco.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtEndereco.setText("Rua Emídio Capodifóglio, casa 14, Bairro Paraíso, Santa Cruz da Conceição-SP");
         jTxtEndereco.setBorder(null);
         jTxtEndereco.setOpaque(false);
         getContentPane().add(jTxtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, 660, 50));
@@ -353,7 +349,6 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtTelefone.setText("19 9 9467-2748");
         jTxtTelefone.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtTelefone.setOpaque(false);
         getContentPane().add(jTxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 260, 50));

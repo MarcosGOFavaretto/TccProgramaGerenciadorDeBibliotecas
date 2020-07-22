@@ -76,8 +76,6 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBtnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 520, 250, 30));
-
-        jTxtSenha.setText("123456");
         getContentPane().add(jTxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, 270, 30));
 
         jSenha.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N
@@ -86,7 +84,6 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(jSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
         jTxtEmail.setFont(new java.awt.Font("Artifakt Element", 1, 14)); // NOI18N
-        jTxtEmail.setText("marcos@gmail.com");
         getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 280, 30));
 
         jUsuario.setFont(new java.awt.Font("Artifakt Element", 1, 24)); // NOI18N

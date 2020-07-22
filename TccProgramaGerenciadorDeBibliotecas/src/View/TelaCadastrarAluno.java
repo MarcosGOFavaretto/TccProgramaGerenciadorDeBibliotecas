@@ -337,7 +337,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtRm.setText("18024");
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtRm.setOpaque(false);
         getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 110, 40));
@@ -361,13 +360,11 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         getContentPane().add(jCbCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 270, 140, 30));
 
         jTxtNome.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtNome.setText("Marcos Gabriel de Oliveira Favaretto");
         jTxtNome.setBorder(null);
         jTxtNome.setOpaque(false);
         getContentPane().add(jTxtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 720, 60));
 
         jTxtEmail.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtEmail.setText("marcos@etec.sp.gov.br");
         jTxtEmail.setBorder(null);
         jTxtEmail.setOpaque(false);
         getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 290, 50));
@@ -378,7 +375,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtTelefone.setText("19 9 9587-0430");
         jTxtTelefone.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtTelefone.setOpaque(false);
         getContentPane().add(jTxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 350, 230, 50));

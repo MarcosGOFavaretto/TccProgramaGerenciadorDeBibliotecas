@@ -348,33 +348,30 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 270, 70));
 
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtQuantidade.setText("1");
         jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
         getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 410, 100, 50));
 
         jTxtDataDevolucao.setBorder(null);
         try {
-            jTxtDataDevolucao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jTxtDataDevolucao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTxtDataDevolucao.setText("20/07/2020");
+        jTxtDataDevolucao.setEnabled(false);
         jTxtDataDevolucao.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataDevolucao.setOpaque(false);
         getContentPane().add(jTxtDataDevolucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 190, 60));
 
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtRm.setText("18024");
         jTxtRm.setBorder(null);
         jTxtRm.setOpaque(false);
         getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, 130, 40));
 
         jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtCodigoLivro.setText("1");
         jTxtCodigoLivro.setBorder(null);
         jTxtCodigoLivro.setOpaque(false);
-        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 130, 40));
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 130, 40));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarEmpréstimos.png"))); // NOI18N
         jFundo.setText("jLabel1");
