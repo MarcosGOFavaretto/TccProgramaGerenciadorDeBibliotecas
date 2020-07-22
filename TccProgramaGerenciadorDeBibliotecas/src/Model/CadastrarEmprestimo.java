@@ -35,7 +35,6 @@ public class CadastrarEmprestimo {
                 System.out.println("Empréstimo cadastrado!");
                 VisualizarEmprestimo visualizaremprestimo_objeto = new VisualizarEmprestimo();
                 resultset_visualizarultimoemprestimo = visualizaremprestimo_objeto.visualizarUltimoEmprestimo();
-                System.out.println(resultset_visualizarultimoemprestimo.getString("id_emprestimo"));
                 salvarhistorico_objeto.salvarhistorico(resultset_visualizarultimoemprestimo.getString("id_emprestimo"), codigo_livro, rm_aluno, data_emprestimo, data_devolucao, quantidade);
                 return true;
             } else {

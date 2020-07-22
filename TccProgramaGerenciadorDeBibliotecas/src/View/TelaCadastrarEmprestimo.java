@@ -5,12 +5,15 @@
  */
 package View;
 
-import Controller.AgendamentoClass;
 import Controller.EmprestimoClass;
 import Controller.LoginClass;
 import Model.ConsultarUsuario;
 import Model.VerificarQuantidade;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -31,6 +34,8 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     private String senha = "";
     private TelaLogin telalogin_objeto = new TelaLogin();
     private LoginClass loginclass_objeto = new LoginClass();
+    public String data_emprestimo_final = "";
+    public String data_entrega_final = "";
 
     public TelaCadastrarEmprestimo() {
         email = JOptionPane.showInputDialog(null, "Insira o email do usuário abaixo:", "Email", 3);
@@ -393,15 +398,14 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
 
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // CÓDIGO DO BOTÃO "SALVAR":
-        String data_emprestimo = "xxxxxxxx";
-        String data_devolucao = "xxxxxxxx";
         if (!jTxtCodigoLivro.getText().equals("") || jTxtRm.getText().equals("") || jTxtQuantidade.getText().equals("")) {
             VerificarQuantidade verificarquantidade_objeto = new VerificarQuantidade();
             int quantidade = Integer.parseInt(jTxtQuantidade.getText().replaceAll("[^0-9]", ""));
             if (verificarquantidade_objeto.verificarQuantidade(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
                 JOptionPane.showMessageDialog(null, "Livro disponível!");
                 EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-                if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""), jTxtRm.getText().replaceAll("[^0-9]", ""), data_emprestimo, data_devolucao, jTxtQuantidade.getText().replaceAll("[^0-9]", ""))) {
+                calcularDatas();
+                if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""), jTxtRm.getText().replaceAll("[^0-9]", ""), data_emprestimo_final, data_entrega_final, jTxtQuantidade.getText().replaceAll("[^0-9]", ""))) {
                     JOptionPane.showMessageDialog(this, "Empréstimo cadastrado com sucesso!");
                     limparCampos();
                 } else {
@@ -416,6 +420,24 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!");
         }
     }//GEN-LAST:event_jBtnSalvarActionPerformed
+
+    private void calcularDatas() {
+        Date data_atual = new Date();
+        SimpleDateFormat mascara = new SimpleDateFormat("dd/MM/yyyy");
+        String[] aData = mascara.format(data_atual).split("/");
+
+        Calendar cal = Calendar.getInstance();
+
+        cal.set(Calendar.DAY_OF_MONTH, Integer.parseInt(aData[0]));
+        cal.set(Calendar.MONTH, Integer.parseInt(aData[1]) - 1);
+        cal.set(Calendar.YEAR, Integer.parseInt(aData[2]));
+        Date data_emprestimo = cal.getTime();
+        cal.add(Calendar.DAY_OF_MONTH, 14);
+        Date data_entrega = cal.getTime();
+
+        data_emprestimo_final = mascara.format(data_emprestimo);
+        data_entrega_final = mascara.format(data_entrega);
+    }
 
     private void jHamburguinho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jHamburguinho1MouseClicked
         // CÓDIGO DO LABEL "HAMBURGUINHO":
@@ -592,6 +614,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jHamburguinho2MouseClicked
     int x = 0;
+
     private void limparCampos() {
         jTxtCodigoLivro.setText("");
         jTxtRm.setText("");

@@ -38,8 +38,8 @@ public class TelaVisualizarHistorico extends javax.swing.JFrame {
                         resultset_visualizarhistorico.getInt("id_emprestimo"),
                         resultset_visualizarhistorico.getInt("id_livro"),
                         resultset_visualizarhistorico.getString("rm_aluno"),
-                        resultset_visualizarhistorico.getDate("data_emprestimo"),
-                        resultset_visualizarhistorico.getDate("data_entrega"),
+                        resultset_visualizarhistorico.getString("data_emprestimo"),
+                        resultset_visualizarhistorico.getString("data_entrega"),
                         resultset_visualizarhistorico.getString("quantidade"),
                         resultset_visualizarhistorico.getString("situacao")
                     }
