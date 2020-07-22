@@ -290,7 +290,7 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 270, 70));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 270, 70));
 
         jBtnCancelar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnCancelar.setText("CANCELAR");
@@ -299,25 +299,22 @@ public class TelaCadastrarAgendamento extends javax.swing.JFrame {
                 jBtnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 350, 270, 70));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 390, 270, 70));
 
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtQuantidade.setText("2");
         jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 250, 50, 40));
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 280, 50, 40));
 
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtRm.setText("18024");
         jTxtRm.setBorder(null);
         jTxtRm.setOpaque(false);
-        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 170, 40));
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 170, 40));
 
         jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jTxtCodigoLivro.setText("3");
         jTxtCodigoLivro.setBorder(null);
         jTxtCodigoLivro.setOpaque(false);
-        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 150, 40));
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 150, 40));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarAgendamento.png"))); // NOI18N
         getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

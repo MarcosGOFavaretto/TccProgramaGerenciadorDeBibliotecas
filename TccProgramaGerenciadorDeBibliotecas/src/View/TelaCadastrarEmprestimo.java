@@ -115,7 +115,6 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         jTxtDataDevolucao = new javax.swing.JFormattedTextField();
         jTxtRm = new javax.swing.JTextField();
         jTxtCodigoLivro = new javax.swing.JTextField();
-        jNovoEmprestimo = new javax.swing.JLabel();
         jFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -337,7 +336,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
                 jBtnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 270, 70));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 500, 270, 70));
 
         jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
@@ -346,13 +345,13 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 270, 70));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 270, 70));
 
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtQuantidade.setText("1");
         jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, 100, 50));
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 410, 100, 50));
 
         jTxtDataDevolucao.setBorder(null);
         try {
@@ -363,24 +362,19 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
         jTxtDataDevolucao.setText("20/07/2020");
         jTxtDataDevolucao.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataDevolucao.setOpaque(false);
-        getContentPane().add(jTxtDataDevolucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 190, 60));
+        getContentPane().add(jTxtDataDevolucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 190, 60));
 
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtRm.setText("18024");
         jTxtRm.setBorder(null);
         jTxtRm.setOpaque(false);
-        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 250, 130, 40));
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, 130, 40));
 
         jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtCodigoLivro.setText("1");
         jTxtCodigoLivro.setBorder(null);
         jTxtCodigoLivro.setOpaque(false);
-        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 130, 40));
-
-        jNovoEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
-        jNovoEmprestimo.setForeground(new java.awt.Color(255, 255, 255));
-        jNovoEmprestimo.setText("NOVO EMPRÉSTIMO");
-        getContentPane().add(jNovoEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 310, 50));
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 130, 40));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarEmpréstimos.png"))); // NOI18N
         jFundo.setText("jLabel1");
@@ -682,7 +676,6 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
     private javax.swing.JLabel jMais2;
     private javax.swing.JLabel jMais3;
     private javax.swing.JLabel jMais4;
-    private javax.swing.JLabel jNovoEmprestimo;
     private javax.swing.JLabel jOlho;
     private javax.swing.JLabel jOlho1;
     private javax.swing.JLabel jOlho2;

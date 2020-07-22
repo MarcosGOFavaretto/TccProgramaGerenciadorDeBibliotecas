@@ -340,7 +340,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         jTxtRm.setText("18024");
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtRm.setOpaque(false);
-        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 110, 40));
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 110, 40));
 
         jCbSala.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "1° Ano", "2° Ano", "3° Ano", "1º Módulo", "2º Módulo", "3º Módulo", "4º Módulo" }));
         jCbSala.setBorder(null);
@@ -349,7 +349,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                 jCbSalaActionPerformed(evt);
             }
         });
-        getContentPane().add(jCbSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 170, 30));
+        getContentPane().add(jCbSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 170, 30));
 
         jCbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "ETIM Administração", "ETIM Desenvolvimento de Sistemas", "ETIM Informática", "ETIM Mecatrônica", "NOVOTEC Banco de Dados", "NOVOTEC Química", "TEC Administração", "TEC Automação Industrial", "TEC Desenvolvimento de Sistemas", "TEC Eletrotécnica", "TEC Infonet" }));
         jCbCurso.setBorder(null);
@@ -358,19 +358,19 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                 jCbCursoActionPerformed(evt);
             }
         });
-        getContentPane().add(jCbCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 250, 140, 30));
+        getContentPane().add(jCbCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 270, 140, 30));
 
         jTxtNome.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtNome.setText("Marcos Gabriel de Oliveira Favaretto");
         jTxtNome.setBorder(null);
         jTxtNome.setOpaque(false);
-        getContentPane().add(jTxtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 720, 60));
+        getContentPane().add(jTxtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 720, 60));
 
         jTxtEmail.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtEmail.setText("marcos@etec.sp.gov.br");
         jTxtEmail.setBorder(null);
         jTxtEmail.setOpaque(false);
-        getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 290, 50));
+        getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 290, 50));
 
         jTxtTelefone.setBorder(null);
         try {
@@ -381,7 +381,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         jTxtTelefone.setText("19 9 9587-0430");
         jTxtTelefone.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtTelefone.setOpaque(false);
-        getContentPane().add(jTxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 330, 230, 50));
+        getContentPane().add(jTxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 350, 230, 50));
 
         jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
@@ -390,7 +390,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 270, 70));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 270, 70));
 
         jBtnCancelar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnCancelar.setText("CANCELAR");
@@ -399,7 +399,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                 jBtnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 520, 270, 70));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 540, 270, 70));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarAluno.png"))); // NOI18N
         getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

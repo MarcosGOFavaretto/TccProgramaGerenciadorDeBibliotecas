@@ -122,7 +122,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jTxtCodigoEmprestimo1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtCodigoEmprestimo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 120, 70));
+        getContentPane().add(jTxtCodigoEmprestimo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 120, 70));
 
         jTxtCodigoEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtCodigoEmprestimo.setBorder(null);
@@ -133,7 +133,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jTxtCodigoEmprestimoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtCodigoEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 120, 40));
+        getContentPane().add(jTxtCodigoEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 120, 40));
 
         jTxtRm.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtRm.setBorder(null);
@@ -143,7 +143,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jTxtRmActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 120, 40));
+        getContentPane().add(jTxtRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, 120, 40));
 
         jTxtCodigoLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtCodigoLivro.setBorder(null);
@@ -153,7 +153,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jTxtCodigoLivroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 250, 120, 40));
+        getContentPane().add(jTxtCodigoLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 280, 120, 40));
 
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtQuantidade.setBorder(null);
@@ -163,7 +163,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jTxtQuantidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, 210, 50));
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 210, 50));
 
         jTxtSituacao1.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtSituacao1.setBorder(null);
@@ -175,7 +175,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jTxtSituacao1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtSituacao1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 320, 240, 60));
+        getContentPane().add(jTxtSituacao1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, 240, 60));
 
         jTxtSituacao.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtSituacao.setBorder(null);
@@ -186,7 +186,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jTxtSituacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtSituacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 330, 230, 50));
+        getContentPane().add(jTxtSituacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 360, 230, 50));
 
         jTxtDataEmprestimo1.setBorder(null);
         try {
@@ -198,7 +198,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         jTxtDataEmprestimo1.setEnabled(false);
         jTxtDataEmprestimo1.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataEmprestimo1.setOpaque(false);
-        getContentPane().add(jTxtDataEmprestimo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 402, 210, 70));
+        getContentPane().add(jTxtDataEmprestimo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 210, 70));
 
         jTxtDataEmprestimo.setBorder(null);
         try {
@@ -209,7 +209,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         jTxtDataEmprestimo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTxtDataEmprestimo.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataEmprestimo.setOpaque(false);
-        getContentPane().add(jTxtDataEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 422, 210, 40));
+        getContentPane().add(jTxtDataEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 210, 40));
 
         jTxtDataEntrega1.setBorder(null);
         try {
@@ -220,7 +220,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         jTxtDataEntrega1.setEnabled(false);
         jTxtDataEntrega1.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataEntrega1.setOpaque(false);
-        getContentPane().add(jTxtDataEntrega1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, 210, 70));
+        getContentPane().add(jTxtDataEntrega1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, 210, 70));
 
         jTxtDataEntrega.setBorder(null);
         try {
@@ -230,7 +230,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         }
         jTxtDataEntrega.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtDataEntrega.setOpaque(false);
-        getContentPane().add(jTxtDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 420, 210, 40));
+        getContentPane().add(jTxtDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 450, 210, 40));
 
         jBtnConfirmarEntrega.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnConfirmarEntrega.setText("CONFIRMAR ENTREGA");
@@ -239,7 +239,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jBtnConfirmarEntregaActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnConfirmarEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 510, 190, 70));
+        getContentPane().add(jBtnConfirmarEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 530, 190, 70));
 
         jBtnDuasSemanas.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnDuasSemanas.setText("+2 SEMANAS");
@@ -248,7 +248,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jBtnDuasSemanasActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnDuasSemanas, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 190, 70));
+        getContentPane().add(jBtnDuasSemanas, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 530, 190, 70));
 
         jBtnUmaSemana.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnUmaSemana.setText("+1 SEMANA");
@@ -257,7 +257,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jBtnUmaSemanaActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnUmaSemana, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, 190, 70));
+        getContentPane().add(jBtnUmaSemana, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, 190, 70));
 
         jBtnSalvarAlteracoes.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvarAlteracoes.setText("SALVAR ALTERAÇÕES");
@@ -266,7 +266,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
                 jBtnSalvarAlteracoesActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvarAlteracoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 190, 70));
+        getContentPane().add(jBtnSalvarAlteracoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 530, 190, 70));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

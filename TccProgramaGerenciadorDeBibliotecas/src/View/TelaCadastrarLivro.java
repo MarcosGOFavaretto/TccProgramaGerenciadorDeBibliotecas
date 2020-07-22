@@ -291,7 +291,7 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
                 jBtnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 510, 270, 70));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 540, 270, 70));
 
         jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
@@ -300,7 +300,7 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 270, 70));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 270, 70));
 
         jTxtEditora.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtEditora.setText("Geoffrey Bles");
@@ -311,19 +311,19 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
                 jTxtEditoraActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 110, 50));
+        getContentPane().add(jTxtEditora, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 120, 50));
 
         jTxtQuantidade.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtQuantidade.setText("10");
         jTxtQuantidade.setBorder(null);
         jTxtQuantidade.setOpaque(false);
-        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 420, 50, 50));
+        getContentPane().add(jTxtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 460, 50, 40));
 
         jTxtAno.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtAno.setText("2008");
         jTxtAno.setBorder(null);
         jTxtAno.setOpaque(false);
-        getContentPane().add(jTxtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 420, 150, 50));
+        getContentPane().add(jTxtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 150, 40));
 
         jTxtAutor.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtAutor.setText("Clive Staples Lewis");
@@ -334,7 +334,7 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
                 jTxtAutorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 710, 50));
+        getContentPane().add(jTxtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 710, 60));
 
         jTxtNomeLivro.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtNomeLivro.setText("As Crônicas de Nárnia");
@@ -345,7 +345,7 @@ public class TelaCadastrarLivro extends javax.swing.JFrame {
                 jTxtNomeLivroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtNomeLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 710, 40));
+        getContentPane().add(jTxtNomeLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 710, 50));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarLivro.png"))); // NOI18N
         getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

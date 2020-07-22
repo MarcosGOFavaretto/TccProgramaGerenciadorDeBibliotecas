@@ -327,25 +327,25 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         jTxtNome.setText("Marcos Gabriel de Oliveira Favaretto");
         jTxtNome.setBorder(null);
         jTxtNome.setOpaque(false);
-        getContentPane().add(jTxtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 710, 40));
+        getContentPane().add(jTxtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 710, 50));
 
         jTxtEmail.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtEmail.setText("marcos@etec.sp.gov.br");
         jTxtEmail.setBorder(null);
         jTxtEmail.setOpaque(false);
-        getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 290, 50));
+        getContentPane().add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 290, 60));
 
         jTxtSenha.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtSenha.setText("123456");
         jTxtSenha.setBorder(null);
         jTxtSenha.setOpaque(false);
-        getContentPane().add(jTxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 340, 270, -1));
+        getContentPane().add(jTxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 356, 270, 50));
 
         jTxtEndereco.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtEndereco.setText("Rua Emídio Capodifóglio, casa 14, Bairro Paraíso, Santa Cruz da Conceição-SP");
         jTxtEndereco.setBorder(null);
         jTxtEndereco.setOpaque(false);
-        getContentPane().add(jTxtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 660, 60));
+        getContentPane().add(jTxtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, 660, 50));
 
         jTxtTelefone.setBorder(null);
         try {
@@ -356,7 +356,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
         jTxtTelefone.setText("19 9 9467-2748");
         jTxtTelefone.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 36)); // NOI18N
         jTxtTelefone.setOpaque(false);
-        getContentPane().add(jTxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 260, 40));
+        getContentPane().add(jTxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 260, 50));
 
         jBtnSalvar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnSalvar.setText("SALVAR");
@@ -365,7 +365,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
                 jBtnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 590, 270, 70));
+        getContentPane().add(jBtnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 620, 270, 70));
 
         jBtnCancelar.setFont(new java.awt.Font("Abadi MT Std Extra Light", 0, 14)); // NOI18N
         jBtnCancelar.setText("CANCELAR");
@@ -374,7 +374,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
                 jBtnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 590, 270, 70));
+        getContentPane().add(jBtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 620, 270, 70));
 
         jFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastrarUsuários.png"))); // NOI18N
         getContentPane().add(jFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
