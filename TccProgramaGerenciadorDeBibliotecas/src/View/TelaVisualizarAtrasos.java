@@ -33,7 +33,7 @@ public class TelaVisualizarAtrasos extends javax.swing.JFrame {
         initComponents();
         AtrasoClass atrasoclass_objeto = new AtrasoClass();
         String[] array_data_banco = null;
-        ResultSet resultset_visualizaratrasos = atrasoclass_objeto.visualizarAtrasos();
+        ResultSet resultset_visualizaratrasos = atrasoclass_objeto.visualizarTodosOsAtrasos();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
         while (resultset_visualizaratrasos.next()) {
