@@ -423,7 +423,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         if (!jTxtRm.getText().equals("") || jCbSala.getSelectedIndex() == 0 || jCbCurso.getSelectedIndex() == 0 || jTxtEmail.getText().equals("") || jTxtTelefone.getText().equals("") || jTxtNome.getText().equals("")) {
             if (validarEmail(jTxtEmail.getText())) {
                 AlunoClass alunoclass_objeto = new AlunoClass();
-                if (alunoclass_objeto.cadastrarAluno(jTxtRm.getText(), jCbSala.getSelectedItem().toString(), jCbCurso.getSelectedItem().toString(), jTxtEmail.getText(), jTxtTelefone.getText(), jTxtNome.getText())) {
+                if (alunoclass_objeto.cadastrarUmNovoAluno(jTxtRm.getText(), jCbSala.getSelectedItem().toString(), jCbCurso.getSelectedItem().toString(), jTxtEmail.getText(), jTxtTelefone.getText(), jTxtNome.getText())) {
                     JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso!");
                     limparCampos();
                 } else {

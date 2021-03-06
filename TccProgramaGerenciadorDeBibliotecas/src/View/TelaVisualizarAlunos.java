@@ -28,7 +28,7 @@ public class TelaVisualizarAlunos extends javax.swing.JFrame {
     public TelaVisualizarAlunos() throws SQLException {
         initComponents();
         AlunoClass alunoclass_objeto = new AlunoClass();
-        ResultSet resultset_visualizaraluno = alunoclass_objeto.visualizarAluno();
+        ResultSet resultset_visualizaraluno = alunoclass_objeto.visualizarTodosOsAlunos();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
         while (resultset_visualizaraluno.next()) {

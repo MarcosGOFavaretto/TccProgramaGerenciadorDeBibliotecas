@@ -15,76 +15,76 @@ import java.sql.ResultSet;
  */
 public class AlunoClass {
 
-    private String rm_aluno;
-    private String sala_aluno;
-    private String curso_aluno;
-    private String email_aluno;
-    private String telefone_aluno;
-    private String nome_aluno;
-    private CadastrarAluno cadastraraluno_objeto = new CadastrarAluno();
-    private VisualizarAluno visualizaraluno_objeto = new VisualizarAluno();
-    private ResultSet resultset_visualizaraluno;
+    private String registroDeMatriculaDoAluno;
+    private String salaDoAluno;
+    private String cursoDoAluno;
+    private String emailDoAluno;
+    private String telefoneDoAluno;
+    private String nomeDoAluno;
+    private CadastrarAluno objetoDaClasseCadastrarAluno = new CadastrarAluno();
+    private VisualizarAluno objetoDaClasseVisualizarAluno = new VisualizarAluno();
+    private ResultSet resultadosDaVisualizaçãoDosAlunos;
 
     // CRIANDO OS MÉTODOS "GETTERS":
-    public String getRm_aluno() {
-        return rm_aluno;
+    public String getRegistroDeMatriculaDoAluno() {
+        return registroDeMatriculaDoAluno;
     }
 
-    public String getSala_aluno() {
-        return sala_aluno;
+    public String getSalaDoAluno() {
+        return salaDoAluno;
     }
 
-    public String getCurso_aluno() {
-        return curso_aluno;
+    public String getCursoDoAluno() {
+        return cursoDoAluno;
     }
 
-    public String getEmail_aluno() {
-        return email_aluno;
+    public String getEmailDoAluno() {
+        return emailDoAluno;
     }
 
-    public String getTelefone_aluno() {
-        return telefone_aluno;
+    public String getTelefoneDoAluno() {
+        return telefoneDoAluno;
     }
 
-    public String getNome_aluno() {
-        return nome_aluno;
+    public String getNomeDoAluno() {
+        return nomeDoAluno;
     }
 
     // CRIANDO OS MÉTODOS "SETTERS": 
-    public void setRm_aluno(String rm_aluno) {
-        this.rm_aluno = rm_aluno;
+    public void setRegistroDeMatriculaDoAluno(String registroDeMatriculaDoAluno) {
+        this.registroDeMatriculaDoAluno = registroDeMatriculaDoAluno;
     }
 
-    public void setSala_aluno(String sala_aluno) {
-        this.sala_aluno = sala_aluno;
+    public void setSalaDoAluno(String salaDoAluno) {
+        this.salaDoAluno = salaDoAluno;
     }
 
-    public void setCurso_aluno(String curso_aluno) {
-        this.curso_aluno = curso_aluno;
+    public void setCursoDoAluno(String cursoDoAluno) {
+        this.cursoDoAluno = cursoDoAluno;
     }
 
-    public void setEmail_aluno(String email_aluno) {
-        this.email_aluno = email_aluno;
+    public void setEmailDoAluno(String emailDoAluno) {
+        this.emailDoAluno = emailDoAluno;
     }
 
-    public void setTelefone_aluno(String telefone_aluno) {
-        this.telefone_aluno = telefone_aluno;
+    public void setTelefoneDoAluno(String telefoneDoAluno) {
+        this.telefoneDoAluno = telefoneDoAluno;
     }
 
-    public void setNome_aluno(String nome_aluno) {
-        this.nome_aluno = nome_aluno;
+    public void setNomeDoAluno(String nomeDoAluno) {
+        this.nomeDoAluno = nomeDoAluno;
     }
 
-    public boolean cadastrarAluno(String rm, String sala, String curso, String email, String telefone, String nome) {
-        if (cadastraraluno_objeto.cadastrarAluno(rm, sala, curso, email, telefone, nome)) {
+    public boolean cadastrarUmNovoAluno(String rm, String sala, String curso, String email, String telefone, String nome) {
+        if (objetoDaClasseCadastrarAluno.cadastrarAluno(rm, sala, curso, email, telefone, nome)) {
             return true;
         } else {
             return false;
         }
     }
 
-    public ResultSet visualizarAluno() {
-        resultset_visualizaraluno = visualizaraluno_objeto.visualizarAluno();
-        return resultset_visualizaraluno;
+    public ResultSet visualizarTodosOsAlunos() {
+        resultadosDaVisualizaçãoDosAlunos = objetoDaClasseVisualizarAluno.visualizarAluno();
+        return resultadosDaVisualizaçãoDosAlunos;
     }
 }
