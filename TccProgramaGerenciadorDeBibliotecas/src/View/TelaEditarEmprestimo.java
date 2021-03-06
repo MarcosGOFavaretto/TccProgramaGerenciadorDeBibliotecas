@@ -35,15 +35,15 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     public TelaEditarEmprestimo() throws SQLException {
         id_emprestimo = JOptionPane.showInputDialog(null, "Insira o código do empréstimo", "CÓDIGO DO EMPRÉSTIMO", 3);
         if (!id_emprestimo.equals("")) {
-            emprestimoclass_objeto.selecionarEmprestimo(Integer.parseInt(id_emprestimo));
+            emprestimoclass_objeto.selecionarEmprestimoEspecifico(Integer.parseInt(id_emprestimo));
             initComponents();
-            jTxtCodigoEmprestimo.setText(String.valueOf(emprestimoclass_objeto.getId_emprestimo()));
-            jTxtRm.setText(String.valueOf(emprestimoclass_objeto.getRm_aluno()));
-            jTxtCodigoLivro.setText(String.valueOf(emprestimoclass_objeto.getId_livro()));
+            jTxtCodigoEmprestimo.setText(String.valueOf(emprestimoclass_objeto.getCodigoDoEmprestimo()));
+            jTxtRm.setText(String.valueOf(emprestimoclass_objeto.getRegistroDeMatriculaDoAluno()));
+            jTxtCodigoLivro.setText(String.valueOf(emprestimoclass_objeto.getCodigoDoLivro()));
             jTxtQuantidade.setText(String.valueOf(emprestimoclass_objeto.getQuantidade()));
             jTxtSituacao.setText("NÃO ENTREGUE");
-            jTxtDataEmprestimo.setText(String.valueOf(emprestimoclass_objeto.getData_emprestimo()));
-            jTxtDataEntrega.setText(String.valueOf(emprestimoclass_objeto.getData_entrega()));
+            jTxtDataEmprestimo.setText(String.valueOf(emprestimoclass_objeto.getDataDaRealizacaoDoEmprestimo()));
+            jTxtDataEntrega.setText(String.valueOf(emprestimoclass_objeto.getDataDaRealizacaoDaEntrega()));
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos!", "Campos vazios!", 0);
         }
@@ -497,7 +497,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
             int quantidade = Integer.parseInt(jTxtQuantidade.getText().replaceAll("[^0-9]", ""));
             if (verificarquantidade_objeto.verificarQuantidade(quantidade, jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""))) {
                 JOptionPane.showMessageDialog(this, "Livro disponível!");
-                if (emprestimoclass_objeto.atualizarEmprestimo(jTxtCodigoEmprestimo.getText(), jTxtRm.getText(), jTxtCodigoLivro.getText(), String.valueOf(quantidade))) {
+                if (emprestimoclass_objeto.atualizarEmprestimoEspecifico(jTxtCodigoEmprestimo.getText(), jTxtRm.getText(), jTxtCodigoLivro.getText(), String.valueOf(quantidade))) {
                     JOptionPane.showMessageDialog(this, "Empréstimo atualizado com sucesso!");
                     this.setVisible(false);
                     telavisualizarhistorico_objeto.setVisible(true);
@@ -515,8 +515,8 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
     private void jBtnUmaSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUmaSemanaActionPerformed
         try {
             // CÓDIGO DO BOTÃO "+1 SEMANA":
-            emprestimoclass_objeto.selecionarEmprestimo(Integer.parseInt(jTxtCodigoEmprestimo.getText()));
-            String data_entrega_inicial = emprestimoclass_objeto.getData_entrega();
+            emprestimoclass_objeto.selecionarEmprestimoEspecifico(Integer.parseInt(jTxtCodigoEmprestimo.getText()));
+            String data_entrega_inicial = emprestimoclass_objeto.getDataDaRealizacaoDaEntrega();
             SimpleDateFormat mascara = new SimpleDateFormat("dd/MM/yyyy");
             String[] aData = data_entrega_inicial.split("/");
 
@@ -527,7 +527,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
             cal.set(Calendar.YEAR, Integer.parseInt(aData[2]));
             cal.add(Calendar.DAY_OF_MONTH, 7);
             Date data_entrega_final = cal.getTime();
-            emprestimoclass_objeto.atualizarDataDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
+            emprestimoclass_objeto.atualizarADataDeDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
             historicoclass_objeto.atualizarDataHistorico(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
         } catch (SQLException ex) {
             Logger.getLogger(TelaEditarEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
@@ -538,8 +538,8 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
         // CÓDIGO DO BOTÃO "+2 SEMANA":
         try {
             // CÓDIGO DO BOTÃO "+1 SEMANA":
-            emprestimoclass_objeto.selecionarEmprestimo(Integer.parseInt(jTxtCodigoEmprestimo.getText()));
-            String data_entrega_inicial = emprestimoclass_objeto.getData_entrega();
+            emprestimoclass_objeto.selecionarEmprestimoEspecifico(Integer.parseInt(jTxtCodigoEmprestimo.getText()));
+            String data_entrega_inicial = emprestimoclass_objeto.getDataDaRealizacaoDaEntrega();
             SimpleDateFormat mascara = new SimpleDateFormat("dd/MM/yyyy");
             String[] aData = data_entrega_inicial.split("/");
 
@@ -550,7 +550,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
             cal.set(Calendar.YEAR, Integer.parseInt(aData[2]));
             cal.add(Calendar.DAY_OF_MONTH, 14);
             Date data_entrega_final = cal.getTime();
-            emprestimoclass_objeto.atualizarDataDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
+            emprestimoclass_objeto.atualizarADataDeDevolucao(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
             historicoclass_objeto.atualizarDataHistorico(jTxtCodigoEmprestimo.getText(), mascara.format(data_entrega_final));
         } catch (SQLException ex) {
             Logger.getLogger(TelaEditarEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
@@ -559,7 +559,7 @@ public class TelaEditarEmprestimo extends javax.swing.JFrame {
 
     private void jBtnConfirmarEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarEntregaActionPerformed
         // CÓDIGO DO BOTÃO "CONFIRMAR ENTREGA":
-        if (emprestimoclass_objeto.confirmarEntrega(jTxtCodigoEmprestimo.getText())) {
+        if (emprestimoclass_objeto.confirmarEntregaDoLivro(jTxtCodigoEmprestimo.getText())) {
             JOptionPane.showMessageDialog(this, "Entrega confirmada!", "ENTREGA REALIZADA!", 1);
             limparCampos();
             TelaVisualizarEmprestimos telavisualizaremprestimos_objeto = null;

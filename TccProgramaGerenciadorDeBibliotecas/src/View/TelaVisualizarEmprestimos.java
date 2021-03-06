@@ -28,7 +28,7 @@ public class TelaVisualizarEmprestimos extends javax.swing.JFrame {
     public TelaVisualizarEmprestimos() throws SQLException {
         initComponents();
         EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
-        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarEmprestimo();
+        ResultSet resultset_visualizaremprestimo = emprestimoclass_objeto.visualizarTodosOsEmprestimos();
         DefaultTableModel tabela = (DefaultTableModel) jTbResultado.getModel();
         tabela.setNumRows(0);
         while (resultset_visualizaremprestimo.next()) {

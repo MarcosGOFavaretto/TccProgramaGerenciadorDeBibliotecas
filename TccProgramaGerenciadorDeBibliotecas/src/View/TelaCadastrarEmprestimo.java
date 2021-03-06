@@ -395,7 +395,7 @@ public class TelaCadastrarEmprestimo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Livro disponível!");
                 EmprestimoClass emprestimoclass_objeto = new EmprestimoClass();
                 calcularDatas();
-                if (emprestimoclass_objeto.cadastrarEmprestimo(jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""), jTxtRm.getText().replaceAll("[^0-9]", ""), data_emprestimo_final, data_entrega_final, jTxtQuantidade.getText().replaceAll("[^0-9]", ""))) {
+                if (emprestimoclass_objeto.cadastrarUmNovoEmprestimo(jTxtCodigoLivro.getText().replaceAll("[^0-9]", ""), jTxtRm.getText().replaceAll("[^0-9]", ""), data_emprestimo_final, data_entrega_final, jTxtQuantidade.getText().replaceAll("[^0-9]", ""))) {
                     JOptionPane.showMessageDialog(this, "Empréstimo cadastrado com sucesso!");
                     limparCampos();
                 } else {
